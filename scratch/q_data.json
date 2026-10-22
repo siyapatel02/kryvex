@@ -1,0 +1,870 @@
+{
+    "statusCode": 200,
+    "data": {
+        "paging": {
+            "total": 745,
+            "totalPages": 42
+        },
+        "articles": [
+            {
+                "id": 1635837,
+                "title": "Gold News: Yields Still Control as XAUUSD Bounces From $4,103.52 Low",
+                "seoTitle": "Gold News: Yields Still Control as XAUUSD Bounces From $4,103.52 Low",
+                "slug": "gold-news-yields-still-control-as-xauusd-bounces-from-4103-52-low",
+                "isPinned": true,
+                "media": "\/2026\/10\/gold-precious-metal-price-chart-19.jpg",
+                "imageUrl": "https:\/\/responsive.fxempire.com\/v7\/_fxempire_\/2026\/10\/gold-precious-metal-price-chart-19.jpg",
+                "author": {
+                    "name": "James Hyerczyk",
+                    "slug": "jameshyerczyk",
+                    "image": "cf18832761e97dd8c518e3f847201a53"
+                },
+                "tags": [
+                    "commodities",
+                    "daily",
+                    "pin1",
+                    "fundamental",
+                    "co-gold",
+                    "hp2",
+                    "jamesxauusd",
+                    "publish_tweet",
+                    "technical",
+                    "xauusd"
+                ],
+                "date": 1791283547000,
+                "timestamp": 1791283547000,
+                "prices": [
+                    {
+                        "slug": "gold",
+                        "type": "commodities",
+                        "last": 4114.295,
+                        "percentChange": -0.4844805379354489,
+                        "symbol": "gold",
+                        "name": "Gold"
+                    }
+                ],
+                "featuredVideo": "",
+                "articleUrl": "\/forecasts\/article\/gold-news-yields-still-control-as-xauusd-bounces-from-4103-52-low-1635837"
+            },
+            {
+                "id": 1636253,
+                "title": "Ethereum Price Forecast: 3 Bullish ETH Signals Put $3K Back in Focus",
+                "seoTitle": "Ethereum Price Forecast: 3 Bullish ETH Signals Put $3K Back in Focus",
+                "slug": "ethereum-price-forecast-3-bullish-eth-signals-put-3k-back-in-focus",
+                "media": "\/2025\/10\/Ethereum-bull.jpg",
+                "imageUrl": "https:\/\/responsive.fxempire.com\/v7\/_fxempire_\/2025\/10\/Ethereum-bull.jpg",
+                "author": {
+                    "name": "Yashu Gola",
+                    "slug": "yashugola",
+                    "image": "b2106d92be92e5d949f063180857bf06"
+                },
+                "tags": [
+                    "cryptocurrencies",
+                    "daily",
+                    "cc-ethereum",
+                    "hp3",
+                    "yahoo-feed",
+                    "yashucrypto"
+                ],
+                "date": 1791368747000,
+                "timestamp": 1791368747000,
+                "prices": [
+                    {
+                        "slug": "ethereum",
+                        "type": "crypto",
+                        "last": 2574.4262343889,
+                        "percentChange": -5.15433647628322,
+                        "symbol": "ETH",
+                        "name": null
+                    }
+                ],
+                "featuredVideo": "https:\/\/www.youtube.com\/watch?v=f4hTy1VZ4SQ",
+                "articleUrl": "\/forecasts\/article\/ethereum-price-forecast-3-bullish-eth-signals-put-3k-back-in-focus-1636253"
+            },
+            {
+                "id": 1636265,
+                "title": "Oil News: Brent Leads as Saudi Exports Rise and Gulf of Mexico Storm Looms",
+                "seoTitle": "Oil News: Brent Leads as Saudi Exports Rise and Gulf of Mexico Storm Looms",
+                "slug": "premium-oil-news-brent-leads-as-saudi-exports-rise-and-gulf-of-mexico-storm-looms",
+                "media": "\/2026\/10\/crude-oil-market-illustration-10.jpg",
+                "imageUrl": "https:\/\/responsive.fxempire.com\/v7\/_fxempire_\/2026\/10\/crude-oil-market-illustration-10.jpg",
+                "author": {
+                    "name": "James Hyerczyk",
+                    "slug": "jameshyerczyk",
+                    "image": "cf18832761e97dd8c518e3f847201a53"
+                },
+                "tags": [
+                    "co-brent-crude-oil",
+                    "commodities",
+                    "daily",
+                    "fundamental",
+                    "hp1",
+                    "jamesoil",
+                    "primex",
+                    "publish_tweet",
+                    "technical",
+                    "co-wti-crude-oil"
+                ],
+                "date": 1791368125000,
+                "timestamp": 1791368125000,
+                "prices": [
+                    {
+                        "slug": "brent-crude-oil",
+                        "type": "commodities",
+                        "last": 104.851,
+                        "percentChange": 1.3092293421968038,
+                        "symbol": "brent-crude-oil",
+                        "name": "Brent Oil"
+                    },
+                    {
+                        "slug": "wti-crude-oil",
+                        "type": "commodities",
+                        "last": 91.572,
+                        "percentChange": 0.50046095087581,
+                        "symbol": "wti-crude-oil",
+                        "name": "WTI Oil"
+                    }
+                ],
+                "featuredVideo": "",
+                "articleUrl": "\/forecasts\/article\/premium-oil-news-brent-leads-as-saudi-exports-rise-and-gulf-of-mexico-storm-looms-1636265?_c=319536"
+            },
+            {
+                "id": 1636254,
+                "title": "Silver Price Forecast: Oil Fuels Inflation Fears Despite Softer Jobs",
+                "seoTitle": "Silver Price Forecast: Oil Fuels Inflation Fears Despite Softer Jobs",
+                "slug": "premium-silver-price-forecast-oil-fuels-inflation-fears-despite-softer-jobs",
+                "media": "\/2026\/09\/silver-precious-metal-price-chart-02-5.jpg",
+                "imageUrl": "https:\/\/responsive.fxempire.com\/v7\/_fxempire_\/2026\/09\/silver-precious-metal-price-chart-02-5.jpg",
+                "author": {
+                    "name": "Muhammad Umair",
+                    "slug": "muhammadumair",
+                    "image": "d3df3714eacad44db3ddfc6a0ea80a38"
+                },
+                "tags": [
+                    "co-brent-crude-oil",
+                    "commodities",
+                    "daily",
+                    "economic-news",
+                    "fundamental",
+                    "co-gold",
+                    "hp3",
+                    "premium-content",
+                    "primex",
+                    "publish_tweet",
+                    "technical",
+                    "umairmetals",
+                    "us-dollar-index"
+                ],
+                "date": 1791367112000,
+                "timestamp": 1791367112000,
+                "prices": [
+                    {
+                        "slug": "brent-crude-oil",
+                        "type": "commodities",
+                        "last": 104.851,
+                        "percentChange": 1.3092293421968038,
+                        "symbol": "brent-crude-oil",
+                        "name": "Brent Oil"
+                    },
+                    {
+                        "slug": "gold",
+                        "type": "commodities",
+                        "last": 4114.295,
+                        "percentChange": -0.4844805379354489,
+                        "symbol": "gold",
+                        "name": "Gold"
+                    }
+                ],
+                "featuredVideo": "",
+                "articleUrl": "\/forecasts\/article\/premium-silver-price-forecast-oil-fuels-inflation-fears-despite-softer-jobs-1636254?_c=528367"
+            },
+            {
+                "id": 1636194,
+                "title": "First Light News: Stocks Rally as Bond Bears Dig In",
+                "seoTitle": "First Light News: Stocks Rally as Bond Bears Dig In",
+                "slug": "first-light-news-stocks-rally-as-bond-bears-dig-in",
+                "media": "\/2026\/10\/sp500-index-stock-market-02.jpg",
+                "imageUrl": "https:\/\/responsive.fxempire.com\/v7\/_fxempire_\/2026\/10\/sp500-index-stock-market-02.jpg",
+                "author": {
+                    "name": "Aaron Hill",
+                    "slug": "aaronhill",
+                    "image": "3d8c14758fb1b3daa1f3e35e18792380"
+                },
+                "tags": [
+                    "bonds",
+                    "co-brent-crude-oil",
+                    "commodities",
+                    "daily",
+                    "i-us30-usd",
+                    "forex",
+                    "indices",
+                    "i-tech100-usd",
+                    "s-nvda",
+                    "i-spx",
+                    "stocks",
+                    "us-dollar-index",
+                    "co-wti-crude-oil"
+                ],
+                "date": 1791355727000,
+                "timestamp": 1791355727000,
+                "prices": [
+                    {
+                        "slug": "brent-crude-oil",
+                        "type": "commodities",
+                        "last": 104.851,
+                        "percentChange": 1.3092293421968038,
+                        "symbol": "brent-crude-oil",
+                        "name": "Brent Oil"
+                    },
+                    {
+                        "slug": "us30-usd",
+                        "type": "indices",
+                        "last": 51352.5,
+                        "percentChange": -0.0005841940458999517,
+                        "symbol": "us30-usd",
+                        "name": null
+                    },
+                    {
+                        "slug": "tech100-usd",
+                        "type": "indices",
+                        "last": 31106.8,
+                        "percentChange": -0.0873642962677482,
+                        "symbol": "tech100-usd",
+                        "name": null
+                    },
+                    {
+                        "slug": "nvda",
+                        "type": "stocks",
+                        "last": 239.24,
+                        "percentChange": 0.14,
+                        "symbol": "nvda",
+                        "name": null
+                    },
+                    {
+                        "slug": "spx",
+                        "type": "indices",
+                        "last": 7722.72,
+                        "percentChange": 0.734,
+                        "symbol": "spx",
+                        "name": null
+                    },
+                    {
+                        "slug": "wti-crude-oil",
+                        "type": "commodities",
+                        "last": 91.572,
+                        "percentChange": 0.50046095087581,
+                        "symbol": "wti-crude-oil",
+                        "name": "WTI Oil"
+                    }
+                ],
+                "featuredVideo": "",
+                "articleUrl": "\/forecasts\/article\/first-light-news-stocks-rally-as-bond-bears-dig-in-1636194"
+            },
+            {
+                "id": 1636161,
+                "title": "Gold vs Bitcoin: BTC Slips Ahead of FOMC Minutes",
+                "seoTitle": "Gold vs Bitcoin: BTC Slips Ahead of FOMC Minutes",
+                "slug": "gold-vs-bitcoin-btc-slips-ahead-of-fomc-minutes",
+                "media": "\/2026\/10\/gold-vs-bitcoin-comparison-03.jpg",
+                "imageUrl": "https:\/\/responsive.fxempire.com\/v7\/_fxempire_\/2026\/10\/gold-vs-bitcoin-comparison-03.jpg",
+                "author": {
+                    "name": "Muhammad Umair",
+                    "slug": "muhammadumair",
+                    "image": "d3df3714eacad44db3ddfc6a0ea80a38"
+                },
+                "tags": [
+                    "cc-bitcoin",
+                    "commodities",
+                    "cryptocurrencies",
+                    "economic-news",
+                    "fundamental",
+                    "co-gold",
+                    "hp2",
+                    "publish_tweet",
+                    "technical",
+                    "umairmetals",
+                    "weekly"
+                ],
+                "date": 1791354259000,
+                "timestamp": 1791354259000,
+                "prices": [
+                    {
+                        "slug": "bitcoin",
+                        "type": "crypto",
+                        "last": 83548.61313876246,
+                        "percentChange": -2.871336064834111,
+                        "symbol": "BTC",
+                        "name": null
+                    },
+                    {
+                        "slug": "gold",
+                        "type": "commodities",
+                        "last": 4114.295,
+                        "percentChange": -0.4844805379354489,
+                        "symbol": "gold",
+                        "name": "Gold"
+                    }
+                ],
+                "featuredVideo": "",
+                "articleUrl": "\/forecasts\/article\/gold-vs-bitcoin-btc-slips-ahead-of-fomc-minutes-1636161"
+            },
+            {
+                "id": 1636162,
+                "title": "US Dollar Price Forecast: Fed Minutes Loom, Can GBP\/USD and EUR\/USD Recover?",
+                "seoTitle": "US Dollar Price Forecast: Fed Minutes Loom, Can GBP\/USD and EUR\/USD Recover?",
+                "slug": "us-dollar-price-forecast-fed-minutes-loom-can-gbp-usd-and-eur-usd-recover",
+                "media": "\/2026\/10\/Main-Images-3-2.jpg",
+                "imageUrl": "https:\/\/responsive.fxempire.com\/v7\/_fxempire_\/2026\/10\/Main-Images-3-2.jpg",
+                "author": {
+                    "name": "Arslan Ali Butt",
+                    "slug": "arslanali",
+                    "image": "48e047264e49bf89471f1711c321d393"
+                },
+                "tags": [
+                    "arslanrecap",
+                    "c-eur-usd",
+                    "forex",
+                    "forex-news",
+                    "fundamental",
+                    "c-gbp-usd",
+                    "co-gold",
+                    "technical",
+                    "translate",
+                    "yahoo-feed"
+                ],
+                "date": 1791351965000,
+                "timestamp": 1791351965000,
+                "prices": [
+                    {
+                        "slug": "eur-usd",
+                        "type": "currencies",
+                        "last": 1.11929,
+                        "percentChange": -0.53319588728239,
+                        "symbol": "eur-usd",
+                        "name": null
+                    },
+                    {
+                        "slug": "gbp-usd",
+                        "type": "currencies",
+                        "last": 1.32267,
+                        "percentChange": -0.3000037688915761,
+                        "symbol": "gbp-usd",
+                        "name": null
+                    },
+                    {
+                        "slug": "gold",
+                        "type": "commodities",
+                        "last": 4114.295,
+                        "percentChange": -0.4844805379354489,
+                        "symbol": "gold",
+                        "name": "Gold"
+                    }
+                ],
+                "featuredVideo": "",
+                "articleUrl": "\/forecasts\/article\/us-dollar-price-forecast-fed-minutes-loom-can-gbp-usd-and-eur-usd-recover-1636162"
+            },
+            {
+                "id": 1636156,
+                "title": "Gold (XAUUSD) & Silver Price Forecast: China Adds Gold, Fed Minutes Loom, Will Gold Clear $4,190?",
+                "seoTitle": "Gold (XAUUSD) & Silver Price Forecast: China Adds Gold, Fed Minutes Loom, Will Gold Clear $4,190?",
+                "slug": "gold-xauusd-silver-price-forecast-china-adds-gold-fed-minutes-loom-will-gold-clear-4190",
+                "media": "\/2026\/10\/Main-Images-5-1.jpg",
+                "imageUrl": "https:\/\/responsive.fxempire.com\/v7\/_fxempire_\/2026\/10\/Main-Images-5-1.jpg",
+                "author": {
+                    "name": "Arslan Ali Butt",
+                    "slug": "arslanali",
+                    "image": "48e047264e49bf89471f1711c321d393"
+                },
+                "tags": [
+                    "arslanmetals",
+                    "commodities",
+                    "fundamental",
+                    "co-gold",
+                    "hp1",
+                    "popular-news",
+                    "co-silver",
+                    "technical"
+                ],
+                "date": 1791349850000,
+                "timestamp": 1791349850000,
+                "prices": [
+                    {
+                        "slug": "gold",
+                        "type": "commodities",
+                        "last": 4114.295,
+                        "percentChange": -0.4844805379354489,
+                        "symbol": "gold",
+                        "name": "Gold"
+                    },
+                    {
+                        "slug": "silver",
+                        "type": "commodities",
+                        "last": 60.102999999999994,
+                        "percentChange": -1.3427225423089,
+                        "symbol": "silver",
+                        "name": "Silver"
+                    }
+                ],
+                "featuredVideo": "",
+                "articleUrl": "\/forecasts\/article\/gold-xauusd-silver-price-forecast-china-adds-gold-fed-minutes-loom-will-gold-clear-4190-1636156"
+            },
+            {
+                "id": 1636149,
+                "title": "Natural Gas and Oil Forecast: Gulf Storm Threatens Supply, Can WTI Break $90.65?",
+                "seoTitle": "Natural Gas and Oil Forecast: Gulf Storm Threatens Supply, Can WTI Break $90.65?",
+                "slug": "natural-gas-and-oil-forecast-gulf-storm-threatens-supply-can-wti-break-90-65",
+                "media": "\/2026\/10\/Main-Images-3-1.jpg",
+                "imageUrl": "https:\/\/responsive.fxempire.com\/v7\/_fxempire_\/2026\/10\/Main-Images-3-1.jpg",
+                "author": {
+                    "name": "Arslan Ali Butt",
+                    "slug": "arslanali",
+                    "image": "48e047264e49bf89471f1711c321d393"
+                },
+                "tags": [
+                    "arslanenergy",
+                    "co-brent-crude-oil",
+                    "commodities",
+                    "fundamental",
+                    "hp4",
+                    "co-natural-gas",
+                    "popular-news",
+                    "technical",
+                    "co-wti-crude-oil"
+                ],
+                "date": 1791348935000,
+                "timestamp": 1791348935000,
+                "prices": [
+                    {
+                        "slug": "brent-crude-oil",
+                        "type": "commodities",
+                        "last": 104.851,
+                        "percentChange": 1.3092293421968038,
+                        "symbol": "brent-crude-oil",
+                        "name": "Brent Oil"
+                    },
+                    {
+                        "slug": "natural-gas",
+                        "type": "commodities",
+                        "last": 3.067,
+                        "percentChange": 3.1965006729475167,
+                        "symbol": "natural-gas",
+                        "name": "Natural Gas"
+                    },
+                    {
+                        "slug": "wti-crude-oil",
+                        "type": "commodities",
+                        "last": 91.572,
+                        "percentChange": 0.50046095087581,
+                        "symbol": "wti-crude-oil",
+                        "name": "WTI Oil"
+                    }
+                ],
+                "featuredVideo": "",
+                "articleUrl": "\/forecasts\/article\/natural-gas-and-oil-forecast-gulf-storm-threatens-supply-can-wti-break-90-65-1636149"
+            },
+            {
+                "id": 1636134,
+                "title": "Gold and Silver Forecast: Breakdown Risk Ahead of Fed Minutes",
+                "seoTitle": "Gold and Silver Forecast: Breakdown Risk Ahead of Fed Minutes",
+                "slug": "gold-and-silver-forecast-breakdown-risk-ahead-of-fed-minutes",
+                "media": "\/2026\/09\/gold-and-silver-precious-metals-02-1.jpg",
+                "imageUrl": "https:\/\/responsive.fxempire.com\/v7\/_fxempire_\/2026\/09\/gold-and-silver-precious-metals-02-1.jpg",
+                "author": {
+                    "name": "Muhammad Umair",
+                    "slug": "muhammadumair",
+                    "image": "d3df3714eacad44db3ddfc6a0ea80a38"
+                },
+                "tags": [
+                    "commodities",
+                    "daily",
+                    "economic-news",
+                    "co-gold",
+                    "hp3",
+                    "co-silver",
+                    "technical",
+                    "umairmetals",
+                    "us-dollar-index"
+                ],
+                "date": 1791342875000,
+                "timestamp": 1791342875000,
+                "prices": [
+                    {
+                        "slug": "gold",
+                        "type": "commodities",
+                        "last": 4114.295,
+                        "percentChange": -0.4844805379354489,
+                        "symbol": "gold",
+                        "name": "Gold"
+                    },
+                    {
+                        "slug": "silver",
+                        "type": "commodities",
+                        "last": 60.102999999999994,
+                        "percentChange": -1.3427225423089,
+                        "symbol": "silver",
+                        "name": "Silver"
+                    }
+                ],
+                "featuredVideo": "",
+                "articleUrl": "\/forecasts\/article\/gold-and-silver-forecast-breakdown-risk-ahead-of-fed-minutes-1636134"
+            },
+            {
+                "id": 1636052,
+                "title": "Oil News: WTI and Brent Bounce as Thin Inventories Limit Release Impact",
+                "seoTitle": "Oil News: WTI and Brent Bounce as Thin Inventories Limit Release Impact",
+                "slug": "premium-oil-news-wti-and-brent-bounce-as-thin-inventories-limit-release-impact",
+                "media": "\/2026\/10\/crude-oil-barrel-illustration.jpg",
+                "imageUrl": "https:\/\/responsive.fxempire.com\/v7\/_fxempire_\/2026\/10\/crude-oil-barrel-illustration.jpg",
+                "author": {
+                    "name": "James Hyerczyk",
+                    "slug": "jameshyerczyk",
+                    "image": "cf18832761e97dd8c518e3f847201a53"
+                },
+                "tags": [
+                    "co-brent-crude-oil",
+                    "commodities",
+                    "daily",
+                    "fundamental",
+                    "hp1",
+                    "jamesoil",
+                    "primex",
+                    "publish_tweet",
+                    "technical",
+                    "co-wti-crude-oil"
+                ],
+                "date": 1791323600000,
+                "timestamp": 1791323600000,
+                "prices": [
+                    {
+                        "slug": "brent-crude-oil",
+                        "type": "commodities",
+                        "last": 104.851,
+                        "percentChange": 1.3092293421968038,
+                        "symbol": "brent-crude-oil",
+                        "name": "Brent Oil"
+                    },
+                    {
+                        "slug": "wti-crude-oil",
+                        "type": "commodities",
+                        "last": 91.572,
+                        "percentChange": 0.50046095087581,
+                        "symbol": "wti-crude-oil",
+                        "name": "WTI Oil"
+                    }
+                ],
+                "featuredVideo": "",
+                "articleUrl": "\/forecasts\/article\/premium-oil-news-wti-and-brent-bounce-as-thin-inventories-limit-release-impact-1636052?_c=491211"
+            },
+            {
+                "id": 1636084,
+                "title": "Gold (XAU\/USD) Price Forecast: $4,104 Support Puts Bears on Notice",
+                "seoTitle": "Gold (XAU\/USD) Price Forecast: $4,104 Support Puts Bears on Notice",
+                "slug": "gold-xau-usd-price-forecast-4104-support-puts-bears-on-notice",
+                "media": "\/2026\/10\/gold-precious-metal-price-chart-03-1.jpg",
+                "imageUrl": "https:\/\/responsive.fxempire.com\/v7\/_fxempire_\/2026\/10\/gold-precious-metal-price-chart-03-1.jpg",
+                "author": {
+                    "name": "Bruce Powers",
+                    "slug": "brucepowers",
+                    "image": "a012504c0d82333ea2ba0dcab115b613"
+                },
+                "tags": [
+                    "brucegold",
+                    "commodities",
+                    "daily",
+                    "co-gold",
+                    "hp2",
+                    "video"
+                ],
+                "date": 1791322168000,
+                "timestamp": 1791322168000,
+                "prices": [
+                    {
+                        "slug": "gold",
+                        "type": "commodities",
+                        "last": 4114.295,
+                        "percentChange": -0.4844805379354489,
+                        "symbol": "gold",
+                        "name": "Gold"
+                    }
+                ],
+                "featuredVideo": "https:\/\/www.youtube.com\/watch?v=Uq-FyPFWH3A",
+                "articleUrl": "\/forecasts\/article\/gold-xau-usd-price-forecast-4104-support-puts-bears-on-notice-1636084"
+            },
+            {
+                "id": 1636075,
+                "title": "WTI Crude Oil Price Forecast: $88.66 Support Signals Potential Pullback Low",
+                "seoTitle": "WTI Crude Oil Price Forecast: $88.66 Support Signals Potential Pullback Low",
+                "slug": "wti-crude-oil-price-forecast-88-66-support-signals-potential-pullback-low",
+                "media": "\/2026\/10\/crude-oil-market-illustration-12-1.jpg",
+                "imageUrl": "https:\/\/responsive.fxempire.com\/v7\/_fxempire_\/2026\/10\/crude-oil-market-illustration-12-1.jpg",
+                "author": {
+                    "name": "Bruce Powers",
+                    "slug": "brucepowers",
+                    "image": "a012504c0d82333ea2ba0dcab115b613"
+                },
+                "tags": [
+                    "brucewti",
+                    "commodities",
+                    "daily",
+                    "video",
+                    "co-wti-crude-oil"
+                ],
+                "date": 1791321567000,
+                "timestamp": 1791321567000,
+                "prices": [
+                    {
+                        "slug": "wti-crude-oil",
+                        "type": "commodities",
+                        "last": 91.572,
+                        "percentChange": 0.50046095087581,
+                        "symbol": "wti-crude-oil",
+                        "name": "WTI Oil"
+                    }
+                ],
+                "featuredVideo": "https:\/\/www.youtube.com\/watch?v=SSpUTRpNJas",
+                "articleUrl": "\/forecasts\/article\/wti-crude-oil-price-forecast-88-66-support-signals-potential-pullback-low-1636075"
+            },
+            {
+                "id": 1636065,
+                "title": "Natural Gas Price Forecast: 200-Day Average Sets Up Critical Breakout Test",
+                "seoTitle": "Natural Gas Price Forecast: 200-Day Average Sets Up Critical Breakout Test",
+                "slug": "natural-gas-price-forecast-200-day-average-sets-up-critical-breakout-test",
+                "media": "\/2026\/10\/natural-gas-market-illustration-10-1.jpg",
+                "imageUrl": "https:\/\/responsive.fxempire.com\/v7\/_fxempire_\/2026\/10\/natural-gas-market-illustration-10-1.jpg",
+                "author": {
+                    "name": "Bruce Powers",
+                    "slug": "brucepowers",
+                    "image": "a012504c0d82333ea2ba0dcab115b613"
+                },
+                "tags": [
+                    "brucegas",
+                    "commodities",
+                    "daily",
+                    "hp3",
+                    "co-natural-gas",
+                    "publish_tweet",
+                    "video"
+                ],
+                "date": 1791320708000,
+                "timestamp": 1791320708000,
+                "prices": [
+                    {
+                        "slug": "natural-gas",
+                        "type": "commodities",
+                        "last": 3.067,
+                        "percentChange": 3.1965006729475167,
+                        "symbol": "natural-gas",
+                        "name": "Natural Gas"
+                    }
+                ],
+                "featuredVideo": "https:\/\/www.youtube.com\/watch?v=ixVwoKr8a3U",
+                "articleUrl": "\/forecasts\/article\/natural-gas-price-forecast-200-day-average-sets-up-critical-breakout-test-1636065"
+            },
+            {
+                "id": 1636057,
+                "title": "Forgent Power Solutions (FPS) Price Forecast: Two Bullish Breakouts Signal Bigger Advance",
+                "seoTitle": "Forgent Power Solutions (FPS) Price Forecast: Two Bullish Breakouts Signal Bigger Advance",
+                "slug": "forgent-power-solutions-fps-price-forecast-two-bullish-breakouts-signal-bigger-advance",
+                "media": "\/2026\/10\/21.jpg",
+                "imageUrl": "https:\/\/responsive.fxempire.com\/v7\/_fxempire_\/2026\/10\/21.jpg",
+                "author": {
+                    "name": "Bruce Powers",
+                    "slug": "brucepowers",
+                    "image": "a012504c0d82333ea2ba0dcab115b613"
+                },
+                "tags": [
+                    "bruce_stocks",
+                    "daily",
+                    "fps",
+                    "hp4",
+                    "stocks",
+                    "video"
+                ],
+                "date": 1791319955000,
+                "timestamp": 1791319955000,
+                "prices": [],
+                "featuredVideo": "https:\/\/www.youtube.com\/watch?v=t2fsccuO8AA",
+                "articleUrl": "\/forecasts\/article\/forgent-power-solutions-fps-price-forecast-two-bullish-breakouts-signal-bigger-advance-1636057"
+            },
+            {
+                "id": 1636031,
+                "title": "NASDAQ Index, SP500, Dow Jones Forecasts \u2013 NASDAQ Tests New Highs As Constellation Energy Soars 11.7%",
+                "seoTitle": "NASDAQ Index, SP500, Dow Jones Forecasts \u2013 NASDAQ Tests New Highs As Constellation Energy Soars 11.7%",
+                "slug": "nasdaq-index-sp500-dow-jones-forecasts-nasdaq-tests-new-highs-as-constellation-energy-soars-11-7",
+                "media": "\/2026\/10\/nasdaq-composite-stock-market-02.jpg",
+                "imageUrl": "https:\/\/responsive.fxempire.com\/v7\/_fxempire_\/2026\/10\/nasdaq-composite-stock-market-02.jpg",
+                "author": {
+                    "name": "Vladimir Zernov",
+                    "slug": "vladimirzernov",
+                    "image": "4efdcf9ab0013e715c6dac9b72552474"
+                },
+                "tags": [
+                    "i-us30-usd",
+                    "fundamental",
+                    "hp1",
+                    "indices",
+                    "i-tech100-usd",
+                    "popular-news",
+                    "i-spx",
+                    "technical",
+                    "vladus"
+                ],
+                "date": 1791314276000,
+                "timestamp": 1791314276000,
+                "prices": [
+                    {
+                        "slug": "us30-usd",
+                        "type": "indices",
+                        "last": 51352.5,
+                        "percentChange": -0.0005841940458999517,
+                        "symbol": "us30-usd",
+                        "name": null
+                    },
+                    {
+                        "slug": "tech100-usd",
+                        "type": "indices",
+                        "last": 31106.8,
+                        "percentChange": -0.0873642962677482,
+                        "symbol": "tech100-usd",
+                        "name": null
+                    },
+                    {
+                        "slug": "spx",
+                        "type": "indices",
+                        "last": 7722.72,
+                        "percentChange": 0.734,
+                        "symbol": "spx",
+                        "name": null
+                    }
+                ],
+                "featuredVideo": "",
+                "articleUrl": "\/forecasts\/article\/nasdaq-index-sp500-dow-jones-forecasts-nasdaq-tests-new-highs-as-constellation-energy-soars-11-7-1636031"
+            },
+            {
+                "id": 1636017,
+                "title": "Ethereum Price Prediction: Risk of a Pullback to $2,400 Increases as Volumes Drop",
+                "seoTitle": "Ethereum Price Prediction: Risk of a Pullback to $2,400 Increases as Volumes Drop",
+                "slug": "ethereum-price-prediction-risk-of-a-pullback-to-2400-increases-as-volumes-drop",
+                "media": "\/2026\/01\/Ethereum-1.jpg",
+                "imageUrl": "https:\/\/responsive.fxempire.com\/v7\/_fxempire_\/2026\/01\/Ethereum-1.jpg",
+                "author": {
+                    "name": "Alejandro Arrieche",
+                    "slug": "alejandroarrieche",
+                    "image": "f885791b68d4360c996071df9cf5c8c9"
+                },
+                "tags": [
+                    "alejandro_crypto",
+                    "cryptocurrencies",
+                    "daily",
+                    "cc-ethereum",
+                    "yahoo-feed"
+                ],
+                "date": 1791313746000,
+                "timestamp": 1791313746000,
+                "prices": [
+                    {
+                        "slug": "ethereum",
+                        "type": "crypto",
+                        "last": 2574.4262343889,
+                        "percentChange": -5.15433647628322,
+                        "symbol": "ETH",
+                        "name": null
+                    }
+                ],
+                "featuredVideo": "https:\/\/www.youtube.com\/watch?v=MFKQhASlWIM",
+                "articleUrl": "\/forecasts\/article\/ethereum-price-prediction-risk-of-a-pullback-to-2400-increases-as-volumes-drop-1636017"
+            },
+            {
+                "id": 1636018,
+                "title": "Silver Price Forecast: Silver Gains as Dollar and Yields Retreat",
+                "seoTitle": "Silver Price Forecast: Silver Gains as Dollar and Yields Retreat",
+                "slug": "silver-price-forecast-silver-gains-as-dollar-and-yields-retreat",
+                "media": "\/2026\/10\/silver-precious-metal-price-chart-01-1.jpg",
+                "imageUrl": "https:\/\/responsive.fxempire.com\/v7\/_fxempire_\/2026\/10\/silver-precious-metal-price-chart-01-1.jpg",
+                "author": {
+                    "name": "James Hyerczyk",
+                    "slug": "jameshyerczyk",
+                    "image": "cf18832761e97dd8c518e3f847201a53"
+                },
+                "tags": [
+                    "commodities",
+                    "daily",
+                    "fundamental",
+                    "hp4",
+                    "jamesxagusd",
+                    "publish_tweet",
+                    "co-silver",
+                    "technical"
+                ],
+                "date": 1791313243000,
+                "timestamp": 1791313243000,
+                "prices": [
+                    {
+                        "slug": "silver",
+                        "type": "commodities",
+                        "last": 60.102999999999994,
+                        "percentChange": -1.3427225423089,
+                        "symbol": "silver",
+                        "name": "Silver"
+                    }
+                ],
+                "featuredVideo": "",
+                "articleUrl": "\/forecasts\/article\/silver-price-forecast-silver-gains-as-dollar-and-yields-retreat-1636018"
+            },
+            {
+                "id": 1636015,
+                "title": "Natural Gas, WTI Oil, Brent Oil Forecasts \u2013 Oil Rebounds As Iran Attempts To Stop Traffic In Hormuz",
+                "seoTitle": "Natural Gas, WTI Oil, Brent Oil Forecasts \u2013 Oil Rebounds As Iran Attempts To Stop Traffic In Hormuz",
+                "slug": "natural-gas-wti-oil-brent-oil-forecasts-oil-rebounds-as-iran-attempts-to-stop-traffic-in-hormuz",
+                "media": "\/2026\/10\/crude-oil-market-illustration-04-2.jpg",
+                "imageUrl": "https:\/\/responsive.fxempire.com\/v7\/_fxempire_\/2026\/10\/crude-oil-market-illustration-04-2.jpg",
+                "author": {
+                    "name": "Vladimir Zernov",
+                    "slug": "vladimirzernov",
+                    "image": "4efdcf9ab0013e715c6dac9b72552474"
+                },
+                "tags": [
+                    "co-brent-crude-oil",
+                    "commodities",
+                    "fundamental",
+                    "hp3",
+                    "co-natural-gas",
+                    "popular-news",
+                    "technical",
+                    "vladenergy",
+                    "co-wti-crude-oil"
+                ],
+                "date": 1791311844000,
+                "timestamp": 1791311844000,
+                "prices": [
+                    {
+                        "slug": "brent-crude-oil",
+                        "type": "commodities",
+                        "last": 104.851,
+                        "percentChange": 1.3092293421968038,
+                        "symbol": "brent-crude-oil",
+                        "name": "Brent Oil"
+                    },
+                    {
+                        "slug": "natural-gas",
+                        "type": "commodities",
+                        "last": 3.067,
+                        "percentChange": 3.1965006729475167,
+                        "symbol": "natural-gas",
+                        "name": "Natural Gas"
+                    },
+                    {
+                        "slug": "wti-crude-oil",
+                        "type": "commodities",
+                        "last": 91.572,
+                        "percentChange": 0.50046095087581,
+                        "symbol": "wti-crude-oil",
+                        "name": "WTI Oil"
+                    }
+                ],
+                "featuredVideo": "",
+                "articleUrl": "\/forecasts\/article\/natural-gas-wti-oil-brent-oil-forecasts-oil-rebounds-as-iran-attempts-to-stop-traffic-in-hormuz-1636015"
+            }
+        ]
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "$schema": "https://www.schemastore.org/package.json",
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "build": "vite build",
+        "dev": "vite"
+    },
+    "devDependencies": {
+        "@rolldown/binding-win32-x64-msvc": "^1.2.14",
+        "@tailwindcss/vite": "^4.0.0",
+        "concurrently": "^9.2.3",
+        "laravel-vite-plugin": "^3.1",
+        "tailwindcss": "^4.0.0",
+        "vite": "^8.0.0"
+    },
+    "dependencies": {
+        "jsqr": "^1.4.0",
+        "lenis": "^1.3.26"
+    }
+}

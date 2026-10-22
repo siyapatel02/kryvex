@@ -1,0 +1,1052 @@
+/* ─── KRYVEX SETTINGS PAGE & MODALS STYLESHEET ─── */
+
+.settings-page {
+    padding: 24px 0 0px !important;
+    overflow-x: hidden;
+    width: 100%;
+}
+.settings-page .kv-container {
+    overflow-x: hidden;
+    max-width: 100%;
+}
+
+/* ─── Tabs Row ─── */
+.settings-tabs-row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 24px;
+    overflow-x: auto;
+    overflow-y: visible;
+    padding-bottom: 6px;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+    max-width: 100%;
+}
+.settings-tabs-row::-webkit-scrollbar {
+    display: none;
+}
+.settings-tab-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 18px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    flex-shrink: 0;
+    white-space: nowrap;
+    transition: all 0.2s ease;
+}
+.settings-tab-btn:hover {
+    background: rgba(255, 255, 255, 0.07);
+    color: #ffffff;
+}
+.settings-tab-btn.is-active {
+    background: rgba(246, 201, 63, 0.12);
+    border-color: var(--kv-yellow, #f6c93f);
+    color: var(--kv-yellow, #f6c93f);
+}
+
+/* ─── Balance Boxes ─── */
+.settings-balance-row {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: rgba(255, 255, 255, 0.02);
+    padding: 12px 20px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    min-width: 0;
+}
+.settings-balance-box {
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+}
+.settings-balance-box > span {
+    display: block;
+    font-size: 0.7rem;
+    color: var(--kv-muted, #94a3b8);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+    margin-bottom: 2px;
+}
+.settings-balance-box > h2 {
+    margin: 0;
+    font-family: monospace;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--kv-text, #ffffff);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.settings-balance-divider {
+    width: 1px;
+    height: 32px;
+    background: rgba(255, 255, 255, 0.08);
+    flex-shrink: 0;
+}
+
+/* ─── Cards Grid ─── */
+.settings-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+/* ─── User Profile Name Edit Row ─── */
+.name-display-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+.edit-name-btn {
+    background: rgba(246, 201, 63, 0.12);
+    border: 1px solid rgba(246, 201, 63, 0.3);
+    color: #f6c93f;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+.edit-name-btn:hover {
+    background: rgba(246, 201, 63, 0.25);
+}
+.name-edit-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.name-edit-input {
+    flex: 1;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 6px;
+    padding: 6px 10px;
+    color: #fff;
+    font-size: 0.9rem;
+}
+.save-name-btn {
+    background: #10b981;
+    color: #fff;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+.cancel-name-btn {
+    background: rgba(255, 255, 255, 0.1);
+    color: #ccc;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    cursor: pointer;
+}
+
+/* ─── Broker & MT5 Status Cards ─── */
+.broker-card,
+.install-app-card,
+.mt5-status-card {
+    grid-column: 1 / -1 !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    background: rgba(13, 17, 26, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 22px;
+    margin-top: 10px;
+}
+.install-app-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+.install-app-left {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+.phone-icon-box {
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
+    background: rgba(16, 185, 129, 0.12);
+    border: 1px solid rgba(16, 185, 129, 0.3);
+    color: #10b981;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+.install-app-info .app-tag {
+    display: block;
+    font-size: 0.75rem;
+    color: #94a3b8;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 2px;
+}
+.install-app-info h3 {
+    margin: 0;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #ffffff;
+}
+.install-app-info p {
+    margin: 2px 0 0;
+    font-size: 0.8rem;
+    color: #94a3b8;
+}
+.install-app-btn {
+    background: #f6c93f !important;
+    color: black !important;
+    font-weight: 700 !important;
+    padding: 9px 20px !important;
+    border-radius: 10px !important;
+    border: 0 !important;
+    cursor: pointer !important;
+    font-size: 0.9rem !important;
+    transition: opacity 0.2s ease;
+}
+.install-app-btn:hover {
+    opacity: 0.9;
+}
+
+.mt5-status-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+}
+.mt5-badge {
+    padding: 5px 14px;
+    border-radius: 999px;
+    font-size: 0.78rem;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+.mt5-badge.pending {
+    background: rgba(234, 179, 8, 0.15);
+    color: #facc15;
+    border: 1px solid rgba(234, 179, 8, 0.3);
+}
+.mt5-badge.active {
+    background: rgba(34, 197, 94, 0.15);
+    color: #22c55e;
+    border: 1px solid rgba(34, 197, 94, 0.3);
+}
+.mt5-status-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 16px;
+}
+.mt5-status-item span {
+    display: block;
+    font-size: 0.78rem;
+    color: #94a3b8;
+    margin-bottom: 4px;
+}
+.mt5-status-item strong {
+    font-size: 1.05rem;
+    color: #ffffff;
+    font-weight: 700;
+}
+
+/* ─── Global Broker & Install Modals ─── */
+.kv-modal-backdrop {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    background: rgba(0, 0, 0, 0.85) !important;
+    backdrop-filter: blur(8px) !important;
+    z-index: 999999 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 20px !important;
+    box-sizing: border-box !important;
+}
+.kv-modal-backdrop[hidden],
+.kv-modal-card[hidden] {
+    display: none !important;
+}
+.kv-modal-card.broker-modal-card {
+    background: #121824 !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    border-radius: 20px !important;
+    width: 100% !important;
+    max-width: 480px !important;
+    padding: 24px !important;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.85) !important;
+    box-sizing: border-box !important;
+    position: relative !important;
+    z-index: 1000000 !important;
+}
+.modal-icon-badge {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: rgba(246, 201, 63, 0.15);
+    border: 1px solid rgba(246, 201, 63, 0.3);
+    color: #f6c93f;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 4px;
+}
+.kv-modal-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+.kv-modal-head h2 {
+    margin: 0;
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: #ffffff;
+}
+.kv-modal-close {
+    background: transparent;
+    border: 0;
+    color: #94a3b8;
+    font-size: 1.8rem;
+    cursor: pointer;
+    line-height: 1;
+    padding: 0 4px;
+}
+.kv-modal-close:hover {
+    color: #ffffff;
+}
+.modal-subtext {
+    font-size: 0.88rem;
+    color: #94a3b8;
+    margin: 0 0 20px 0;
+    line-height: 1.5;
+}
+.broker-options-list {
+    display: grid;
+    gap: 12px;
+}
+.broker-option-card {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 16px;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 2px solid rgba(255, 255, 255, 0.08);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    position: relative;
+}
+.broker-option-card:hover {
+    border-color: rgba(246, 201, 63, 0.5);
+    background: rgba(246, 201, 63, 0.04);
+}
+.broker-option-card.is-selected {
+    border-color: #f6c93f !important;
+    background: rgba(246, 201, 63, 0.1) !important;
+}
+.broker-option-card input[type="radio"] {
+    display: none;
+}
+.broker-option-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.06);
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+.broker-option-info {
+    flex: 1;
+}
+.broker-option-info strong {
+    display: block;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 2px;
+}
+.broker-option-info span {
+    font-size: 0.78rem;
+    color: #94a3b8;
+    line-height: 1.3;
+    display: block;
+}
+.radio-check-indicator {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    border: 2px solid #64748b;
+    position: relative;
+    flex-shrink: 0;
+}
+.broker-option-card.is-selected .radio-check-indicator {
+    border-color: #f6c93f;
+    background: #f6c93f;
+}
+.broker-option-card.is-selected .radio-check-indicator::after {
+    content: '';
+    position: absolute;
+    top: 5px; left: 5px; width: 8px; height: 8px;
+    border-radius: 50%;
+    background: #111111;
+}
+.broker-submit-btn {
+    width: 100%;
+    margin-top: 14px;
+    padding: 13px;
+    border-radius: 12px;
+    background: #f6c93f !important;
+    color: #111111 !important;
+    font-weight: 800 !important;
+    font-size: 0.98rem !important;
+    border: 0 !important;
+    cursor: pointer !important;
+    transition: opacity 0.2s ease;
+}
+.broker-submit-btn:hover {
+    opacity: 0.9;
+}
+
+/* ─── MT5 Plans Grid ─── */
+.mt5-plans-grid {
+    display: grid;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+.mt5-plan-card {
+    padding: 14px 16px;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 2px solid rgba(255, 255, 255, 0.08);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: all 0.2s ease;
+}
+.mt5-plan-card.is-selected {
+    border-color: #f6c93f !important;
+    background: rgba(246, 201, 63, 0.1) !important;
+}
+.mt5-plan-card.is-disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+.mt5-error-box {
+    background: rgba(239, 68, 68, 0.12);
+    border: 1px solid rgba(239, 68, 68, 0.3);
+    color: #ef4444;
+    padding: 12px 14px;
+    border-radius: 10px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+.wallet-balance-indicator {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 10px 14px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 14px;
+    font-size: 0.88rem;
+    color: #94a3b8;
+}
+.wallet-balance-indicator strong {
+    color: #f6c93f;
+    font-size: 1rem;
+    font-family: monospace;
+}
+.modal-actions-row {
+    display: flex;
+    gap: 12px;
+    margin-top: 10px;
+}
+.mt5-requested-notice-card {
+    background: #0d111a;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+    color: #94a3b8;
+    line-height: 1.6;
+}
+.mt5-requested-notice-card strong {
+    color: #ffffff;
+}
+
+/* ─── Ultra Premium App Install Modal ─── */
+.install-app-modal-card {
+    background: linear-gradient(180deg, #111827 0%, #0b0f19 100%) !important;
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+    border-radius: 28px !important;
+    width: 100% !important;
+    max-width: 440px !important;
+    padding: 28px 24px !important;
+    box-shadow: 0 35px 80px -15px rgba(0, 0, 0, 0.9), 0 0 40px rgba(168, 85, 247, 0.12) !important;
+    box-sizing: border-box !important;
+    position: relative !important;
+    text-align: center;
+    z-index: 1000000 !important;
+}
+.install-app-modal-card .kv-modal-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+.modal-head-title-wrap {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.modal-icon-badge.phone-badge {
+    width: 38px;
+    height: 38px;
+    border-radius: 12px;
+    background: rgba(236, 186, 22, 0.15) !important;
+    border: 1px solid rgba(247, 231, 85, 0.35) !important;
+    color: #f3d583 !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin: 0 !important;
+}
+.phone-mockup-wrapper {
+    margin: 12px auto 20px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    padding: 10px 0;
+}
+.phone-mockup-wrapper::before {
+    content: '';
+    position: absolute;
+    width: 220px;
+    height: 220px;
+    background: radial-gradient(circle, rgba(168, 85, 247, 0.25) 0%, rgba(99, 102, 241, 0.15) 50%, rgba(0, 0, 0, 0) 75%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    pointer-events: none;
+    filter: blur(20px);
+}
+.phone-frame {
+    width: 200px;
+    height: 310px;
+    background: #090d16;
+    border: 4px solid rgba(255, 255, 255, 0.18);
+    border-radius: 32px;
+    padding: 12px 10px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8), 0 0 25px rgba(168, 85, 247, 0.2);
+    position: relative;
+    box-sizing: border-box;
+    overflow: hidden;
+    text-align: left;
+    z-index: 2;
+}
+.phone-notch {
+    width: 60px;
+    height: 14px;
+    background: #0f172a;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    position: absolute;
+    top: 0; left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.phone-notch-camera {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #000;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+.phone-screen {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: 8px;
+}
+.phone-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.65rem;
+    color: #94a3b8;
+    font-weight: 700;
+}
+.phone-header .brand {
+    color: #f6c93f;
+    font-weight: 900;
+    letter-spacing: 1px;
+    font-size: 0.7rem;
+}
+.phone-title {
+    font-size: 0.88rem;
+    font-weight: 800;
+    color: #fff;
+    margin-top: 4px;
+}
+.phone-balance-card {
+    background: linear-gradient(135deg, rgba(124, 58, 237, 0.25) 0%, rgba(67, 56, 202, 0.2) 100%);
+    border: 1px solid rgba(168, 85, 247, 0.35);
+    border-radius: 12px;
+    padding: 9px 10px;
+    margin-top: 4px;
+}
+.phone-balance-card .bal-label {
+    font-size: 0.6rem;
+    color: #c084fc;
+    font-weight: 600;
+}
+.phone-balance-card .bal-val {
+    font-size: 1rem;
+    font-weight: 900;
+    color: #fff;
+    margin: 2px 0 1px;
+    letter-spacing: -0.3px;
+}
+.phone-balance-card .bal-change {
+    font-size: 0.58rem;
+    color: #34d399;
+    font-weight: 700;
+}
+.phone-chart-area {
+    height: 38px;
+    margin: 4px 0;
+    position: relative;
+}
+.phone-chart-area svg {
+    width: 100%;
+    height: 100%;
+}
+.phone-coin-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    padding: 6px 8px;
+    border-radius: 10px;
+    font-size: 0.62rem;
+}
+.coin-badge {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+    color: #fff;
+    font-weight: 900;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.6rem;
+    box-shadow: 0 2px 6px rgba(245, 158, 11, 0.4);
+}
+.coin-info strong { display: block; color: #fff; line-height: 1.1; font-weight: 800; }
+.coin-info span { font-size: 0.55rem; color: #94a3b8; }
+.coin-gain { margin-left: auto; color: #10b981; font-weight: 800; font-size: 0.62rem; }
+.phone-action-btns {
+    display: flex;
+    gap: 6px;
+    margin-top: 6px;
+}
+.phone-btn {
+    flex: 1;
+    padding: 6px;
+    border-radius: 8px;
+    border: 0;
+    font-size: 0.62rem;
+    font-weight: 800;
+    color: #fff;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+.phone-btn.long { background: #10b981; box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3); }
+.phone-btn.short { background: #ef4444; box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3); }
+
+.install-modal-text {
+    font-size: 0.9rem;
+    color: #94a3b8;
+    margin: 0 0 16px 0;
+    line-height: 1.5;
+    font-weight: 500;
+}
+.install-instructions-card {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.01) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 14px 16px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    text-align: left;
+    margin-bottom: 18px;
+}
+.dl-icon-box {
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    background: rgba(246, 201, 63, 0.15);
+    border: 1px solid rgba(246, 201, 63, 0.3);
+    color: #f6c93f;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+.install-instructions-card strong {
+    display: block;
+    font-size: 0.92rem;
+    color: #fff;
+    margin-bottom: 2px;
+    font-weight: 700;
+}
+.install-instructions-card span {
+    font-size: 0.78rem;
+    color: #94a3b8;
+    line-height: 1.3;
+}
+.install-buttons-stack {
+    display: grid;
+    gap: 12px;
+}
+.btn-main-install {
+    width: 100%;
+    padding: 14px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, #f1c73a 0%, #c48704 100%) !important;
+    color: #000000 !important;
+    font-weight: 800 !important;
+    font-size: 1.02rem !important;
+    border: 0 !important;
+    cursor: pointer !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    box-shadow: 0 10px 25px -5px rgba(236, 186, 77, 0.5) !important;
+    transition: all 0.25s ease !important;
+}
+.btn-main-install:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 30px -5px rgba(168, 85, 247, 0.65) !important;
+}
+.store-buttons-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+.store-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: #ffffff;
+    font-size: 0.88rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+.store-btn:hover {
+    background: rgba(255, 255, 255, 0.09);
+    border-color: rgba(255, 255, 255, 0.25);
+    transform: translateY(-1px);
+}
+.btn-maybe-later {
+    background: none;
+    border: none;
+    color: #94a3b8;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 6px;
+    margin-top: 2px;
+    transition: color 0.2s ease;
+}
+.btn-maybe-later:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+    .settings-page {
+        padding: 20px 0 60px;
+    }
+    .settings-cards-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ===== KYC Section Height Fix ===== */
+#kycSection,
+#kycSection .kyc-page {
+    min-height: auto !important;
+    background: transparent !important;
+    padding: 0 !important;
+}
+
+/* Chrome Autofill & Dropdown Select Options Dark Theme Fix */
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+    -webkit-text-fill-color: #ffffff !important;
+    -webkit-box-shadow: 0 0 0px 1000px #141724 inset !important;
+    box-shadow: 0 0 0px 1000px #141724 inset !important;
+    transition: background-color 5000s ease-in-out 0s !important;
+}
+
+select option,
+select optgroup {
+    background-color: #141724 !important;
+    color: #ffffff !important;
+    padding: 10px !important;
+}
+
+/* =========================================================================
+   SUPPORT TAB & STAT BADGES (OPEN / TOTAL) LIGHT THEME
+   ========================================================================= */
+html[data-theme="light"] .support-header-banner,
+html.theme-light .support-header-banner {
+    background: linear-gradient(135deg, #f8fafc, #f1f5f9) !important;
+    border: 1px solid #e2e8f0 !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04) !important;
+}
+
+html[data-theme="light"] .support-icon-wrap,
+html.theme-light .support-icon-wrap {
+    background: #f3e8ff !important;
+    border: 1px solid #d8b4fe !important;
+}
+
+html[data-theme="light"] .support-icon-wrap svg,
+html.theme-light .support-icon-wrap svg {
+    stroke: #7c3aed !important;
+}
+
+html[data-theme="light"] .support-banner-title,
+html.theme-light .support-banner-title {
+    color: #0f172a !important;
+}
+
+html[data-theme="light"] .support-banner-desc,
+html.theme-light .support-banner-desc {
+    color: #64748b !important;
+}
+
+/* OPEN & TOTAL Stat Boxes */
+html[data-theme="light"] .support-stat-box,
+html.theme-light .support-stat-box {
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    border: 1px solid #e2e8f0 !important;
+    border-color: #e2e8f0 !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04) !important;
+}
+
+html[data-theme="light"] .support-stat-label,
+html.theme-light .support-stat-label {
+    color: #7c3aed !important;
+    -webkit-text-fill-color: #7c3aed !important;
+    font-weight: 800 !important;
+}
+
+html[data-theme="light"] .support-stat-val,
+html.theme-light .support-stat-val {
+    color: #0f172a !important;
+    -webkit-text-fill-color: #0f172a !important;
+    font-weight: 800 !important;
+}
+
+/* Topic Selection Cards */
+html[data-theme="light"] .support-topic-card:not(.active-topic),
+html.theme-light .support-topic-card:not(.active-topic) {
+    background: #ffffff !important;
+    border: 1px solid #e2e8f0 !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04) !important;
+}
+
+html[data-theme="light"] .support-topic-card:not(.active-topic):hover,
+html.theme-light .support-topic-card:not(.active-topic):hover {
+    background: #f8fafc !important;
+    border-color: #cbd5e1 !important;
+}
+
+html[data-theme="light"] .support-topic-card.active-topic,
+html.theme-light .support-topic-card.active-topic {
+    background: #f3e8ff !important;
+    border: 1px solid #d8b4fe !important;
+    box-shadow: 0 2px 8px rgba(124, 58, 237, 0.12) !important;
+}
+
+html[data-theme="light"] .support-topic-card strong,
+html.theme-light .support-topic-card strong {
+    color: #0f172a !important;
+}
+
+html[data-theme="light"] .support-topic-card span,
+html.theme-light .support-topic-card span {
+    color: #64748b !important;
+}
+
+html[data-theme="light"] .support-topic-card.active-topic strong,
+html.theme-light .support-topic-card.active-topic strong {
+    color: #7c3aed !important;
+}
+
+/* ==========================================================================
+   LENIS SMOOTH SCROLLING & SCROLL ANIMATIONS FOR SETTINGS & ACCOUNT PROFILE
+   ========================================================================== */
+html.lenis, html.lenis body {
+    height: auto;
+}
+
+.lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent],
+.lenis.lenis-smooth .settings-modal-card {
+    overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+    overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+    pointer-events: none;
+}
+
+/* Scroll Reveal / Landing Animations */
+.reveal-item {
+    opacity: 0;
+    transform: translateY(22px);
+    transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+}
+
+.reveal-item.is-visible {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
+/* Stagger animation delay helper classes */
+.delay-100 { transition-delay: 80ms; }
+.delay-200 { transition-delay: 160ms; }
+.delay-300 { transition-delay: 240ms; }
+.delay-400 { transition-delay: 320ms; }
+
+/* Scroll Progress Bar */
+#settingsScrollProgressBar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #6366f1, #a855f7, #ec4899);
+    z-index: 99999;
+    transition: width 0.1s ease-out;
+    box-shadow: 0 0 10px rgba(168, 85, 247, 0.6);
+    pointer-events: none;
+}
+
+/* Scroll-to-Top Floating Button */
+#settingsScrollToTopBtn {
+    position: fixed;
+    bottom: 28px;
+    right: 28px;
+    z-index: 999;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(14, 19, 31, 0.85);
+    border: 1px solid rgba(168, 85, 247, 0.35);
+    color: #c084fc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5), 0 0 15px rgba(168, 85, 247, 0.25);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(16px) scale(0.9);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    cursor: pointer;
+}
+
+#settingsScrollToTopBtn.is-visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) scale(1);
+}
+
+#settingsScrollToTopBtn:hover {
+    background: rgba(124, 58, 237, 0.35);
+    border-color: #a855f7;
+    color: #ffffff;
+    box-shadow: 0 10px 28px rgba(124, 58, 237, 0.45);
+    transform: translateY(-2px) scale(1.08);
+}
+
+/* Light theme adjustments for scroll button */
+html[data-theme="light"] #settingsScrollToTopBtn,
+html.theme-light #settingsScrollToTopBtn {
+    background: rgba(255, 255, 255, 0.9) !important;
+    border-color: rgba(168, 85, 247, 0.4) !important;
+    color: #7c3aed !important;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1), 0 0 15px rgba(168, 85, 247, 0.2) !important;
+}
+
+html[data-theme="light"] #settingsScrollToTopBtn:hover,
+html.theme-light #settingsScrollToTopBtn:hover {
+    background: rgba(124, 58, 237, 0.12) !important;
+    border-color: #7c3aed !important;
+    color: #6d28d9 !important;
+}
+

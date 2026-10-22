@@ -1,0 +1,1228 @@
+/* ==========================================================================
+   BitPro Dark Theme - Options Trading Page Styles
+   Direct Navbar Attachment (Zero Gap), Unified Deep-Dark Palette, Sharp Corners
+   ========================================================================== */
+
+:root {
+    --bp-bg: #090c12;
+    --bp-card-bg: #10141c;
+    --bp-card-sub: #141822;
+    --bp-border: rgba(255, 255, 255, 0.07);
+    --bp-border-light: rgba(255, 255, 255, 0.035);
+    --bp-text: #ffffff;
+    --bp-muted: #848e9c;
+    --bp-green: #10b981;
+    --bp-green-bg: rgba(16, 185, 129, 0.10);
+    --bp-red: #f43f5e;
+    --bp-red-bg: rgba(244, 63, 94, 0.10);
+    --bp-yellow: #f59e0b;
+    --bp-purple: #8b5cf6;
+}
+
+.options-page.bitpro-theme {
+    min-height: calc(100vh - 60px);
+    padding: 4px 12px 4px;
+    box-sizing: border-box;
+    background: var(--bp-bg);
+    color: var(--bp-text);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+@media (min-width: 1025px) {
+    html.options-page-html,
+    body.options-page-body,
+    html:has(.options-page),
+    body:has(.options-page) {
+        height: 100% !important;
+        overflow: hidden !important;
+    }
+
+    body.options-page-body main,
+    body:has(.options-page) main {
+        height: calc(100vh - 60px) !important;
+        overflow: hidden !important;
+        display: flex !important;
+        flex-direction: column !important;
+    }
+
+    .options-page.bitpro-theme {
+        height: 100% !important;
+        max-height: 100% !important;
+        padding: 4px 12px 4px;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden !important;
+        flex: 1;
+    }
+}
+
+/* ==========================================================================
+   NO HOVER BOUNCE / SHADOW ON CARDS (STRICT USER REQUIREMENT) & SHARP CORNERS
+   ========================================================================== */
+.kv-card,
+.bitpro-options-header,
+.bitpro-chain-panel,
+.bitpro-order-panel,
+.bitpro-bottom-summary-card,
+.bitpro-view-pane.kv-card {
+    background: var(--bp-card-bg);
+    border: 1px solid var(--bp-border);
+    border-radius: 4px !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4) !important;
+    transform: none !important;
+    transition: none !important;
+}
+
+.kv-card:hover,
+.bitpro-options-header:hover,
+.bitpro-chain-panel:hover,
+.bitpro-order-panel:hover,
+.bitpro-bottom-summary-card:hover,
+.bitpro-view-pane.kv-card:hover {
+    transform: none !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4) !important;
+}
+
+/* ==========================================================================
+   1. Top Asset Bar / Header Strip
+   ========================================================================== */
+.bitpro-options-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    padding: 8px 14px;
+    margin-top: 0;
+    margin-bottom: 6px;
+    flex-wrap: wrap;
+}
+
+.header-left-symbol-group {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.symbol-badge-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.symbol-badge-icon img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    background: #0b0d14;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.symbol-dropdown-select-wrap {
+    display: flex;
+    flex-direction: column;
+}
+
+.opt-symbol-select {
+    background: transparent;
+    border: none;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    outline: none;
+    padding-right: 14px;
+    color-scheme: dark;
+}
+
+.opt-symbol-select option {
+    background: var(--bp-card-bg);
+    color: #ffffff;
+}
+
+.symbol-sub-label {
+    font-size: 10px;
+    color: var(--bp-muted);
+}
+
+.price-block {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    padding-left: 10px;
+    border-left: 1px solid var(--bp-border);
+}
+
+.live-big-price {
+    font-size: 18px;
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: -0.02em;
+}
+
+.live-change-badge {
+    font-size: 11.5px;
+    font-weight: 700;
+    color: var(--bp-green);
+}
+
+.live-change-badge.negative {
+    color: var(--bp-red);
+}
+
+.header-stats-strip {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+}
+
+.stat-col {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+}
+
+.stat-lbl {
+    font-size: 10px;
+    color: var(--bp-muted);
+    white-space: nowrap;
+}
+
+.stat-val {
+    font-size: 11.5px;
+    font-weight: 700;
+    color: #ffffff;
+    white-space: nowrap;
+}
+
+.header-right-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+.btn-guide-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    background: rgba(139, 92, 246, 0.12);
+    border: 1px solid rgba(139, 92, 246, 0.4);
+    border-radius: 4px;
+    color: #c084fc;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.btn-guide-pill:hover {
+    background: rgba(139, 92, 246, 0.22);
+    border-color: #c084fc;
+}
+
+.btn-greeks-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    background: rgba(139, 92, 246, 0.12);
+    border: 1px solid rgba(139, 92, 246, 0.4);
+    border-radius: 4px;
+    color: #c084fc;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.trading-account-selector-wrapper {
+    position: relative;
+}
+
+.trading-account-selector-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--bp-card-sub);
+    border: 1px solid var(--bp-border);
+    border-radius: 4px;
+    color: #ffffff;
+    font-size: 11.5px;
+    font-weight: 700;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+/* ==========================================================================
+   2. Top Navigation Tabs Bar
+   ========================================================================== */
+.bitpro-nav-tabs-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--bp-border);
+    margin-bottom: 6px;
+    padding-bottom: 0px;
+    gap: 12px;
+}
+
+.nav-tab-links {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    overflow-x: auto;
+}
+
+.bitpro-tab-link {
+    background: none;
+    border: none;
+    color: var(--bp-muted);
+    font-size: 12.5px;
+    font-weight: 700;
+    padding: 6px 2px 8px;
+    cursor: pointer;
+    position: relative;
+    white-space: nowrap;
+    border-bottom: 2px solid transparent;
+}
+
+.bitpro-tab-link:hover {
+    color: #ffffff;
+}
+
+.bitpro-tab-link.is-active {
+    color: #ffffff;
+    border-bottom-color: var(--bp-purple);
+}
+
+.header-wallet-actions-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-shrink: 0;
+}
+
+.opt-action-pill {
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 700;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    border: 1px solid transparent;
+}
+
+.opt-action-pill.transfer {
+    background: rgba(139, 92, 246, 0.14);
+    border-color: rgba(139, 92, 246, 0.5);
+    color: #c084fc;
+}
+
+.opt-action-pill.deposit {
+    background: rgba(16, 185, 129, 0.12);
+    border-color: rgba(16, 185, 129, 0.4);
+    color: #34d399;
+}
+
+.opt-action-pill.withdraw {
+    background: rgba(244, 63, 94, 0.12);
+    border-color: rgba(244, 63, 94, 0.4);
+    color: #fb7185;
+}
+
+/* ==========================================================================
+   3. Options Chain Controls Filter Bar
+   ========================================================================== */
+.bitpro-chain-filter-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 6px;
+    flex-wrap: wrap;
+}
+
+.filter-left-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.filter-symbol-select-wrap {
+    position: relative;
+    display: inline-flex;
+}
+
+.bitpro-symbol-filter-select {
+    background: var(--bp-card-bg);
+    border: 1px solid var(--bp-border);
+    border-radius: 4px;
+    color: #ffffff;
+    padding: 5px 10px;
+    font-size: 12px;
+    font-weight: 700;
+    outline: none;
+    cursor: pointer;
+    color-scheme: dark;
+}
+
+.bitpro-symbol-filter-select option {
+    background: var(--bp-card-bg);
+    color: #ffffff;
+}
+
+.filter-symbol-pill,
+.filter-expiry-picker-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--bp-card-bg);
+    border: 1px solid var(--bp-border);
+    border-radius: 4px;
+    padding: 5px 10px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.filter-expiry-select-wrap {
+    position: relative;
+}
+
+.bitpro-expiry-select {
+    background: var(--bp-card-bg);
+    border: 1px solid var(--bp-border);
+    border-radius: 4px;
+    color: #ffffff;
+    padding: 5px 10px;
+    font-size: 12px;
+    font-weight: 700;
+    outline: none;
+    cursor: pointer;
+    color-scheme: dark;
+}
+
+.bitpro-expiry-select option {
+    background: var(--bp-card-bg);
+    color: #ffffff;
+}
+
+.spot-price-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 10px;
+    font-size: 12px;
+}
+
+.spot-lbl {
+    color: var(--bp-muted);
+}
+
+.spot-val {
+    color: var(--bp-green);
+    font-weight: 800;
+}
+
+.filter-right-group {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.view-mode-toggle-group {
+    display: inline-flex;
+    background: #0b0e14;
+    border: 1px solid var(--bp-border);
+    border-radius: 4px;
+    padding: 2px;
+}
+
+.view-mode-btn {
+    background: none;
+    border: none;
+    color: var(--bp-muted);
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.view-mode-btn.is-active {
+    background: var(--bp-card-sub);
+    color: #ffffff;
+}
+
+.filter-settings-btn {
+    background: var(--bp-card-bg);
+    border: 1px solid var(--bp-border);
+    border-radius: 4px;
+    color: var(--bp-muted);
+    font-size: 13px;
+    padding: 4px 8px;
+    cursor: pointer;
+}
+
+/* ==========================================================================
+   4. Main Layout & Swappable Views (Height matches Order Ticket ~575px)
+   ========================================================================== */
+.bitpro-main-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 330px;
+    gap: 8px;
+    align-items: stretch;
+    margin-bottom: 4px;
+    flex: 1;
+    min-height: 0;
+}
+
+@media (max-width: 1200px) {
+    .bitpro-main-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+.bitpro-main-view-container {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    height: 100%;
+    min-height: 0;
+}
+
+.bitpro-view-pane {
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.bitpro-view-pane[hidden] {
+    display: none !important;
+}
+
+.bitpro-view-pane.kv-card {
+    padding: 12px;
+    background: var(--bp-card-bg);
+    border: 1px solid var(--bp-border);
+    border-radius: 4px;
+    height: 100%;
+    min-height: 0;
+    overflow-y: auto;
+}
+
+.bitpro-view-pane .panel-section-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--bp-border);
+}
+
+.bitpro-view-pane .panel-section-head h3 {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.close-all-options-btn {
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 700;
+    background: rgba(244, 63, 94, 0.15);
+    border: 1px solid rgba(244, 63, 94, 0.4);
+    color: #fb7185;
+    cursor: pointer;
+}
+
+/* ==========================================================================
+   Options Chain Table Panel & Fixed Header Scrolling
+   ========================================================================== */
+.bitpro-chain-panel {
+    padding: 0;
+    overflow: hidden;
+    height: 100% !important;
+    flex: 1;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--bp-border);
+    border-radius: 4px;
+    background: var(--bp-card-bg);
+}
+
+.bitpro-chain-table-container {
+    width: 100%;
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: auto;
+    position: relative;
+}
+
+/* Custom Sleek Scrollbar */
+.bitpro-chain-table-container::-webkit-scrollbar,
+.bitpro-view-pane.kv-card::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+
+.bitpro-chain-table-container::-webkit-scrollbar-track,
+.bitpro-view-pane.kv-card::-webkit-scrollbar-track {
+    background: var(--bp-bg);
+}
+
+.bitpro-chain-table-container::-webkit-scrollbar-thumb,
+.bitpro-view-pane.kv-card::-webkit-scrollbar-thumb {
+    background: #1e2430;
+    border-radius: 2px;
+}
+
+.bitpro-chain-table-container::-webkit-scrollbar-thumb:hover,
+.bitpro-view-pane.kv-card::-webkit-scrollbar-thumb:hover {
+    background: #2d3648;
+}
+
+.bitpro-options-chain-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    font-size: 11.5px;
+    text-align: right;
+}
+
+/* Sticky Headers */
+.bitpro-options-chain-table thead {
+    position: sticky;
+    top: 0;
+    z-index: 15;
+}
+
+.dual-banner-row th {
+    position: sticky;
+    top: 0;
+    z-index: 16;
+    padding: 6px 10px;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.banner-calls-head {
+    background: #0d1714;
+    color: var(--bp-green);
+    text-align: center;
+    border-bottom: 1px solid var(--bp-border);
+    border-right: 1px solid var(--bp-border);
+}
+
+.banner-strike-head {
+    background: #141822;
+    color: #ffffff;
+    text-align: center;
+    border-bottom: 1px solid var(--bp-border);
+    border-left: 1px solid var(--bp-border);
+    border-right: 1px solid var(--bp-border);
+    width: 95px;
+    min-width: 95px;
+}
+
+.strk-title {
+    display: block;
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.strk-exp-sub {
+    display: block;
+    font-size: 9px;
+    color: var(--bp-purple);
+    font-weight: 600;
+    text-transform: none;
+}
+
+.banner-puts-head {
+    background: #1a0f14;
+    color: var(--bp-red);
+    text-align: center;
+    border-bottom: 1px solid var(--bp-border);
+    border-left: 1px solid var(--bp-border);
+}
+
+/* Column Header Row */
+.chain-col-header-row th {
+    position: sticky;
+    top: 30px;
+    z-index: 15;
+    padding: 6px 8px;
+    font-size: 10.5px;
+    font-weight: 700;
+    color: var(--bp-muted);
+    border-bottom: 1px solid var(--bp-border);
+    white-space: nowrap;
+    background: #0c1017;
+}
+
+.chain-col-header-row th.col-center-strike {
+    text-align: center;
+    background: #141822;
+    color: #ffffff;
+    border-left: 1px solid var(--bp-border);
+    border-right: 1px solid var(--bp-border);
+}
+
+/* Table Body Rows */
+.bitpro-options-chain-table tbody tr {
+    border-bottom: 1px solid var(--bp-border-light);
+    height: 32px;
+}
+
+.bitpro-options-chain-table tbody tr:hover {
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.bitpro-options-chain-table td {
+    padding: 4px 8px;
+    white-space: nowrap;
+    font-variant-numeric: tabular-nums;
+}
+
+.bitpro-options-chain-table td.col-center-strike {
+    text-align: center;
+    background: #141822;
+    color: #ffffff;
+    font-weight: 800;
+    border-left: 1px solid var(--bp-border);
+    border-right: 1px solid var(--bp-border);
+}
+
+/* Spot Price Live Divider Row across the Chain Table */
+.bitpro-options-chain-table tbody tr.underlying-price-divider-row {
+    height: 32px !important;
+    background: #111726 !important;
+}
+
+.bitpro-options-chain-table tbody tr.underlying-price-divider-row:hover {
+    background: #111726 !important;
+}
+
+.bitpro-options-chain-table td.underlying-divider-cell {
+    padding: 0 !important;
+    text-align: center !important;
+    background: #111726 !important;
+    border-top: 1px solid rgba(139, 92, 246, 0.4) !important;
+    border-bottom: 1px solid rgba(139, 92, 246, 0.4) !important;
+}
+
+.underlying-spot-bar {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    padding: 6px 12px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    background: #111726 !important;
+    font-size: 11.5px !important;
+    letter-spacing: 0.02em !important;
+}
+
+.spot-tag-lbl {
+    color: var(--bp-muted) !important;
+    font-size: 11px !important;
+    font-weight: 600 !important;
+}
+
+.spot-tag-symbol {
+    color: #ffffff !important;
+    font-size: 11.5px !important;
+    font-weight: 700 !important;
+}
+
+.spot-tag-price {
+    color: #ffffff !important;
+    font-size: 12px !important;
+    font-weight: 800 !important;
+}
+
+.spot-tag-change {
+    font-size: 11px !important;
+    font-weight: 700 !important;
+}
+
+.spot-tag-change.positive {
+    color: var(--bp-green) !important;
+}
+
+.spot-tag-change.negative {
+    color: var(--bp-red) !important;
+}
+
+/* Cell values & Sleek Selection Styling */
+.opt-cell {
+    cursor: pointer;
+    transition: background 0.1s ease;
+}
+
+.opt-cell:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.chain-row.is-selected-row {
+    background: rgba(139, 92, 246, 0.06) !important;
+}
+
+.opt-cell.is-selected-side {
+    background: rgba(139, 92, 246, 0.12) !important;
+}
+
+.opt-cell.is-selected-call:first-child {
+    border-left: 2px solid var(--bp-purple) !important;
+}
+
+.opt-cell.is-selected-put:last-child {
+    border-right: 2px solid var(--bp-purple) !important;
+}
+
+.val-call {
+    color: var(--bp-green);
+    font-weight: 700;
+}
+
+.val-put {
+    color: var(--bp-red);
+    font-weight: 700;
+}
+
+.opt-sub-iv {
+    font-size: 9.5px;
+    color: var(--bp-muted);
+    font-weight: 500;
+}
+
+.chain-underlying-footer-note {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 10px;
+    font-size: 11px;
+    color: var(--bp-muted);
+    border-top: 1px solid var(--bp-border);
+    background: #0a0d14;
+    flex-shrink: 0;
+}
+
+.chain-underlying-footer-note strong {
+    color: #ffffff;
+    margin-left: 4px;
+}
+
+.chain-underlying-footer-note .info-icon {
+    color: var(--bp-muted);
+    margin-left: 4px;
+    cursor: pointer;
+}
+
+/* Data Tables inside Swappable Views */
+.options-table-wrap {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.options-data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 11.5px;
+    text-align: left;
+}
+
+.options-data-table th {
+    padding: 8px 10px;
+    font-size: 11px;
+    color: var(--bp-muted);
+    border-bottom: 1px solid var(--bp-border);
+    font-weight: 700;
+    background: #0c1017;
+}
+
+.options-data-table td {
+    padding: 8px 10px;
+    border-bottom: 1px solid var(--bp-border-light);
+    white-space: nowrap;
+}
+
+.opt-table-danger-btn {
+    background: rgba(244, 63, 94, 0.15) !important;
+    border: 1px solid rgba(244, 63, 94, 0.4) !important;
+    color: #fb7185 !important;
+    padding: 3px 10px !important;
+    border-radius: 4px !important;
+    font-size: 11px !important;
+    font-weight: 700 !important;
+    cursor: pointer !important;
+    display: inline-block !important;
+    transition: all 0.15s ease !important;
+}
+
+.opt-table-danger-btn:hover {
+    background: rgba(244, 63, 94, 0.3) !important;
+    color: #ffffff !important;
+}
+
+/* ==========================================================================
+   5. Right Side Order Ticket Panel
+   ========================================================================== */
+.bitpro-order-panel {
+    padding: 10px 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-height: 575px;
+}
+
+.bitpro-side-toggle-tabs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+}
+
+.side-tab-btn {
+    border: none;
+    border-radius: 4px;
+    padding: 7px;
+    font-size: 12.5px;
+    font-weight: 800;
+    cursor: pointer;
+    background: #141822;
+    color: var(--bp-muted);
+}
+
+.side-tab-btn.buy-tab.is-active {
+    background: var(--bp-green);
+    color: #000000;
+}
+
+.side-tab-btn.sell-tab.is-active {
+    background: var(--bp-red);
+    color: #ffffff;
+}
+
+.bitpro-sub-ticket-tabs {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    border-bottom: 1px solid var(--bp-border);
+    padding-bottom: 6px;
+}
+
+.sub-tab-btn {
+    background: none;
+    border: none;
+    color: var(--bp-muted);
+    font-size: 11.5px;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.sub-tab-btn.is-active {
+    background: var(--bp-card-sub);
+    color: #ffffff;
+}
+
+.badge-new {
+    background: var(--bp-purple);
+    color: #ffffff;
+    font-size: 8.5px;
+    font-weight: 800;
+    padding: 1px 3px;
+    border-radius: 2px;
+    margin-left: 3px;
+}
+
+.bitpro-order-form {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.form-label {
+    font-size: 11px;
+    color: var(--bp-muted);
+    font-weight: 600;
+}
+
+.instrument-select-display {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--bp-card-sub);
+    border: 1px solid var(--bp-border);
+    border-radius: 4px;
+    padding: 6px 10px;
+    font-size: 11.5px;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.bitpro-input-select {
+    width: 100%;
+    background: var(--bp-card-sub);
+    border: 1px solid var(--bp-border);
+    border-radius: 4px;
+    color: #ffffff;
+    padding: 6px 10px;
+    font-size: 12px;
+    font-weight: 600;
+    outline: none;
+    color-scheme: dark;
+}
+
+.bitpro-input-select option {
+    background: var(--bp-card-sub);
+    color: #ffffff;
+}
+
+.stepper-input-group {
+    display: flex;
+    align-items: center;
+    background: var(--bp-card-sub);
+    border: 1px solid var(--bp-border);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.stepper-btn {
+    background: #191e2a;
+    border: none;
+    color: #ffffff;
+    width: 30px;
+    height: 30px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.stepper-btn:hover {
+    background: #232938;
+}
+
+.stepper-input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    color: #ffffff;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 5px;
+    outline: none;
+}
+
+.stepper-input::-webkit-outer-spin-button,
+.stepper-input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.slider-group {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    padding: 2px 0;
+}
+
+.bitpro-range-slider {
+    width: 100%;
+    accent-color: var(--bp-purple);
+    cursor: pointer;
+    height: 4px;
+}
+
+.slider-percentage-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 9.5px;
+    color: var(--bp-muted);
+}
+
+.slider-percentage-labels span {
+    cursor: pointer;
+}
+
+.order-metric-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    padding: 2px 0;
+}
+
+.order-metric-row .metric-lbl {
+    color: var(--bp-muted);
+}
+
+.order-metric-row .metric-val {
+    color: #ffffff;
+}
+
+.options-checkboxes-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 1px;
+}
+
+.bitpro-checkbox-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 10.5px;
+    color: var(--bp-muted);
+    cursor: pointer;
+}
+
+.bitpro-action-submit-btn {
+    width: 100%;
+    padding: 8px;
+    border-radius: 4px;
+    border: none;
+    font-size: 13px;
+    font-weight: 800;
+    cursor: pointer;
+    margin-top: 3px;
+}
+
+.bitpro-action-submit-btn.buy {
+    background: var(--bp-green);
+    color: #000000;
+}
+
+.bitpro-action-submit-btn.sell {
+    background: var(--bp-red);
+    color: #ffffff;
+}
+
+.ticket-footer-metrics {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    border-top: 1px solid var(--bp-border);
+    padding-top: 6px;
+    margin-top: 2px;
+}
+
+.metric-pair {
+    display: flex;
+    justify-content: space-between;
+    font-size: 10.5px;
+}
+
+.metric-pair .lbl {
+    color: var(--bp-muted);
+}
+
+.metric-pair .val {
+    color: #ffffff;
+    font-weight: 700;
+}
+
+.option-order-message {
+    font-size: 10px;
+    color: var(--bp-muted);
+    margin: 2px 0 0;
+    text-align: center;
+}
+
+/* ==========================================================================
+   6. Bottom Summary Stats Strip
+   ========================================================================== */
+.bitpro-bottom-summary-card {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 12px;
+    padding: 8px 14px;
+    margin-top: 6px;
+    margin-bottom: 0;
+}
+
+@media (max-width: 1024px) {
+    .bitpro-bottom-summary-card {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    .bitpro-bottom-summary-card {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.summary-stat-item {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+}
+
+.sum-lbl {
+    font-size: 10px;
+    color: var(--bp-muted);
+}
+
+.sum-val {
+    font-size: 12px;
+    font-weight: 800;
+    color: #ffffff;
+}
+
+/* Options Page Modal Overlay Styling */
+.options-modal-backdrop {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    background: rgba(0, 0, 0, 0.78) !important;
+    backdrop-filter: blur(5px) !important;
+    -webkit-backdrop-filter: blur(5px) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    z-index: 999999 !important;
+    padding: 16px;
+    box-sizing: border-box;
+}
+
+.options-modal-backdrop[hidden] {
+    display: none !important;
+}

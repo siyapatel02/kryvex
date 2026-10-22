@@ -1,0 +1,312 @@
+.orders-page {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.market-badge,
+.side-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 7px 11px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 900;
+}
+
+.market-badge.futures {
+    color: #60a5fa;
+    background: rgba(96, 165, 250, 0.13);
+}
+
+.market-badge.options {
+    color: #f5c542;
+    background: rgba(245, 197, 66, 0.13);
+}
+
+.side-badge.buy,
+.side-badge.long,
+.side-badge.call {
+    color: #22c55e;
+    background: rgba(34, 197, 94, 0.13);
+}
+
+.side-badge.sell,
+.side-badge.short,
+.side-badge.put {
+    color: #ef4444;
+    background: rgba(239, 68, 68, 0.13);
+}
+
+.orders-table {
+    min-width: 1450px;
+}
+
+.orders-table th,
+.orders-table td {
+    white-space: nowrap;
+}
+
+.orders-table td:first-child {
+    min-width: 220px;
+}
+
+.orders-table td:nth-child(3) {
+    min-width: 130px;
+}
+/* Match the rest of admin theme instead of blue-heavy cards */
+.market-badge.futures {
+    color: #f5c542;
+    background: rgba(245, 197, 66, 0.12);
+    border: 1px solid rgba(245, 197, 66, 0.35);
+}
+
+.wallet-filter-card,
+.wallet-table-card,
+.wallet-tab {
+    transition: .22s ease;
+}
+
+.wallet-filter-card:hover,
+.wallet-table-card:hover,
+.wallet-tab:hover {
+    transform: translateY(-2px);
+    border-color: rgba(245, 197, 66, .38);
+    box-shadow: 0 18px 42px rgba(0,0,0,.28);
+}
+
+/* Admin orders status colors.
+   Active = entry order still has an open linked position.
+   Filled = linked position is closed, so we show one final row instead of duplicate close order rows. */
+.orders-table .status-badge.active {
+    color: #22c55e;
+    background: rgba(34, 197, 94, 0.13);
+    border: 1px solid rgba(34, 197, 94, 0.28);
+}
+
+.orders-table .status-badge.filled,
+.orders-table .status-badge.executed {
+    color: #f5c542;
+    background: rgba(245, 197, 66, 0.13);
+    border: 1px solid rgba(245, 197, 66, 0.28);
+}
+
+.orders-table .status-badge.cancelled,
+.orders-table .status-badge.failed {
+    color: #ef4444;
+    background: rgba(239, 68, 68, 0.13);
+    border: 1px solid rgba(239, 68, 68, 0.28);
+}
+
+/* ===== Orders page pro dashboard layout ===== */
+.admin-market-page-head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 18px;
+}
+
+.admin-market-page-head h1 {
+    margin: 0;
+    color: #ffffff;
+    font-size: 30px;
+    font-weight: 1000;
+    letter-spacing: -0.05em;
+}
+
+.admin-market-page-head span {
+    display: block;
+    margin-top: 6px;
+    color: #94a3b8;
+    font-size: 14px;
+}
+
+.admin-market-search {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.admin-market-search input,
+.compact-filter-actions input,
+.compact-filter-actions select {
+    min-height: 42px;
+    border-radius: 13px;
+    border: 1px solid rgba(148, 163, 184, 0.18);
+    background: #101722;
+    color: #ffffff;
+    padding: 0 14px;
+    outline: none;
+    transition: .2s ease;
+}
+
+.admin-market-search input {
+    width: min(340px, 40vw);
+}
+
+.admin-market-search input:focus,
+.compact-filter-actions input:focus,
+.compact-filter-actions select:focus {
+    border-color: rgba(245, 197, 66, 0.65);
+    box-shadow: 0 0 0 4px rgba(245, 197, 66, 0.08);
+}
+
+.admin-market-search button {
+    min-height: 42px;
+    border: 1px solid rgba(245, 197, 66, .40);
+    border-radius: 13px;
+    background: rgba(245, 197, 66, .12);
+    color: #f5c542;
+    padding: 0 16px;
+    font-weight: 900;
+    cursor: pointer;
+}
+
+.admin-market-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 14px;
+}
+
+.admin-market-stat-card {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(148, 163, 184, 0.14);
+    border-radius: 18px;
+    background: #111721;
+    padding: 18px;
+    min-height: 112px;
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.22);
+}
+
+.admin-market-stat-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    opacity: .92;
+    pointer-events: none;
+}
+
+.admin-market-stat-card.violet::before { background: radial-gradient(circle at top right, rgba(139, 92, 246, .28), transparent 48%); }
+.admin-market-stat-card.amber::before { background: radial-gradient(circle at top right, rgba(245, 158, 11, .26), transparent 48%); }
+.admin-market-stat-card.green::before { background: radial-gradient(circle at top right, rgba(16, 185, 129, .22), transparent 48%); }
+.admin-market-stat-card.blue::before { background: radial-gradient(circle at top right, rgba(14, 165, 233, .24), transparent 48%); }
+
+.admin-market-stat-card span,
+.admin-market-stat-card strong,
+.admin-market-stat-card small {
+    position: relative;
+    z-index: 1;
+}
+
+.admin-market-stat-card span {
+    display: block;
+    color: #94a3b8;
+    font-size: 12px;
+    font-weight: 900;
+}
+
+.admin-market-stat-card strong {
+    display: block;
+    margin-top: 10px;
+    color: #ffffff;
+    font-size: 27px;
+    font-weight: 1000;
+    letter-spacing: -0.04em;
+}
+
+.admin-market-stat-card small {
+    display: block;
+    margin-top: 8px;
+    color: #64748b;
+    font-size: 12px;
+}
+
+.admin-market-tabs-row,
+.market-tabs-main {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.admin-market-filter-strip {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    border: 1px solid rgba(148, 163, 184, 0.14);
+    border-radius: 18px;
+    background: #101720;
+    padding: 12px;
+}
+
+.filter-chip-group,
+.compact-filter-actions {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.filter-chip {
+    border: 1px solid rgba(148, 163, 184, 0.20);
+    border-radius: 12px;
+    background: #151c27;
+    color: #aab6c8;
+    padding: 10px 13px;
+    font-size: 12px;
+    font-weight: 900;
+    cursor: pointer;
+    transition: .2s ease;
+}
+
+.filter-chip:hover,
+.filter-chip.active {
+    transform: translateY(-1px);
+    border-color: rgba(245, 197, 66, .52);
+    background: rgba(245, 197, 66, .14);
+    color: #f5c542;
+}
+
+.filter-chip.buy.active,
+.filter-chip.buy:hover {
+    border-color: rgba(34, 197, 94, .45);
+    background: rgba(34, 197, 94, .13);
+    color: #4ade80;
+}
+
+.filter-chip.sell.active,
+.filter-chip.sell:hover {
+    border-color: rgba(239, 68, 68, .45);
+    background: rgba(239, 68, 68, .13);
+    color: #f87171;
+}
+
+.admin-market-table-card {
+    overflow: hidden;
+}
+
+.orders-table {
+    min-width: 1280px;
+}
+
+.orders-table th,
+.orders-table td {
+    padding-block: 14px;
+}
+
+@media (max-width: 1100px) {
+    .admin-market-stats-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .admin-market-page-head { flex-direction: column; }
+    .admin-market-search, .admin-market-search input { width: 100%; }
+}
+
+@media (max-width: 620px) {
+    .admin-market-stats-grid { grid-template-columns: 1fr; }
+    .compact-filter-actions { width: 100%; }
+    .compact-filter-actions input,
+    .compact-filter-actions select,
+    .compact-filter-actions .filter-btn,
+    .compact-filter-actions .reset-btn { width: 100%; }
+}

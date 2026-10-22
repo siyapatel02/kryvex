@@ -1,0 +1,38 @@
+.kv-card {
+    background: var(--kv-surface);
+    border: 1px solid var(--kv-line);
+    border-radius: var(--kv-radius-lg);
+    transition: 0.18s ease;
+}
+
+.kv-card:hover {
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
+.kv-card-pad {
+    padding: 18px;
+}
+
+.kv-panel {
+    background: var(--kv-surface-2);
+    border: 1px solid var(--kv-line);
+    border-radius: var(--kv-radius-md);
+}
+
+.kv-divider {
+    height: 1px;
+    background: var(--kv-line);
+}
+
+/* Global card hover consistency (No yellow or colored border on hover) */
+.kv-card,
+.kv-panel {
+    box-shadow: 0 10px 32px rgba(0, 0, 0, 0.22);
+}
+
+.kv-card:hover,
+.kv-panel:hover {
+    transform: translateY(-2px);
+    border-color: rgba(255, 255, 255, 0.15) !important;
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.36);
+}

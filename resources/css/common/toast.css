@@ -1,0 +1,269 @@
+/* Centralized Modern Pill Toast Notification System */
+:root {
+    --toast-pill-bg: #10141d;
+    --toast-pill-border: rgba(255, 255, 255, 0.12);
+    --toast-success: #10b981;
+    --toast-error: #ef4444;
+    --toast-warning: #f59e0b;
+    --toast-info: #3b82f6;
+    --toast-loading: #94a3b8;
+    --toast-text: #ffffff;
+    --toast-muted: #94a3b8;
+}
+
+.global-toast-host {
+    position: fixed;
+    z-index: 999999;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    pointer-events: none;
+    transition: all 0.25s ease;
+}
+
+/* --- Positioning Logic --- */
+
+/* Desktop & Tablet Position: Top Right */
+.global-toast-host.is-desktop,
+.global-toast-host.is-tablet {
+    top: 20px;
+    right: 20px;
+    top: calc(20px + env(safe-area-inset-top, 0px));
+    right: calc(20px + env(safe-area-inset-right, 0px));
+    left: auto;
+    bottom: auto;
+    transform: none;
+    align-items: flex-end;
+    width: auto;
+    max-width: calc(100vw - 40px);
+}
+
+/* Small Mobile Screen Position: Top Center */
+.global-toast-host.is-mobile {
+    top: 16px;
+    left: 50%;
+    top: calc(16px + env(safe-area-inset-top, 0px));
+    right: auto;
+    bottom: auto;
+    transform: translateX(-50%);
+    align-items: center;
+    width: auto;
+    max-width: calc(100vw - 24px);
+    padding: 0;
+}
+
+/* --- Pill Toast Card --- */
+.global-toast {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    width: auto;
+    max-width: min(480px, calc(100vw - 24px));
+    min-width: 200px;
+    padding: 7.5px 16px 7.5px 11px;
+    background: var(--toast-pill-bg);
+    border: 1px solid var(--toast-pill-border);
+    border-radius: 9999px;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.65), 0 2px 8px rgba(0, 0, 0, 0.4);
+    color: var(--toast-text);
+    pointer-events: auto;
+    overflow: hidden;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    transition: all 0.22s cubic-bezier(0.2, 0.9, 0.3, 1);
+    opacity: 0;
+    white-space: nowrap;
+}
+
+/* --- Left Icon Badge --- */
+.toast-icon-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.toast-status-badge {
+    width: 20px;
+    height: 20px;
+    min-width: 20px;
+    min-height: 20px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.toast-status-badge.toast-status-success {
+    background: rgba(16, 185, 129, 0.16);
+    border: 1.5px solid #10b981;
+    color: #10b981;
+}
+
+.toast-status-badge.toast-status-error {
+    background: rgba(239, 68, 68, 0.16);
+    border: 1.5px solid #ef4444;
+    color: #ef4444;
+}
+
+.toast-status-badge.toast-status-warning {
+    background: rgba(245, 158, 11, 0.16);
+    border: 1.5px solid #f59e0b;
+    color: #f59e0b;
+}
+
+.toast-status-badge.toast-status-info {
+    background: rgba(59, 130, 246, 0.16);
+    border: 1.5px solid #3b82f6;
+    color: #3b82f6;
+}
+
+/* --- Spinner Animation --- */
+.toast-spinner {
+    width: 16px;
+    height: 16px;
+    border: 2px solid rgba(255, 255, 255, 0.15);
+    border-top-color: #3b82f6;
+    border-radius: 50%;
+    animation: toast-spin 0.8s linear infinite;
+}
+
+@keyframes toast-spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* --- Body and Typography --- */
+.toast-body {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    flex: 1 1 auto;
+    min-width: 0;
+    line-height: 1.25;
+}
+
+.toast-title-inline {
+    font-size: 13px;
+    font-weight: 700;
+    color: #ffffff;
+    white-space: nowrap;
+}
+
+.toast-desc-inline {
+    font-size: 12.5px;
+    font-weight: 600;
+    color: #ffffff;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* --- Close Button --- */
+.toast-close-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: none;
+    color: #94a3b8;
+    font-size: 12px;
+    cursor: pointer;
+    padding: 0 0 0 4px;
+    margin-left: 2px;
+    line-height: 1;
+    opacity: 0.65;
+    transition: all 0.15s ease;
+    flex-shrink: 0;
+}
+
+.toast-close-btn:hover {
+    color: #ffffff;
+    opacity: 1;
+    transform: scale(1.15);
+}
+
+/* --- Animations --- */
+
+/* Desktop & Tablet Animations (Top Right Slide Down / Fade) */
+.global-toast-host.is-desktop .global-toast,
+.global-toast-host.is-tablet .global-toast {
+    transform: translateY(-14px) scale(0.96);
+}
+
+.global-toast-host.is-desktop .global-toast.is-active,
+.global-toast-host.is-tablet .global-toast.is-active {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+/* Mobile Animations (Top Center Drop Down / Fade) */
+.global-toast-host.is-mobile .global-toast {
+    transform: translateY(-16px) scale(0.96);
+}
+
+.global-toast-host.is-mobile .global-toast.is-active {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+/* Dismiss Animation */
+.global-toast.is-dismissing {
+    opacity: 0 !important;
+    transform: translateY(-10px) scale(0.9) !important;
+    filter: blur(3px);
+}
+
+/* Mobile Responsive Optimization */
+@media (max-width: 640px) {
+    .global-toast-host.is-mobile {
+        top: 14px;
+        top: calc(14px + env(safe-area-inset-top, 0px));
+        max-width: calc(100vw - 20px);
+    }
+
+    .global-toast {
+        min-width: min(220px, calc(100vw - 28px));
+        max-width: calc(100vw - 20px);
+        padding: 7px 14px 7px 10px;
+        gap: 9px;
+    }
+
+    .toast-desc-inline {
+        font-size: 12px;
+        font-weight: 600;
+        white-space: nowrap;
+    }
+}
+
+/* --- Light Theme Support --- */
+html[data-theme="light"] .global-toast,
+html.theme-light .global-toast {
+    background: #ffffff !important;
+    border: 1px solid #cbd5e1 !important;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.10), 0 2px 6px rgba(0, 0, 0, 0.05) !important;
+    color: #0f172a !important;
+}
+
+html[data-theme="light"] .toast-title-inline,
+html.theme-light .toast-title-inline {
+    color: #0f172a !important;
+}
+
+html[data-theme="light"] .toast-desc-inline,
+html.theme-light .toast-desc-inline {
+    color: #334155 !important;
+}
+
+html[data-theme="light"] .toast-close-btn,
+html.theme-light .toast-close-btn {
+    color: #64748b !important;
+}
+
+html[data-theme="light"] .toast-close-btn:hover,
+html.theme-light .toast-close-btn:hover {
+    color: #0f172a !important;
+}
+

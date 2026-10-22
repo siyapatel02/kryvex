@@ -1,0 +1,423 @@
+
+
+Created At: 2026-10-05T15:49:01+05:30
+Completed At: 2026-10-05T15:49:02+05:30
+File Path: `file:///D:/projects/laravel%20projects/kryvex-fresh%20-%20Copy/resources/views/web/wallet.blade.php`
+Total Lines: 13604
+Total Bytes: 796623
+Showing lines 7240 to 7650
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+7240:                 'ARB': { title: 'ARB', desc: 'Arbitrum One' },
+7241:                 'LTC': { title: 'LTC', desc: 'Litecoin Network' },
+7242:                 'XRP': { title: 'XRP', desc: 'Ripple Network' },
+7243:                 'DOGE': { title: 'DOGE', desc: 'Dogecoin Network' },
+7244:                 'ADA': { title: 'ADA', desc: 'Cardano Network' },
+7245:                 'AVAX': { title: 'AVAX', desc: 'Avalanche C-Chain' },
+7246:                 'DOT': { title: 'DOT', desc: 'Polkadot Network' }
+7247:             };
+7248: 
+7249:             const btnDepToggleCrypto = document.getElementById('btnDepositToggleCrypto');
+7250:             const btnDepToggleMoney = document.getElementById('btnDepositToggleMoney');
+7251:             const depositMainTitle = document.getElementById('depositMainTitle');
+7252:             const cryptoStepsContainer = document.getElementById('cryptoStepsContainer');
+7253:             const moneyStepsContainer = document.getElementById('moneyStepsContainer');
+7254: 
+7255:             window.setStepDepositMode = function(mode, preserveState = false) {
+7256:                 stepDepositState.mode = mode;
+7257:                 try {
+7258:                     sessionStorage.setItem('kryvex_active_deposit_mode', mode);
+7259:                 } catch(e) {}
+7260: 
+7261:                 if (window.history && window.history.replaceState) {
+7262:                     try {
+7263:                         const url = new URL(window.location.href);
+7264:                         url.searchParams.set('mode', mode);
+7265:                         window.history.replaceState(null, '', url.toString());
+7266:                     } catch(e) {}
+7267:                 }
+7268: 
+7269:                 if (mode === 'money') {
+7270:                     if (btnDepToggleCrypto) btnDepToggleCrypto.classList.remove('is-active');
+7271:                     if (btnDepToggleMoney) btnDepToggleMoney.classList.add('is-active');
+7272:                     if (depositMainTitle) depositMainTitle.textContent = 'Deposit money';
+7273:                     if (cryptoStepsContainer) cryptoStepsContainer.style.display = 'none';
+7274:                     if (moneyStepsContainer) moneyStepsContainer.style.display = 'block';
+7275:                     if (preserveState && stepDepositState.selectedMoneyCurrency) {
+7276:                         selectStepMoneyCurrency(stepDepositState.selectedMoneyCurrency);
+7277:                     } else {
+7278:                         resetStepMoneyView();
+7279:                     }
+7280:                     renderMoneyCurrencyDropdownList('');
+7281:                 } else {
+7282:                     if (btnDepToggleMoney) btnDepToggleMoney.classList.remove('is-active');
+7283:                     if (btnDepToggleCrypto) btnDepToggleCrypto.classList.add('is-active');
+7284:                     if (depositMainTitle) depositMainTitle.textContent = 'Deposit crypto';
+7285:                     if (moneyStepsContainer) moneyStepsContainer.style.display = 'none';
+7286:                     if (cryptoStepsContainer) cryptoStepsContainer.style.display = 'block';
+7287:                     if (preserveState && stepDepositState.selectedCoin) {
+7288:                         selectStepDepositCurrency(stepDepositState.selectedCoin.symbol);
+7289:                     } else {
+7290:                         resetStepDepositView();
+7291:                     }
+7292:                     renderCurrencyDropdownList('');
+7293:                 }
+7294:             };
+7295: 
+7296:             if (btnDepToggleCrypto) btnDepToggleCrypto.addEventListener('click', () => window.setStepDepositMode('crypto', false));
+7297:             if (btnDepToggleMoney) btnDepToggleMoney.addEventListener('click', () => window.setStepDepositMode('money', false));
+7298: 
+7299:             // Withdraw Mode Toggle & Step Progress Helpers
+7300:             const btnWitToggleCrypto = document.getElementById('btnWithdrawToggleCrypto');
+7301:             const btnWitToggleMoney = document.getElementById('btnWithdrawToggleMoney');
+7302:             const withdrawMainTitle = document.getElementById('withdrawMainTitle');
+7303:             const withdrawCryptoStepsContainer = document.getElementById('withdrawCryptoStepsContainer');
+7304:             const withdrawMoneyStepsContainer = document.getElementById('withdrawMoneyStepsContainer');
+7305: 
+7306:             window.setStepWithdrawMode = function(mode) {
+7307:                 const isMoney = (mode === 'money' || mode === 'inr');
+7308:                 const targetMode = isMoney ? 'money' : 'crypto';
+7309: 
+7310:                 try { sessionStorage.setItem('kryvex_active_withdraw_mode', targetMode); } catch(e) {}
+7311: 
+7312:                 if (window.history && window.history.replaceState) {
+7313:                     try {
+7314:                         const url = new URL(window.location.href);
+7315:                         url.searchParams.set('withdraw_mode', targetMode);
+7316:                         window.history.replaceState(null, '', url.toString());
+7317:                     } catch(e) {}
+7318:                 }
+7319: 
+7320:                 const btnCrypto = document.getElementById('btnWithdrawToggleCrypto');
+7321:                 const btnMoney = document.getElementById('btnWithdrawToggleMoney');
+7322:                 const titleEl = document.getElementById('withdrawMainTitle');
+7323:                 const cryptoContainer = document.getElementById('withdrawCryptoStepsContainer');
+7324:                 const moneyContainer = document.getElementById('withdrawMoneyStepsContainer');
+7325:                 const usdtForm = document.getElementById('withdrawForm');
+7326:                 const inrForm = document.getElementById('inrWithdrawForm');
+7327: 
+7328:                 if (isMoney) {
+7329:                     if (btnCrypto) btnCrypto.classList.remove('is-active');
+7330:                     if (btnMoney) btnMoney.classList.add('is-active');
+7331:                     if (titleEl) titleEl.textContent = 'Withdraw money';
+7332:                     if (cryptoContainer) cryptoContainer.style.display = 'none';
+7333:                     if (moneyContainer) moneyContainer.style.display = 'block';
+7334:                     if (inrForm) inrForm.style.display = 'flex';
+7335:                 } else {
+7336:                     if (btnMoney) btnMoney.classList.remove('is-active');
+7337:                     if (btnCrypto) btnCrypto.classList.add('is-active');
+7338:                     if (titleEl) titleEl.textContent = 'Withdraw crypto';
+7339:                     if (moneyContainer) moneyContainer.style.display = 'none';
+7340:                     if (cryptoContainer) cryptoContainer.style.display = 'block';
+7341:                     if (usdtForm) usdtForm.style.display = 'flex';
+7342:                 }
+7343:             };
+7344: 
+7345:             document.addEventListener('click', function(e) {
+7346:                 const cryptoBtn = e.target.closest('#btnWithdrawToggleCrypto');
+7347:                 if (cryptoBtn) {
+7348:                     e.preventDefault();
+7349:                     e.stopPropagation();
+7350:                     window.setStepWithdrawMode('crypto');
+7351:                     return;
+7352:                 }
+7353:                 const moneyBtn = e.target.closest('#btnWithdrawToggleMoney');
+7354:                 if (moneyBtn) {
+7355:                     e.preventDefault();
+7356:                     e.stopPropagation();
+7357:                     window.setStepWithdrawMode('money');
+7358:                     return;
+7359:                 }
+7360:             });
+7361: 
+7362:             const withdrawNetworkSelect = document.getElementById('withdrawNetworkSelect');
+7363:             const withdrawWalletAddress = document.getElementById('withdrawWalletAddress');
+7364:             const withdrawAmountInput = document.querySelector('#withdrawForm input[name="amount"]');
+7365:             const inrWithdrawAmountInput = document.getElementById('inrWithdrawAmount');
+7366: 
+7367:             // Withdraw Crypto Currency Dropdown Logic
+7368:             const btnOpenWithdrawCurrencyDropdown = document.getElementById('btnOpenWithdrawCurrencyDropdown');
+7369:             const withdrawCurrencyDropdownPanel = document.getElementById('withdrawCurrencyDropdownPanel');
+7370:             const withdrawCurrencySearchInput = document.getElementById('withdrawCurrencySearchInput');
+7371:             const withdrawCurrencyDropdownList = document.getElementById('withdrawCurrencyDropdownList');
+7372:             const withdrawCurrencyDropdownChevron = document.getElementById('withdrawCurrencyDropdownChevron');
+7373: 
+7374:             let selectedWithdrawCoin = STEP_DEPOSIT_COINS.find(c => c.symbol === 'USDT') || STEP_DEPOSIT_COINS[0];
+7375: 
+7376:             function toggleWithdrawCurrencyDropdown(open) {
+7377:                 if (!withdrawCurrencyDropdownPanel) return;
+7378:                 const shouldOpen = open !== undefined ? open : (withdrawCurrencyDropdownPanel.style.display === 'none');
+7379:                 withdrawCurrencyDropdownPanel.style.display = shouldOpen ? 'block' : 'none';
+7380:                 if (withdrawCurrencyDropdownChevron) {
+7381:                     withdrawCurrencyDropdownChevron.style.transform = shouldOpen ? 'rotate(180deg)' : 'rotate(0deg)';
+7382:                 }
+7383:                 if (btnOpenWithdrawCurrencyDropdown) {
+7384:                     btnOpenWithdrawCurrencyDropdown.classList.toggle('is-open', shouldOpen);
+7385:                 }
+7386:                 if (shouldOpen) {
+7387:                     if (withdrawCurrencySearchInput) withdrawCurrencySearchInput.value = '';
+7388:                     renderWithdrawCurrencyDropdownList('');
+7389:                     setTimeout(() => withdrawCurrencySearchInput?.focus(), 60);
+7390:                 }
+7391:             }
+7392: 
+7393:             if (btnOpenWithdrawCurrencyDropdown) {
+7394:                 btnOpenWithdrawCurrencyDropdown.addEventListener('click', (e) => {
+7395:                     e.stopPropagation();
+7396:                     toggleWithdrawCurrencyDropdown();
+7397:                 });
+7398:             }
+7399: 
+7400:             function renderWithdrawCurrencyDropdownList(filterText = '') {
+7401:                 if (!withdrawCurrencyDropdownList) return;
+7402:                 const q = filterText.toLowerCase().trim();
+7403:                 const filtered = STEP_DEPOSIT_COINS.filter(c => 
+7404:                     !q || c.symbol.toLowerCase().includes(q) || c.name.toLowerCase().includes(q)
+7405:                 );
+7406: 
+7407:                 if (!filtered.length) {
+7408:                     withdrawCurrencyDropdownList.innerHTML = `<div style="text-align:center; padding: 16px; color: rgba(255,255,255,0.4); font-size: 0.8rem;">No cryptocurrency found matching "${filterText}"</div>`;
+7409:                     return;
+7410:                 }
+7411: 
+7412:                 withdrawCurrencyDropdownList.innerHTML = filtered.map(coin => {
+7413:                     const isSelected = selectedWithdrawCoin?.symbol === coin.symbol;
+7414:                     return `
+7415:                         <div class="kvx-dropdown-item ${isSelected ? 'is-selected' : ''}" data-withdraw-coin-select="${coin.symbol}">
+7416:                             <div class="kvx-dropdown-item-left">
+7417:                                 <img src="${coin.icon}" alt="${coin.symbol}" class="kvx-currency-icon" onerror="this.src='https://raw.githubusercontent.com/spothq/cryptocurrency-icons/master/128/color/${coin.symbol.toLowerCase()}.png';" />
+7418:                                 <div class="kvx-dropdown-item-names">
+7419:                                     <span class="kvx-currency-symbol">${coin.symbol}</span>
+7420:                                     <span class="kvx-dropdown-item-sub">${coin.name}</span>
+7421:                                 </div>
+7422:                             </div>
+7423:                             <div class="kvx-dropdown-item-right">
+7424:                                 ${isSelected ? `<span style="color:#10b981; font-weight:bold; font-size:1rem;">✓</span>` : ''}
+7425:                             </div>
+7426:                         </div>
+7427:                     `;
+7428:                 }).join('');
+7429: 
+7430:                 withdrawCurrencyDropdownList.querySelectorAll('[data-withdraw-coin-select]').forEach(item => {
+7431:                     item.addEventListener('click', (e) => {
+7432:                         e.stopPropagation();
+7433:                         const sym = item.getAttribute('data-withdraw-coin-select');
+7434:                         selectWithdrawCurrency(sym);
+7435:                         toggleWithdrawCurrencyDropdown(false);
+7436:                     });
+7437:                 });
+7438:             }
+7439: 
+7440:             if (withdrawCurrencySearchInput) {
+7441:                 withdrawCurrencySearchInput.addEventListener('input', () => {
+7442:                     renderWithdrawCurrencyDropdownList(withdrawCurrencySearchInput.value);
+7443:                 });
+7444:             }
+7445: 
+7446:             function selectWithdrawCurrency(symbol) {
+7447:                 const coin = STEP_DEPOSIT_COINS.find(c => c.symbol === symbol) || STEP_DEPOSIT_COINS[0];
+7448:                 selectedWithdrawCoin = coin;
+7449: 
+7450:                 const iconEl = document.getElementById('selectedWithdrawCurrencyIcon');
+7451:                 const symbolEl = document.getElementById('selectedWithdrawCurrencySymbol');
+7452:                 const nameEl = document.getElementById('selectedWithdrawCurrencyName');
+7453:                 const pillEl = document.getElementById('withdrawAssetPill');
+7454:                 const helpEl = document.getElementById('withdrawNetworkHelpText');
+7455: 
+7456:                 if (iconEl) iconEl.src = coin.icon;
+7457:                 if (symbolEl) symbolEl.textContent = coin.symbol;
+7458:                 if (nameEl) nameEl.textContent = coin.name;
+7459:                 if (pillEl) pillEl.textContent = coin.symbol;
+7460: 
+7461:                 if (helpEl) {
+7462:                     const networks = coin.networks || [coin.defaultNetwork || 'TRC20'];
+7463:                     helpEl.textContent = `${coin.symbol} Networks: ${networks.join(', ')}`;
+7464:                 }
+7465: 
+7466:                 // Select default network for newly selected currency
+7467:                 const defaultNet = coin.defaultNetwork || (coin.networks ? coin.networks[0] : 'TRC20');
+7468:                 selectWithdrawNetwork(defaultNet);
+7469: 
+7470:                 updateWithdrawStepProgress();
+7471:             }
+7472: 
+7473:             // =========================================================================
+7474:             // WITHDRAW NETWORK DROPDOWN CONTROLLER
+7475:             // =========================================================================
+7476:             const btnOpenWithdrawNetworkDropdown = document.getElementById('btnOpenWithdrawNetworkDropdown');
+7477:             const withdrawNetworkDropdownPanel = document.getElementById('withdrawNetworkDropdownPanel');
+7478:             const withdrawNetworkList = document.getElementById('withdrawNetworkList');
+7479:             const withdrawNetworkDropdownChevron = document.getElementById('withdrawNetworkDropdownChevron');
+7480: 
+7481:             isolateDropdownScroll(withdrawNetworkList);
+7482:             isolateDropdownScroll(withdrawNetworkDropdownPanel);
+7483: 
+7484:             function toggleWithdrawNetworkDropdown(open) {
+7485:                 if (!withdrawNetworkDropdownPanel) return;
+7486:                 const shouldOpen = open !== undefined ? open : (withdrawNetworkDropdownPanel.style.display === 'none');
+7487:                 withdrawNetworkDropdownPanel.style.display = shouldOpen ? 'block' : 'none';
+7488:                 if (withdrawNetworkDropdownChevron) {
+7489:                     withdrawNetworkDropdownChevron.style.transform = shouldOpen ? 'rotate(180deg)' : 'rotate(0deg)';
+7490:                 }
+7491:                 if (btnOpenWithdrawNetworkDropdown) {
+7492:                     btnOpenWithdrawNetworkDropdown.classList.toggle('is-open', shouldOpen);
+7493:                 }
+7494:                 if (shouldOpen) {
+7495:                     renderWithdrawNetworkDropdownList(selectedWithdrawCoin);
+7496:                 }
+7497:             }
+7498: 
+7499:             if (btnOpenWithdrawNetworkDropdown) {
+7500:                 btnOpenWithdrawNetworkDropdown.addEventListener('click', (e) => {
+7501:                     e.stopPropagation();
+7502:                     toggleWithdrawNetworkDropdown();
+7503:                 });
+7504:             }
+7505: 
+7506:             function renderWithdrawNetworkDropdownList(coin) {
+7507:                 if (!withdrawNetworkList || !coin) return;
+7508:                 const networks = coin.networks || [coin.defaultNetwork || 'TRC20'];
+7509:                 const selectedNet = stepWithdrawState.selectedNetwork || coin.defaultNetwork || networks[0];
+7510: 
+7511:                 withdrawNetworkList.innerHTML = networks.map(net => {
+7512:                     const isSelected = net === selectedNet;
+7513:                     const netIcon = NETWORK_ICONS[net] || coin.icon;
+7514:                     const meta = NETWORK_META[net] || { title: net, desc: `${coin.symbol} (${net})` };
+7515:                     return `
+7516:                         <div class="kvx-dropdown-item ${isSelected ? 'is-selected' : ''}" data-withdraw-net-select="${net}" style="padding: 10px 12px; cursor: pointer;">
+7517:                             <div class="kvx-dropdown-item-left" style="gap: 12px; display: flex; align-items: center;">
+7518:                                 <div style="width: 30px; height: 30px; background: rgba(255, 255, 255, 0.08); border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; overflow: hidden;">
+7519:                                     <img src="${netIcon}" alt="${net}" style="width: 20px; height: 20px; object-fit: contain;" onerror="this.src='${coin.icon}'" />
+7520:                                 </div>
+7521:                                 <div class="kvx-dropdown-item-names" style="display: flex; flex-direction: column;">
+7522:                                     <span class="kvx-currency-symbol" style="font-size: 0.90rem; font-weight: 700; color: #ffffff;">${meta.title}</span>
+7523:                                     <span class="kvx-dropdown-item-sub" style="font-size: 0.74rem; color: rgba(255,255,255,0.45);">${meta.desc}</span>
+7524:                                 </div>
+7525:                             </div>
+7526:                             <div class="kvx-dropdown-item-right">
+7527:                                 ${isSelected ? `<span style="color:#10b981; font-weight:bold; font-size:1rem;">✓</span>` : ''}
+7528:                             </div>
+7529:                         </div>
+7530:                     `;
+7531:                 }).join('');
+7532: 
+7533:                 withdrawNetworkList.querySelectorAll('[data-withdraw-net-select]').forEach(item => {
+7534:                     item.addEventListener('click', (e) => {
+7535:                         e.stopPropagation();
+7536:                         const net = item.getAttribute('data-withdraw-net-select');
+7537:                         selectWithdrawNetwork(net);
+7538:                         toggleWithdrawNetworkDropdown(false);
+7539:                     });
+7540:                 });
+7541:             }
+7542: 
+7543:             function selectWithdrawNetwork(netCode) {
+7544:                 const coin = selectedWithdrawCoin || STEP_DEPOSIT_COINS[0];
+7545:                 const networks = coin.networks || [coin.defaultNetwork || 'TRC20'];
+7546:                 const net = networks.includes(netCode) ? netCode : (coin.defaultNetwork || networks[0]);
+7547: 
+7548:                 stepWithdrawState.selectedNetwork = net;
+7549: 
+7550:                 // Sync hidden select input for backend form submit compatibility
+7551:                 if (withdrawNetworkSelect) {
+7552:                     withdrawNetworkSelect.innerHTML = networks.map(n => `<option value="${n}" ${n === net ? 'selected' : ''}>${n}</option>`).join('');
+7553:                     withdrawNetworkSelect.value = net;
+7554:                 }
+7555: 
+7556:                 // Update UI Display
+7557:                 const titleEl = document.getElementById('withdrawNetworkTitle');
+7558:                 const subEl = document.getElementById('withdrawNetworkSub');
+7559:                 const iconEl = document.getElementById('selectedWithdrawNetworkIcon');
+7560:                 const meta = NETWORK_META[net] || { title: net, desc: `${coin.symbol} (${net})` };
+7561:                 const netIcon = NETWORK_ICONS[net] || coin.icon;
+7562: 
+7563:                 if (titleEl) titleEl.textContent = meta.title;
+7564:                 if (subEl) subEl.textContent = meta.desc;
+7565:                 if (iconEl) {
+7566:                     iconEl.src = netIcon;
+7567:                     iconEl.onerror = () => { iconEl.src = coin.icon; };
+7568:                 }
+7569: 
+7570:                 // Update address rule text
+7571:                 if (typeof renderWithdrawAddressPanel === 'function') {
+7572:                     renderWithdrawAddressPanel();
+7573:                 }
+7574: 
+7575:                 updateWithdrawStepProgress();
+7576:             }
+7577:             window.selectWithdrawNetwork = selectWithdrawNetwork;
+7578: 
+7579:             // Money (INR) Currency Dropdown Logic
+7580:             const btnOpenWithdrawMoneyCurrencyDropdown = document.getElementById('btnOpenWithdrawMoneyCurrencyDropdown');
+7581:             const withdrawMoneyCurrencyDropdownPanel = document.getElementById('withdrawMoneyCurrencyDropdownPanel');
+7582:             const withdrawMoneyCurrencyDropdownChevron = document.getElementById('withdrawMoneyCurrencyDropdownChevron');
+7583: 
+7584:             if (btnOpenWithdrawMoneyCurrencyDropdown) {
+7585:                 btnOpenWithdrawMoneyCurrencyDropdown.addEventListener('click', (e) => {
+7586:                     e.stopPropagation();
+7587:                     const isOpen = withdrawMoneyCurrencyDropdownPanel.style.display !== 'none';
+7588:                     withdrawMoneyCurrencyDropdownPanel.style.display = isOpen ? 'none' : 'block';
+7589:                     if (withdrawMoneyCurrencyDropdownChevron) {
+7590:                         withdrawMoneyCurrencyDropdownChevron.style.transform = isOpen ? 'rotate(0deg)' : 'rotate(180deg)';
+7591:                     }
+7592:                 });
+7593:             }
+7594: 
+7595:             document.addEventListener('click', (e) => {
+7596:                 if (withdrawCurrencyDropdownPanel && !withdrawCurrencyDropdownPanel.contains(e.target) && btnOpenWithdrawCurrencyDropdown && !btnOpenWithdrawCurrencyDropdown.contains(e.target)) {
+7597:                     toggleWithdrawCurrencyDropdown(false);
+7598:                 }
+7599:                 if (withdrawMoneyCurrencyDropdownPanel && !withdrawMoneyCurrencyDropdownPanel.contains(e.target) && btnOpenWithdrawMoneyCurrencyDropdown && !btnOpenWithdrawMoneyCurrencyDropdown.contains(e.target)) {
+7600:                     if (withdrawMoneyCurrencyDropdownPanel) withdrawMoneyCurrencyDropdownPanel.style.display = 'none';
+7601:                     if (withdrawMoneyCurrencyDropdownChevron) withdrawMoneyCurrencyDropdownChevron.style.transform = 'rotate(0deg)';
+7602:                 }
+7603:                 if (withdrawNetworkDropdownPanel && !withdrawNetworkDropdownPanel.contains(e.target) && btnOpenWithdrawNetworkDropdown && !btnOpenWithdrawNetworkDropdown.contains(e.target)) {
+7604:                     toggleWithdrawNetworkDropdown(false);
+7605:                 }
+7606:                 const withdrawFromPanel = document.getElementById('withdrawFromDropdownPanel');
+7607:                 const btnWithdrawFrom = document.getElementById('btnOpenWithdrawFromDropdown');
+7608:                 if (withdrawFromPanel && !withdrawFromPanel.contains(e.target) && btnWithdrawFrom && !btnWithdrawFrom.contains(e.target)) {
+7609:                     toggleWithdrawFromDropdown(false);
+7610:                 }
+7611:                 const withdrawMoneyFromPanel = document.getElementById('withdrawMoneyFromDropdownPanel');
+7612:                 const btnWithdrawMoneyFrom = document.getElementById('btnOpenWithdrawMoneyFromDropdown');
+7613:                 if (withdrawMoneyFromPanel && !withdrawMoneyFromPanel.contains(e.target) && btnWithdrawMoneyFrom && !btnWithdrawMoneyFrom.contains(e.target)) {
+7614:                     toggleWithdrawMoneyFromDropdown(false);
+7615:                 }
+7616:             });
+7617: 
+7618:             // =========================================================================
+7619:             // WITHDRAW FROM ACCOUNT SELECTOR LOGIC
+7620:             // =========================================================================
+7621:             let stepWithdrawState = {
+7622:                 selectedAccount: 'main_wallet',
+7623:                 selectedAccountData: null
+7624:             };
+7625: 
+7626:             function renderWithdrawFromAccounts() {
+7627:                 const withdrawFromAccountsList = document.getElementById('withdrawFromAccountsList');
+7628:                 const withdrawMoneyFromAccountsList = document.getElementById('withdrawMoneyFromAccountsList');
+7629:                 if (!withdrawFromAccountsList && !withdrawMoneyFromAccountsList) return;
+7630: 
+7631:                 const accounts = typeof getUserTradingAccounts === 'function' ? getUserTradingAccounts() : [];
+7632:                 const mainBal = typeof getUserAvailableBalance === 'function' ? getUserAvailableBalance() : 0;
+7633:                 const mainBalStr = parseFloat(mainBal || 0).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+7634:                 const isMainSelected = stepWithdrawState.selectedAccount === 'main_wallet';
+7635: 
+7636:                 let html = `
+7637:                     <div class="kvx-dropdown-item ${isMainSelected ? 'is-selected' : ''}" data-withdraw-acc-id="main_wallet" style="padding: 10px 12px;">
+7638:                         <div class="kvx-dropdown-item-left" style="gap: 12px;">
+7639:                             <div style="width: 32px; height: 32px; background: rgba(59, 130, 246, 0.15); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #60a5fa; flex-shrink: 0;">
+7640:                                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+7641:                                     <path d="M21 12V7H5a2 2 0 0 1 0-4h14v4"></path>
+7642:                                     <path d="M3 5v14a2 2 0 0 0 2 2h16v-5"></path>
+7643:                                     <path d="M18 12a2 2 0 0 0 0 4h4v-4Z"></path>
+7644:                                 </svg>
+7645:                             </div>
+7646:                             <div class="kvx-dropdown-item-names">
+7647:                                 <span class="kvx-currency-symbol" style="font-size: 0.88rem; font-weight: 700; color: #ffffff;">Main Wallet</span>
+7648:                                 <span class="kvx-dropdown-item-sub" style="font-size: 0.76rem; color: rgba(255,255,255,0.45);">Main Balance ($${mainBalStr})</span>
+7649:                             </div>
+7650:                         </div>
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.
+
+

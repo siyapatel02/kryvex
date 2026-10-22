@@ -1,0 +1,153 @@
+.positions-page {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.positions-table {
+    width: 100%;
+    min-width: 1100px !important;
+}
+
+.positions-table th,
+.positions-table td {
+    white-space: nowrap;
+    padding: 12px 14px;
+    font-size: 0.86rem;
+}
+
+.positions-table td:first-child {
+    min-width: 180px;
+}
+
+.positions-table .table-responsive {
+    overflow-x: auto !important;
+    scrollbar-width: thin !important;
+}
+
+.pnl-profit {
+    color: #22c55e;
+    font-weight: 900;
+}
+
+.pnl-loss {
+    color: #ef4444;
+    font-weight: 900;
+}
+
+.market-badge,
+.side-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 5px 10px;
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 800;
+}
+
+.market-badge.futures {
+    color: #f5c542;
+    background: rgba(245, 197, 66, 0.13);
+    border: 1px solid rgba(245, 197, 66, 0.22);
+}
+
+.market-badge.options {
+    color: #c084fc;
+    background: rgba(192, 132, 252, 0.12);
+    border: 1px solid rgba(192, 132, 252, 0.22);
+}
+
+.side-badge.buy,
+.side-badge.long,
+.side-badge.call {
+    color: #22c55e;
+    background: rgba(34, 197, 94, 0.13);
+    border: 1px solid rgba(34, 197, 94, 0.22);
+}
+
+.side-badge.sell,
+.side-badge.short,
+.side-badge.put {
+    color: #ef4444;
+    background: rgba(239, 68, 68, 0.13);
+    border: 1px solid rgba(239, 68, 68, 0.22);
+}
+
+.live-price-cell strong {
+    color: #f5c542;
+}
+
+.live-dot {
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    margin-right: 7px;
+    border-radius: 999px;
+    background: #22c55e;
+    box-shadow: 0 0 13px rgba(34, 197, 94, 0.9);
+}
+
+.positions-stats-grid .admin-market-stat-card strong.pnl-profit {
+    color: #22c55e;
+}
+
+.positions-stats-grid .admin-market-stat-card strong.pnl-loss {
+    color: #ef4444;
+}
+
+.positions-page .wallet-tabs.market-tabs-main {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.positions-page .admin-market-filter-strip {
+    margin-top: -4px;
+}
+
+.positions-page .status-badge.open {
+    color: #22c55e;
+    background: rgba(34, 197, 94, 0.13);
+    border: 1px solid rgba(34, 197, 94, 0.28);
+}
+
+.positions-page .status-badge.closed {
+    color: #f5c542;
+    background: rgba(245, 197, 66, 0.13);
+    border: 1px solid rgba(245, 197, 66, 0.28);
+}
+
+/* ===== Force Stop Trade Button ===== */
+.kv-btn-force-stop {
+    background: rgba(239, 68, 68, 0.15);
+    color: #ef4444;
+    border: 1px solid rgba(239, 68, 68, 0.4);
+    padding: 5px 12px;
+    border-radius: 8px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.kv-btn-force-stop:hover {
+    background: #ef4444 !important;
+    color: #ffffff !important;
+    border-color: #ef4444 !important;
+    box-shadow: 0 4px 14px rgba(239, 68, 68, 0.35);
+}
+
+html[data-admin-theme="light"] .kv-btn-force-stop {
+    background: #fef2f2;
+    color: #dc2626;
+    border: 1px solid #fca5a5;
+}
+
+html[data-admin-theme="light"] .kv-btn-force-stop:hover {
+    background: #dc2626 !important;
+    color: #ffffff !important;
+}

@@ -1,0 +1,829 @@
+/* ===== KRYVEX PORTFOLIO PAGE STYLES (DHARMA WEB3 THEME) ===== */
+
+.portfolio-page {
+    background-color: var(--kv-bg, #0c0d12);
+    color: var(--kv-text, #f8fafc);
+    min-height: 100vh;
+}
+
+/* Glassmorphism Card Style Matching Wallet Page */
+.pf-card {
+    background: linear-gradient(135deg, rgba(20, 21, 30, 0.95), rgba(13, 14, 20, 0.98)) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    border-radius: 20px !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35) !important;
+    backdrop-filter: blur(12px);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.pf-inner-box {
+    background: rgba(255, 255, 255, 0.03) !important;
+    border: 1px solid rgba(255, 255, 255, 0.07) !important;
+    border-radius: 14px !important;
+}
+
+/* Pill Tab Buttons */
+.pf-table-tab {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: rgba(255, 255, 255, 0.65);
+    font-weight: 700;
+    transition: all 0.2s ease;
+}
+
+.pf-table-tab:hover {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
+.pf-table-tab.active {
+    background: #8b5cf6 !important;
+    color: #ffffff !important;
+    border-color: #8b5cf6 !important;
+    box-shadow: 0 4px 16px rgba(139, 92, 246, 0.35) !important;
+}
+
+/* Chart Timeframe Pills */
+.pf-chart-btn {
+    color: rgba(255, 255, 255, 0.55);
+    font-weight: 700;
+    transition: all 0.15s ease;
+}
+
+.pf-chart-btn:hover {
+    color: #ffffff;
+}
+
+.pf-chart-btn.active {
+    background: #8b5cf6 !important;
+    color: #ffffff !important;
+    box-shadow: 0 2px 10px rgba(139, 92, 246, 0.3) !important;
+}
+
+.pf-tab-pane.hidden {
+    display: none !important;
+}
+
+/* Primary Action Buttons */
+.pf-btn-primary {
+    background: #8b5cf6;
+    color: #ffffff;
+    font-weight: 700;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 16px rgba(139, 92, 246, 0.35);
+}
+
+.pf-btn-primary:hover {
+    background: #7c3aed;
+    box-shadow: 0 6px 20px rgba(139, 92, 246, 0.45);
+    transform: translateY(-1px);
+}
+
+.pf-btn-secondary {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    color: #ffffff;
+    font-weight: 600;
+    border-radius: 12px;
+    transition: all 0.2s ease;
+}
+
+.pf-btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.18);
+    transform: translateY(-1px);
+}
+
+/* Table Style Polish */
+.pf-table thead tr {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.pf-table tbody tr {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    transition: background-color 0.15s ease;
+}
+
+.pf-table tbody tr:hover {
+    background-color: rgba(255, 255, 255, 0.03);
+}
+
+.pf-table th,
+.pf-table td {
+    white-space: nowrap;
+}
+
+/* Horizontal Table Scroll Styling */
+.pf-tab-pane .overflow-x-auto {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(139, 92, 246, 0.3) transparent;
+    -webkit-overflow-scrolling: touch;
+}
+
+.pf-tab-pane .overflow-x-auto::-webkit-scrollbar {
+    height: 4px;
+}
+
+.pf-tab-pane .overflow-x-auto::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 4px;
+}
+
+.pf-tab-pane .overflow-x-auto::-webkit-scrollbar-thumb {
+    background: rgba(139, 92, 246, 0.35);
+    border-radius: 4px;
+}
+
+.pf-tab-pane .overflow-x-auto::-webkit-scrollbar-thumb:hover {
+    background: rgba(139, 92, 246, 0.6);
+}
+
+/* Hide scrollbar utility */
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+.no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* Responsive Table Mobile Tuning */
+@media (max-width: 640px) {
+    .pf-table-tab {
+        font-size: 11px !important;
+        padding: 6px 12px !important;
+    }
+}
+
+/* Custom Select & Dropdown Options (Dark Web3 Theme) */
+#pfAccountSelect,
+.portfolio-page select {
+    background-color: transparent !important;
+    color: #c084fc !important;
+}
+
+#pfAccountSelect option,
+.portfolio-page select option {
+    background-color: #12131c !important;
+    color: #f1f5f9 !important;
+    padding: 8px 12px !important;
+}
+
+#pfAccountSelect option:hover,
+#pfAccountSelect option:checked,
+.portfolio-page select option:hover,
+.portfolio-page select option:checked {
+    background-color: #7c3aed !important;
+    color: #ffffff !important;
+}
+
+/* Light Theme Overrides */
+html[data-theme="light"] .portfolio-page,
+html.theme-light .portfolio-page {
+    background-color: #f8fafc !important;
+    color: #0f172a !important;
+}
+
+html[data-theme="light"] .pf-card,
+html.theme-light .pf-card {
+    background: #ffffff !important;
+    border-color: #e2e8f0 !important;
+    box-shadow: 0 4px 20px rgba(15, 23, 42, 0.05) !important;
+}
+
+html[data-theme="light"] .pf-inner-box,
+html.theme-light .pf-inner-box {
+    background: #f1f5f9 !important;
+    border-color: #e2e8f0 !important;
+}
+
+html[data-theme="light"] .text-white,
+html.theme-light .text-white {
+    color: #0f172a !important;
+}
+
+/* Mobile Position Cards in Portfolio Page */
+.portfolio-page .futures-position-mobile-card {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 12px !important;
+    background: #11131c !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    border-radius: 16px !important;
+    padding: 12px 14px !important;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25) !important;
+    transition: all 0.2s ease;
+}
+
+.portfolio-page .futures-position-mobile-card:hover {
+    border-color: rgba(255, 255, 255, 0.15) !important;
+    background: #141724 !important;
+}
+
+.portfolio-page .pos-card-left-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 0;
+}
+
+.portfolio-page .pos-card-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
+}
+
+.portfolio-page .pos-card-title-row {
+    display: flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    white-space: nowrap !important;
+    flex-wrap: nowrap !important;
+}
+
+.portfolio-page .pos-card-sym-name {
+    font-size: 13px !important;
+    font-weight: 700 !important;
+    color: #ffffff !important;
+    letter-spacing: -0.01em;
+    white-space: nowrap !important;
+}
+
+.portfolio-page .pos-card-cur-badge {
+    background: rgba(88, 28, 135, 0.5) !important;
+    color: #d8b4fe !important;
+    border: 1px solid rgba(168, 85, 247, 0.4) !important;
+    font-size: 9px !important;
+    font-weight: 800 !important;
+    padding: 1px 4px !important;
+    border-radius: 4px !important;
+    line-height: 1 !important;
+    text-transform: uppercase !important;
+}
+
+.portfolio-page .pos-card-sub-row {
+    display: flex !important;
+    align-items: center !important;
+    gap: 4px !important;
+    font-size: 11px !important;
+    white-space: nowrap !important;
+    flex-wrap: nowrap !important;
+}
+
+.portfolio-page .pos-card-side-label {
+    font-weight: 700 !important;
+    white-space: nowrap !important;
+}
+
+.portfolio-page .pos-card-qty-label {
+    font-weight: 700 !important;
+    color: #ffffff !important;
+    white-space: nowrap !important;
+}
+
+.portfolio-page .pos-card-entry-label {
+    color: #94a3b8 !important;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace !important;
+    white-space: nowrap !important;
+}
+
+.portfolio-page .pos-card-right-group {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-end !important;
+    gap: 2px !important;
+    flex-shrink: 0 !important;
+    text-align: right !important;
+    white-space: nowrap !important;
+}
+
+.portfolio-page .pos-card-top-action-row {
+    display: flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    white-space: nowrap !important;
+    flex-wrap: nowrap !important;
+}
+
+.portfolio-page .pos-card-pnl-val {
+    font-size: 12px !important;
+    font-weight: 700 !important;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace !important;
+    white-space: nowrap !important;
+}
+
+.portfolio-page .pos-card-close-x {
+    width: 20px !important;
+    height: 20px !important;
+    border-radius: 9999px !important;
+    background: rgba(255, 255, 255, 0.06) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    color: #94a3b8 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 11px !important;
+    line-height: 1 !important;
+    cursor: pointer !important;
+    transition: all 0.15s ease !important;
+    padding: 0 !important;
+}
+
+.portfolio-page .pos-card-close-x:hover {
+    background: rgba(239, 68, 68, 0.2) !important;
+    border-color: rgba(239, 68, 68, 0.4) !important;
+    color: #f87171 !important;
+}
+
+.portfolio-page .pos-card-ltp-val {
+    font-size: 13px !important;
+    font-weight: 700 !important;
+    color: #ffffff !important;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace !important;
+    white-space: nowrap !important;
+}
+
+/* ===== PORTFOLIO LOADING OVERLAY ANIMATION ===== */
+.portfolio-loading-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(8, 11, 17, 0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    transition: opacity 0.35s ease, visibility 0.35s ease;
+}
+
+.portfolio-loading-overlay.is-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.portfolio-loader-spinner {
+    width: 46px;
+    height: 46px;
+    border: 3px solid rgba(139, 92, 246, 0.15);
+    border-top: 3px solid #8b5cf6;
+    border-right: 3px solid #ec4899;
+    border-radius: 50%;
+    animation: pfSpin 0.8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    box-shadow: 0 0 24px rgba(139, 92, 246, 0.3);
+}
+
+@keyframes pfSpin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.portfolio-loader-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 16px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.portfolio-loader-text {
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    color: #cbd5e1;
+}
+
+/* =========================================================================
+   320px - 480px SMALL MOBILE RESPONSIVE OPTIMIZATIONS
+   ========================================================================= */
+@media (max-width: 639px) {
+    .pf-card {
+        padding: 12px 10px !important;
+        border-radius: 16px !important;
+    }
+
+    #pfChartTimeframeContainer {
+        width: 100% !important;
+        display: flex !important;
+        gap: 3px !important;
+        padding: 3px !important;
+        box-sizing: border-box !important;
+    }
+
+    .pf-chart-btn {
+        flex: 1 1 0 !important;
+        min-width: 0 !important;
+        padding: 5px 2px !important;
+        font-size: 11px !important;
+        text-align: center !important;
+    }
+
+    #pfChartPeriodReturnBadgeMobile {
+        font-size: 11px !important;
+        padding: 2px 6px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .portfolio-page {
+        overflow-x: hidden !important;
+    }
+
+    .pf-btn-secondary {
+        padding: 6px 10px !important;
+        font-size: 11px !important;
+    }
+
+    #pfTotalPortfolioValue {
+        font-size: 1.75rem !important;
+    }
+}
+
+/* =========================================================================
+   COMPREHENSIVE LIGHT THEME STYLES FOR PORTFOLIO PAGE
+   ========================================================================= */
+html[data-theme="light"] .portfolio-page,
+html.theme-light .portfolio-page {
+    background-color: #f8fafc !important;
+    color: #0f172a !important;
+}
+
+/* Main Cards & Inner Sub-Boxes */
+html[data-theme="light"] .portfolio-page .pf-card,
+html.theme-light .portfolio-page .pf-card {
+    background: #ffffff !important;
+    border: 1px solid #cbd5e1 !important;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04) !important;
+    color: #0f172a !important;
+}
+
+html[data-theme="light"] .portfolio-page .pf-inner-box,
+html.theme-light .portfolio-page .pf-inner-box {
+    background: #f8fafc !important;
+    border: 1px solid #e2e8f0 !important;
+    color: #0f172a !important;
+}
+
+/* Titles, Headings & Text */
+html[data-theme="light"] .portfolio-page h1,
+html[data-theme="light"] .portfolio-page h2,
+html[data-theme="light"] .portfolio-page h3,
+html[data-theme="light"] .portfolio-page strong:not([class*="text-"]):not([class*="market-"]):not(#pfMainBalance):not(#pfLockedBalance):not(#pfUnrealizedPnl):not(#pfRealizedPnl):not(#pfAllTimePnlText),
+html[data-theme="light"] .portfolio-page .text-white,
+html.theme-light .portfolio-page h1,
+html.theme-light .portfolio-page h2,
+html.theme-light .portfolio-page h3,
+html.theme-light .portfolio-page strong:not([class*="text-"]):not([class*="market-"]):not(#pfMainBalance):not(#pfLockedBalance):not(#pfUnrealizedPnl):not(#pfRealizedPnl):not(#pfAllTimePnlText),
+html.theme-light .portfolio-page .text-white {
+    color: #0f172a !important;
+}
+
+#pfMainBalance,
+#pfLockedBalance {
+    color: #ffffff !important;
+}
+
+/* Financial Metric Colors on Portfolio Page in Light Theme */
+html[data-theme="light"] #pfMainBalance,
+html[data-theme="light"] #pfLockedBalance,
+html[data-theme="light"] #pfAvailableBalance,
+html.theme-light #pfMainBalance,
+html.theme-light #pfLockedBalance,
+html.theme-light #pfAvailableBalance {
+    color: #0f172a !important;
+}
+
+html[data-theme="light"] #pfUnrealizedPnl.market-positive,
+html[data-theme="light"] #pfRealizedPnl.market-positive,
+html[data-theme="light"] #pfAllTimePnlText.market-positive,
+html[data-theme="light"] .portfolio-page .text-emerald-400,
+html[data-theme="light"] .portfolio-page .market-positive,
+html.theme-light #pfUnrealizedPnl.market-positive,
+html.theme-light #pfRealizedPnl.market-positive,
+html.theme-light #pfAllTimePnlText.market-positive,
+html.theme-light .portfolio-page .text-emerald-400,
+html.theme-light .portfolio-page .market-positive {
+    color: #10b981 !important;
+}
+
+html[data-theme="light"] #pfUnrealizedPnl.market-negative,
+html[data-theme="light"] #pfRealizedPnl.market-negative,
+html[data-theme="light"] #pfAllTimePnlText.market-negative,
+html[data-theme="light"] .portfolio-page .text-rose-400,
+html[data-theme="light"] .portfolio-page .market-negative,
+html.theme-light #pfUnrealizedPnl.market-negative,
+html.theme-light #pfRealizedPnl.market-negative,
+html.theme-light #pfAllTimePnlText.market-negative,
+html.theme-light .portfolio-page .text-rose-400,
+html.theme-light .portfolio-page .market-negative {
+    color: #f43f5e !important;
+}
+
+html[data-theme="light"] .portfolio-page .text-slate-400,
+html[data-theme="light"] .portfolio-page .text-slate-500,
+html.theme-light .portfolio-page .text-slate-400,
+html.theme-light .portfolio-page .text-slate-500 {
+    color: #64748b !important;
+}
+
+html[data-theme="light"] .portfolio-page .text-slate-200,
+html[data-theme="light"] .portfolio-page .text-slate-300,
+html.theme-light .portfolio-page .text-slate-200,
+html.theme-light .portfolio-page .text-slate-300 {
+    color: #334155 !important;
+}
+
+/* Today PnL Badge in Dark Mode */
+#pfTodayPnlBadge {
+    transition: all 0.25s ease;
+}
+#pfTodayPnlBadge.is-positive {
+    background: rgba(6, 78, 59, 0.6) !important;
+    border: 1px solid rgba(6, 95, 70, 0.5) !important;
+    color: #34d399 !important;
+}
+#pfTodayPnlBadge.is-negative {
+    background: rgba(136, 19, 55, 0.6) !important;
+    border: 1px solid rgba(159, 18, 57, 0.5) !important;
+    color: #fb7185 !important;
+}
+
+/* Today PnL Badge in Light Theme */
+html[data-theme="light"] #pfTodayPnlBadge.is-positive,
+html.theme-light #pfTodayPnlBadge.is-positive {
+    background: #ecfdf5 !important;
+    border: 1px solid #a7f3d0 !important;
+    color: #059669 !important;
+    font-weight: 800 !important;
+}
+
+html[data-theme="light"] #pfTodayPnlBadge.is-negative,
+html.theme-light #pfTodayPnlBadge.is-negative {
+    background: #fff1f2 !important;
+    border: 1px solid #fecdd3 !important;
+    color: #e11d48 !important;
+    font-weight: 800 !important;
+}
+
+/* Sub-Account Selector in Dark/Light Themes */
+#pfAccountSelect option {
+    background: #0e131f;
+    color: #ffffff;
+}
+html[data-theme="light"] #pfAccountSelect,
+html.theme-light #pfAccountSelect {
+    color: #7c3aed !important;
+    font-weight: 800 !important;
+}
+html[data-theme="light"] #pfAccountSelect option,
+html.theme-light #pfAccountSelect option {
+    background: #ffffff !important;
+    color: #0f172a !important;
+}
+
+/* All-Time PnL Badge in Light Theme */
+html[data-theme="light"] #pfAllTimePnlBadge,
+html.theme-light #pfAllTimePnlBadge {
+    background: #f8fafc !important;
+    border: 1px solid #cbd5e1 !important;
+    color: #475569 !important;
+}
+
+/* Quick Action Buttons */
+html[data-theme="light"] .portfolio-page .pf-btn-secondary,
+html.theme-light .portfolio-page .pf-btn-secondary {
+    background: #f8fafc !important;
+    border: 1px solid #cbd5e1 !important;
+    color: #0f172a !important;
+}
+html[data-theme="light"] .portfolio-page .pf-btn-secondary:hover,
+html.theme-light .portfolio-page .pf-btn-secondary:hover {
+    background: #f1f5f9 !important;
+    border-color: #94a3b8 !important;
+}
+
+html[data-theme="light"] .portfolio-page [data-action-transfer],
+html.theme-light .portfolio-page [data-action-transfer] {
+    background: #eff6ff !important;
+    border: 1px solid #bfdbfe !important;
+    color: #2563eb !important;
+}
+html[data-theme="light"] .portfolio-page [data-action-transfer]:hover,
+html.theme-light .portfolio-page [data-action-transfer]:hover {
+    background: #dbeafe !important;
+    border-color: #93c5fd !important;
+}
+
+/* Timeframe Pills */
+html[data-theme="light"] .portfolio-page .pf-chart-btn,
+html.theme-light .portfolio-page .pf-chart-btn {
+    color: #64748b !important;
+}
+html[data-theme="light"] .portfolio-page .pf-chart-btn.active,
+html.theme-light .portfolio-page .pf-chart-btn.active {
+    background: #7c3aed !important;
+    color: #ffffff !important;
+}
+
+/* Donut Chart Center & Legend */
+html[data-theme="light"] #pfTopAssetLabel,
+html.theme-light #pfTopAssetLabel {
+    color: #64748b !important;
+}
+html[data-theme="light"] #pfTopAssetValue span,
+html.theme-light #pfTopAssetValue span {
+    color: #0f172a !important;
+}
+
+/* Table Tabs */
+html[data-theme="light"] .portfolio-page .pf-table-tab,
+html.theme-light .portfolio-page .pf-table-tab {
+    background: #f1f5f9 !important;
+    border: 1px solid #cbd5e1 !important;
+    color: #475569 !important;
+}
+html[data-theme="light"] .portfolio-page .pf-table-tab.active,
+html.theme-light .portfolio-page .pf-table-tab.active {
+    background: #7c3aed !important;
+    border-color: #7c3aed !important;
+    color: #ffffff !important;
+}
+
+/* Tables */
+html[data-theme="light"] .portfolio-page .pf-table thead tr th,
+html.theme-light .portfolio-page .pf-table thead tr th {
+    background: #f1f5f9 !important;
+    border-bottom: 1px solid #cbd5e1 !important;
+    color: #475569 !important;
+    font-weight: 750 !important;
+}
+html[data-theme="light"] .portfolio-page .pf-table tbody tr td,
+html.theme-light .portfolio-page .pf-table tbody tr td {
+    background: #ffffff !important;
+    border-bottom: 1px solid #f1f5f9 !important;
+    color: #0f172a !important;
+}
+html[data-theme="light"] .portfolio-page .pf-table tbody tr:hover td,
+html.theme-light .portfolio-page .pf-table tbody tr:hover td {
+    background: #f8fafc !important;
+}
+
+/* 24h Change Badges */
+.pf-change-badge.positive {
+    background: rgba(6, 78, 59, 0.6);
+    color: #34d399;
+    border-color: rgba(6, 95, 70, 0.4);
+}
+.pf-change-badge.negative {
+    background: rgba(136, 19, 55, 0.6);
+    color: #fb7185;
+    border-color: rgba(159, 18, 57, 0.4);
+}
+.pf-change-badge.neutral {
+    background: rgba(15, 23, 42, 0.8);
+    color: #94a3b8;
+    border-color: rgba(30, 41, 59, 0.8);
+}
+
+html[data-theme="light"] .pf-change-badge.positive,
+html[data-theme="light"] .portfolio-page .bg-emerald-950\/60,
+html.theme-light .pf-change-badge.positive,
+html.theme-light .portfolio-page .bg-emerald-950\/60 {
+    background: #ecfdf5 !important;
+    color: #059669 !important;
+    border: 1px solid #a7f3d0 !important;
+    font-weight: 800 !important;
+}
+
+html[data-theme="light"] .pf-change-badge.negative,
+html[data-theme="light"] .portfolio-page .bg-rose-950\/60,
+html.theme-light .pf-change-badge.negative,
+html.theme-light .portfolio-page .bg-rose-950\/60 {
+    background: #fff1f2 !important;
+    color: #e11d48 !important;
+    border: 1px solid #fecdd3 !important;
+    font-weight: 800 !important;
+}
+
+html[data-theme="light"] .pf-change-badge.neutral,
+html[data-theme="light"] .portfolio-page .bg-slate-900,
+html.theme-light .pf-change-badge.neutral,
+html.theme-light .portfolio-page .bg-slate-900 {
+    background: #f1f5f9 !important;
+    color: #64748b !important;
+    border: 1px solid #cbd5e1 !important;
+    font-weight: 750 !important;
+}
+
+/* Allocation Track in Light Theme */
+html[data-theme="light"] .pf-alloc-track,
+html.theme-light .pf-alloc-track {
+    background: #e2e8f0 !important;
+    border: 1px solid #cbd5e1 !important;
+}
+
+/* Mobile Position Cards */
+html[data-theme="light"] .portfolio-page .futures-position-mobile-card,
+html.theme-light .portfolio-page .futures-position-mobile-card {
+    background: #ffffff !important;
+    border: 1px solid #cbd5e1 !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04) !important;
+}
+html[data-theme="light"] .portfolio-page .pos-card-sym-name,
+html[data-theme="light"] .portfolio-page .pos-card-qty-label,
+html[data-theme="light"] .portfolio-page .pos-card-ltp-val,
+html[data-theme="light"] .portfolio-page .futures-position-mobile-card strong,
+html[data-theme="light"] .portfolio-page .futures-position-mobile-card .text-white,
+html.theme-light .portfolio-page .pos-card-sym-name,
+html.theme-light .portfolio-page .pos-card-qty-label,
+html.theme-light .portfolio-page .pos-card-ltp-val,
+html.theme-light .portfolio-page .futures-position-mobile-card strong,
+html.theme-light .portfolio-page .futures-position-mobile-card .text-white {
+    color: #0f172a !important;
+}
+html[data-theme="light"] .portfolio-page .pos-card-entry-label,
+html[data-theme="light"] .portfolio-page .futures-position-mobile-card .text-slate-400,
+html.theme-light .portfolio-page .pos-card-entry-label,
+html.theme-light .portfolio-page .futures-position-mobile-card .text-slate-400 {
+    color: #64748b !important;
+}
+html[data-theme="light"] .portfolio-page .pos-card-cur-badge,
+html.theme-light .portfolio-page .pos-card-cur-badge {
+    background: #f3e8ff !important;
+    color: #7c3aed !important;
+    border: 1px solid #e9d5ff !important;
+    font-weight: 800 !important;
+}
+
+/* Status Badges (Live, Balanced) in Light Theme */
+html[data-theme="light"] .portfolio-page .bg-emerald-950\/50,
+html[data-theme="light"] .portfolio-page .bg-emerald-950\/60,
+html.theme-light .portfolio-page .bg-emerald-950\/50,
+html.theme-light .portfolio-page .bg-emerald-950\/60 {
+    background: #ecfdf5 !important;
+    color: #059669 !important;
+    border: 1px solid #a7f3d0 !important;
+    font-weight: 750 !important;
+}
+
+/* Pagination Buttons in Light Theme */
+html[data-theme="light"] .portfolio-page .pf-page-btn.active,
+html[data-theme="light"] .portfolio-page .pf-page-btn[class*="bg-purple-600"],
+html[data-theme="light"] .pf-page-btn.active,
+html.theme-light .portfolio-page .pf-page-btn.active,
+html.theme-light .portfolio-page .pf-page-btn[class*="bg-purple-600"],
+html.theme-light .pf-page-btn.active {
+    background: #7c3aed !important;
+    color: #ffffff !important;
+    border: none !important;
+    box-shadow: 0 4px 14px rgba(124, 58, 237, 0.35) !important;
+}
+
+html[data-theme="light"] .portfolio-page .pf-prev-btn,
+html[data-theme="light"] .portfolio-page .pf-next-btn,
+html[data-theme="light"] .portfolio-page .pf-page-btn:not(.active):not([class*="bg-purple-600"]),
+html.theme-light .portfolio-page .pf-prev-btn,
+html.theme-light .portfolio-page .pf-next-btn,
+html.theme-light .portfolio-page .pf-page-btn:not(.active):not([class*="bg-purple-600"]) {
+    background: #f1f5f9 !important;
+    border: 1px solid #cbd5e1 !important;
+    color: #475569 !important;
+}
+
+html[data-theme="light"] .portfolio-page .pf-prev-btn:hover:not(:disabled),
+html[data-theme="light"] .portfolio-page .pf-next-btn:hover:not(:disabled),
+html[data-theme="light"] .portfolio-page .pf-page-btn:hover:not(.active),
+html.theme-light .portfolio-page .pf-prev-btn:hover:not(:disabled),
+html.theme-light .portfolio-page .pf-next-btn:hover:not(:disabled),
+html.theme-light .portfolio-page .pf-page-btn:hover:not(.active) {
+    background: #e2e8f0 !important;
+    color: #0f172a !important;
+    border-color: #94a3b8 !important;
+}
+
+html[data-theme="light"] .portfolio-page .pf-prev-btn:disabled,
+html[data-theme="light"] .portfolio-page .pf-next-btn:disabled,
+html.theme-light .portfolio-page .pf-prev-btn:disabled,
+html.theme-light .portfolio-page .pf-next-btn:disabled {
+    background: #f8fafc !important;
+    border-color: #e2e8f0 !important;
+    color: #94a3b8 !important;
+    opacity: 0.6 !important;
+}
+
+
+
+
+

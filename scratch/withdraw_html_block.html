@@ -1,0 +1,509 @@
+
+
+Created At: 2026-10-05T14:40:24+05:30
+Completed At: 2026-10-05T14:40:24+05:30
+File Path: `file:///d:/projects/laravel%20projects/kryvex-fresh%20-%20Copy/resources/views/web/wallet.blade.php`
+Total Lines: 13181
+Total Bytes: 764633
+Showing lines 11695 to 12300
+Content truncated: showing bytes 0-46080 of 53247. To see more, call this tool again with the same line range and ContentOffset=46080.
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+11695:                 <div id="innerPanelWithdraw" style="{{ $isWithdrawRoute ? 'display: block;' : 'display: none;' }}">
+11696:                     <div class="kvx-deposit-layout">
+11697:                         
+11698:                         <!-- Left Column: Main Step Card & Disclaimer -->
+11699:                         <div>
+11700:                             <div class="kvx-deposit-card">
+11701:                                 
+11702:                                 <!-- Card Header -->
+11703:                                 <div class="kvx-deposit-card-header">
+11704:                                     <h1 class="kvx-deposit-title" id="withdrawMainTitle">Withdraw crypto</h1>
+11705:                                     <div class="kvx-deposit-toggle-pill" id="withdrawTogglePill">
+11706:                                         <button type="button" class="kvx-toggle-btn is-active" id="btnWithdrawToggleCrypto" data-mode="crypto">Crypto</button>
+11707:                                         <button type="button" class="kvx-toggle-btn" id="btnWithdrawToggleMoney" data-mode="money">Money</button>
+11708:                                     </div>
+11709:                                 </div>
+11710: 
+11711:                                 <!-- Hidden legacy tab buttons for script compatibility -->
+11712:                                 <div id="withdrawCurrencyTabs" style="display: none !important;">
+11713:                                     <button type="button" id="withdrawTabUsdt" data-tab="usdt"></button>
+11714:                                     <button type="button" id="withdrawTabInr" data-tab="inr"></button>
+11715:                                 </div>
+11716: 
+11717:                                 <!-- CRYPTO WITHDRAW STEP FLOW (5 STEPS) -->
+11718:                                 <div class="kvx-steps-container" id="withdrawCryptoStepsContainer">
+11719:                                     <form id="withdrawForm" class="wallet-form wallet-flow-form" style="display: flex; flex-direction: column; gap: 0;">
+11720:                                         
+11721:                                         <!-- Step 1: Select Currency -->
+11722:                                         <div class="kvx-step-item" id="withdrawStepItem1">
+11723:                                             <div class="kvx-step-indicator">
+11724:                                                 <div class="kvx-step-circle" id="withdrawStepCircle1">1</div>
+11725:                                                 <div class="kvx-step-line" id="withdrawStepLine1"></div>
+11726:                                             </div>
+11727:                                             <div class="kvx-step-body">
+11728:                                                 <div class="kvx-step-title">Select currency</div>
+11729:                                                 <div class="kvx-dropdown-wrap" id="step1WithdrawCurrencySelectorWrap" style="margin-top: 10px;">
+11730:                                                     <button type="button" class="kvx-dropdown-btn" id="btnOpenWithdrawCurrencyDropdown">
+11731:                                                         <div class="kvx-dropdown-current" id="selectedWithdrawCurrencyDisplay">
+11732:                                                             <img id="selectedWithdrawCurrencyIcon" src="https://assets.coincap.io/assets/icons/usdt@2x.png" class="kvx-currency-icon" style="width: 24px; height: 24px;" alt="USDT" />
+11733:                                                             <div style="display: flex; flex-direction: column; text-align: left; line-height: 1.25;">
+11734:                                                                 <strong id="selectedWithdrawCurrencySymbol" style="color: #ffffff; font-size: 0.92rem; font-weight: 700;">USDT</strong>
+11735:                                                                 <span id="selectedWithdrawCurrencyName" style="color: rgba(255, 255, 255, 0.45); font-size: 0.76rem;">Tether USD</span>
+11736:                                                             </div>
+11737:                                                         </div>
+11738:                                                         <svg class="w-4 h-4 text-gray-400 transition-transform flex-shrink-0" id="withdrawCurrencyDropdownChevron" fill="none" stroke="currentColor" viewBox="0 0 24 24" width="16" height="16"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m6 9 6 6 6-6"></path></svg>
+11739:                                                     </button>
+11740: 
+11741:                                                     <!-- Dropdown Flyout with Search -->
+11742:                                                     <div class="kvx-dropdown-panel" id="withdrawCurrencyDropdownPanel" data-lenis-prevent data-no-lenis style="display: none;">
+11743:                                                         <div class="kvx-dropdown-search-box">
+11744:                                                             <svg class="w-4 h-4 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" width="16" height="16"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.35-4.35"></path></svg>
+11745:                                                             <input type="text" class="kvx-dropdown-search-input" id="withdrawCurrencySearchInput" placeholder="Search cryptocurrency..." autocomplete="off" />
+11746:                                                         </div>
+11747:                                                         <div class="kvx-dropdown-list" id="withdrawCurrencyDropdownList" data-lenis-prevent data-no-lenis>
+11748:                                                             <!-- Rendered dynamically -->
+11749:                                                         </div>
+11750:                                                     </div>
+11751:                                                 </div>
+11752:                                             </div>
+11753:                                         </div>
+11754: 
+11755:                                         <!-- Step 2: Select Network -->
+11756:                                         <div class="kvx-step-item" id="withdrawStepItem2">
+11757:                                             <div class="kvx-step-indicator">
+11758:                                                 <div class="kvx-step-circle is-inactive" id="withdrawStepCircle2">2</div>
+11759:                                                 <div class="kvx-step-line" id="withdrawStepLine2"></div>
+11760:                                             </div>
+11761:                                             <div class="kvx-step-body">
+11762:                                                 <div class="kvx-step-title">
+11763:                                                     <span>Select network</span>
+11764:                                                     <span class="kvx-info-icon" title="Choose the network corresponding to your receiving crypto wallet">ⓘ</span>
+11765:                                                 </div>
+11766:                                                 <div style="position: relative; margin-top: 10px;">
+11767:                                                     <select name="network" id="withdrawNetworkSelect" class="wallet-select-input" required style="width: 100%; height: 46px; background: #191c22; border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 12px; color: #ffffff; padding: 0 38px 0 14px; font-size: 0.9rem; font-weight: 600; outline: none; appearance: none; -webkit-appearance: none; cursor: pointer;">
+11768:                                                         <option value="">Loading networks...</option>
+11769:                                                     </select>
+11770:                                                     <span style="position: absolute; right: 14px; top: 50%; transform: translateY(-50%); color: rgba(255, 255, 255, 0.4); pointer-events: none; font-size: 0.75rem;">▼</span>
+11771:                                                 </div>
+11772:                                             </div>
+11773:                                         </div>
+11774: 
+11775:                                         <!-- Step 3: Destination Address -->
+11776:                                         <div class="kvx-step-item" id="withdrawStepItem3">
+11777:                                             <div class="kvx-step-indicator">
+11778:                                                 <div class="kvx-step-circle is-inactive" id="withdrawStepCircle3">3</div>
+11779:                                                 <div class="kvx-step-line" id="withdrawStepLine3"></div>
+11780:                                             </div>
+11781:                                             <div class="kvx-step-body">
+11782:                                                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
+11783:                                                     <div class="kvx-step-title" style="margin: 0;">
+11784:                                                         <span>Destination address</span>
+11785:                                                         <span class="kvx-info-icon" title="Enter the external wallet address to receive your funds">ⓘ</span>
+11786:                                                     </div>
+11787:                                                     <button type="button" class="withdraw-save-btn" id="saveWithdrawAddressButton">
+11788:                                                         <span>💾</span>
+11789:                                                         <span>Save Address</span>
+11790:                                                     </button>
+11791:                                                 </div>
+11792:                                                 <div style="margin-top: 10px;">
+11793:                                                     <input type="text" name="wallet_address" id="withdrawWalletAddress" placeholder="Paste your receiving wallet address" required style="width: 100%; height: 46px; background: #191c22; border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 12px; padding: 0 14px; font-size: 0.88rem; color: #ffffff; font-family: ui-monospace, SFMono-Regular, monospace; outline: none; box-sizing: border-box;">
+11794:                                                     <small class="wallet-address-rule" id="withdrawAddressRuleText" style="display: block; font-size: 0.76rem; font-weight: 500; margin-top: 6px; color: rgba(255,255,255,0.5);">Select network to view address rule.</small>
+11795:                                                 </div>
+11796:                                             </div>
+11797:                                         </div>
+11798: 
+11799:                                         <!-- Step 4: Withdrawal Amount -->
+11800:                                         <div class="kvx-step-item" id="withdrawStepItem4">
+11801:                                             <div class="kvx-step-indicator">
+11802:                                                 <div class="kvx-step-circle is-inactive" id="withdrawStepCircle4">4</div>
+11803:                                                 <div class="kvx-step-line" id="withdrawStepLine4"></div>
+11804:                                             </div>
+11805:                                             <div class="kvx-step-body">
+11806:                                                 <div class="kvx-step-title">
+11807:                                                     <span>Withdrawal amount</span>
+11808:                                                     <span class="kvx-info-icon" title="Specify how much you wish to withdraw from your available balance">ⓘ</span>
+11809:                                                 </div>
+11810: 
+11811:                                                 <!-- Available Balance Banner -->
+11812:                                                 <div class="withdraw-balance-banner" style="margin-top: 10px; margin-bottom: 12px;">
+11813:                                                     <div class="withdraw-balance-top-row">
+11814:                                                         <span style="font-size: 0.72rem; color: #94a3b8; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;">Available to Withdraw</span>
+11815:                                                         <button type="button" id="withdrawQuickMaxTopBtn" style="background: rgba(139, 92, 246, 0.18); border: 1px solid rgba(139, 92, 246, 0.35); color: #c4b5fd; padding: 4px 10px; border-radius: 6px; font-size: 0.74rem; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 4px; white-space: nowrap;">
+11816:                                                             <span>Use Max</span> ⚡
+11817:                                                         </button>
+11818:                                                     </div>
+11819:                                                     <div class="withdraw-balance-main-row">
+11820:                                                         <strong id="withdrawMainAvailBalanceText" style="font-size: 1.25rem; font-weight: 800; color: #ffffff; font-family: ui-monospace, SFMono-Regular, monospace; line-height: 1.2;" data-sensitive-balance>--</strong>
+11821:                                                         <span id="withdrawAssetPill" style="font-size: 0.70rem; color: #c4b5fd; background: rgba(139,92,246,0.15); border: 1px solid rgba(139,92,246,0.3); padding: 2px 8px; border-radius: 12px; font-weight: 700; white-space: nowrap;">USDT</span>
+11822:                                                     </div>
+11823:                                                 </div>
+11824: 
+11825:                                                 <div style="position: relative; margin-top: 6px;">
+11826:                                                     <span class="withdraw-input-prefix">$</span>
+11827:                                                     <input type="number" name="amount" min="0.00000001" step="any" placeholder="0.00" required style="width: 100%; height: 48px; background: #191c22; border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 12px; padding: 0 65px 0 28px; font-size: 1.05rem; font-weight: 800; color: #ffffff; font-family: ui-monospace, SFMono-Regular, monospace; outline: none; box-sizing: border-box;">
+11828:                                                     <button type="button" id="withdrawMaxButton" style="position: absolute; right: 8px; top: 50%; transform: translateY(-50%); padding: 4px 10px; border-radius: 8px; font-size: 0.76rem; cursor: pointer; font-weight: 800; text-transform: uppercase;">MAX</button>
+11829:                                                 </div>
+11830: 
+11831:                                                 <!-- Quick % Buttons -->
+11832:                                                 <div class="withdraw-pct-grid" style="margin-top: 8px;">
+11833:                                                     <button type="button" class="withdraw-pct-btn" data-pct="25">25%</button>
+11834:                                                     <button type="button" class="withdraw-pct-btn" data-pct="50">50%</button>
+11835:                                                     <button type="button" class="withdraw-pct-btn" data-pct="75">75%</button>
+11836:                                                     <button type="button" class="withdraw-pct-btn" data-pct="100">100%</button>
+11837:                                                 </div>
+11838:                                             </div>
+11839:                                         </div>
+11840: 
+11841:                                         <!-- Step 5: Confirm & Withdraw -->
+11842:                                         <div class="kvx-step-item" id="withdrawStepItem5">
+11843:                                             <div class="kvx-step-indicator">
+11844:                                                 <div class="kvx-step-circle is-inactive" id="withdrawStepCircle5">5</div>
+11845:                                             </div>
+11846:                                             <div class="kvx-step-body">
+11847:                                                 <div class="kvx-step-title" style="margin-bottom: 12px;">
+11848:                                                     <span>Confirm &amp; withdraw</span>
+11849:                                                 </div>
+11850: 
+11851:                                                 <!-- Receipt Card Summary inside Step 5 -->
+11852:                                                 <div class="withdraw-receipt-card" id="withdrawPreviewCard" style="margin-bottom: 14px;">
+11853:                                                     <div class="withdraw-receipt-row">
+11854:                                                         <span>Withdrawal Amount</span>
+11855:                                                         <strong id="withdrawPreviewAmount">--</strong>
+11856:                                                     </div>
+11857:                                                     <div class="withdraw-receipt-row">
+11858:                                                         <span>Network Fee</span>
+11859:                                                         <strong id="withdrawPreviewFee">--</strong>
+11860:                                                     </div>
+11861:                                                     <div class="withdraw-receipt-row">
+11862:                                                         <span>Platform Charge</span>
+11863:                                                         <strong id="withdrawPreviewPlatformCharge">--</strong>
+11864:                                                     </div>
+11865:                                                     <div class="withdraw-receipt-total">
+11866:                                                         <span style="font-weight: 700; font-size: 0.9rem;">You Will Receive</span>
+11867:                                                         <strong id="withdrawPreviewNet" style="font-size: 1.15rem; font-weight: 800; font-family: ui-monospace, SFMono-Regular, monospace; color: #10b981;">--</strong>
+11868:                                                     </div>
+11869:                                                 </div>
+11870: 
+11871:                                                 <button type="submit" class="withdraw-submit-btn" data-account-action>
+11872:                                                     <span>Confirm &amp; Withdraw</span>
+11873:                                                     <span style="font-size: 1.15rem;">➔</span>
+11874:                                                 </button>
+11875: 
+11876:                                                 <!-- Trust Badges -->
+11877:                                                 <div style="display: flex; align-items: center; justify-content: center; gap: 14px; font-size: 0.74rem; color: rgba(255,255,255,0.5); font-weight: 600; margin-top: 10px;">
+11878:                                                     <span>⚡ Fast Processing</span>
+11879:                                                     <span>•</span>
+11880:                                                     <span>🔒 Multi-Sig Secure</span>
+11881:                                                 </div>
+11882:                                             </div>
+11883:                                         </div>
+11884: 
+11885:                                     </form>
+11886:                                 </div>
+11887: 
+11888:                                 <!-- MONEY / FIAT WITHDRAW STEP FLOW (5 STEPS) -->
+11889:                                 <div class="kvx-steps-container" id="withdrawMoneyStepsContainer" style="display: none;">
+11890:                                     <form id="inrWithdrawForm" class="wallet-form wallet-flow-form" style="display: flex; flex-direction: column; gap: 0;">
+11891:                                         
+11892:                                         <!-- Step 1: Select Currency (INR) -->
+11893:                                         <div class="kvx-step-item" id="withdrawMoneyStepItem1">
+11894:                                             <div class="kvx-step-indicator">
+11895:                                                 <div class="kvx-step-circle" id="withdrawMoneyStepCircle1">1</div>
+11896:                                                 <div class="kvx-step-line" id="withdrawMoneyStepLine1"></div>
+11897:                                             </div>
+11898:                                             <div class="kvx-step-body">
+11899:                                                 <div class="kvx-step-title">Select currency</div>
+11900:                                                 <div class="kvx-currency-selector-wrap" style="margin-top: 10px;">
+11901:                                                     <button type="button" class="kvx-currency-select-btn" id="btnOpenWithdrawMoneyCurrencyDropdown">
+11902:                                                         <div class="kvx-currency-select-current" id="withdrawMoneySelectedCurrencyDisplay">
+11903:                                                             <span style="font-size: 1.2rem; margin-right: 4px;">🇮🇳</span>
+11904:                                                             <div style="display: flex; flex-direction: column; text-align: left; line-height: 1.25;">
+11905:                                                                 <strong style="color: #ffffff; font-size: 0.92rem; font-weight: 700;">INR</strong>
+11906:                                                                 <span style="color: rgba(255, 255, 255, 0.45); font-size: 0.76rem;">Indian Rupee</span>
+11907:                                                             </div>
+11908:                                                         </div>
+11909:                                                         <svg class="w-4 h-4 text-gray-400 transition-transform flex-shrink-0" id="withdrawMoneyCurrencyDropdownChevron" fill="none" stroke="currentColor" viewBox="0 0 24 24" width="16" height="16"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m6 9 6 6 6-6"></path></svg>
+11910:                                                     </button>
+11911: 
+11912:                                                     <!-- Dropdown Flyout with Search -->
+11913:                                                     <div class="kvx-currency-dropdown" id="withdrawMoneyCurrencyDropdownPanel" data-lenis-prevent data-no-lenis style="display: none;">
+11914:                                                         <div class="kvx-currency-search-box">
+11915:                                                             <svg class="w-4 h-4 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" width="16" height="16"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.35-4.35"></path></svg>
+11916:                                                             <input type="text" class="kvx-currency-search-input" id="withdrawMoneyCurrencySearchInput" placeholder="Search fiat currency..." autocomplete="off" />
+11917:                                                         </div>
+11918:                                                         <div class="kvx-currency-list" id="withdrawMoneyCurrencyDropdownList" data-lenis-prevent data-no-lenis>
+11919:                                                             <div class="kvx-dropdown-item is-selected">
+11920:                                                                 <div class="kvx-dropdown-item-left">
+11921:                                                                     <span style="font-size: 1.2rem; margin-right: 10px;">🇮🇳</span>
+11922:                                                                     <div class="kvx-dropdown-item-names">
+11923:                                                                         <span class="kvx-currency-symbol">INR</span>
+11924:                                                                         <span class="kvx-dropdown-item-sub">Indian Rupee</span>
+11925:                                                                     </div>
+11926:                                                                 </div>
+11927:                                                                 <div class="kvx-dropdown-item-right">
+11928:                                                                     <span style="color:#10b981; font-weight:bold; font-size:1rem;">✓</span>
+11929:                                                                 </div>
+11930:                                                             </div>
+11931:                                                         </div>
+11932:                                                     </div>
+11933:                                                 </div>
+11934:                                             </div>
+11935:                                         </div>
+11936: 
+11937:                                         <!-- Step 2: Destination Bank Details -->
+11938:                                         <div class="kvx-step-item" id="withdrawMoneyStepItem2">
+11939:                                             <div class="kvx-step-indicator">
+11940:                                                 <div class="kvx-step-circle is-inactive" id="withdrawMoneyStepCircle2">2</div>
+11941:                                                 <div class="kvx-step-line" id="withdrawMoneyStepLine2"></div>
+11942:                                             </div>
+11943:                                             <div class="kvx-step-body">
+11944:                                                 <div class="kvx-step-title">Destination bank details</div>
+11945:                                                 <div id="savedBankDetailsBanner" style="margin-top: 10px;"></div>
+11946:                                             </div>
+11947:                                         </div>
+11948: 
+11949:                                         <!-- Step 3: Enter INR Amount -->
+11950:                                         <div class="kvx-step-item" id="withdrawMoneyStepItem3">
+11951:                                             <div class="kvx-step-indicator">
+11952:                                                 <div class="kvx-step-circle is-inactive" id="withdrawMoneyStepCircle3">3</div>
+11953:                                                 <div class="kvx-step-line" id="withdrawMoneyStepLine3"></div>
+11954:                                             </div>
+11955:                                             <div class="kvx-step-body">
+11956:                                                 <div class="kvx-step-title">Enter INR amount</div>
+11957:                                                 <div style="position: relative; margin-top: 10px;">
+11958:                                                     <span class="withdraw-input-prefix">₹</span>
+11959:                                                     <input type="number" name="amount_inr" id="inrWithdrawAmount" min="1" step="any" placeholder="0.00" required style="width: 100%; height: 48px; background: #191c22; border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 12px; padding: 0 65px 0 28px; font-size: 1.05rem; font-weight: 800; color: #ffffff; font-family: ui-monospace, SFMono-Regular, monospace; outline: none; box-sizing: border-box;">
+11960:                                                     <button type="button" id="inrWithdrawMaxButton" style="position: absolute; right: 8px; top: 50%; transform: translateY(-50%); padding: 4px 10px; border-radius: 8px; font-size: 0.76rem; cursor: pointer; font-weight: 800; text-transform: uppercase;">MAX</button>
+11961:                                                 </div>
+11962: 
+11963:                                                 <!-- Quick % Buttons for INR -->
+11964:                                                 <div class="withdraw-pct-grid" style="margin-top: 8px;">
+11965:                                                     <button type="button" class="withdraw-pct-btn" data-inr-pct="25">25%</button>
+11966:                                                     <button type="button" class="withdraw-pct-btn" data-inr-pct="50">50%</button>
+11967:                                                     <button type="button" class="withdraw-pct-btn" data-inr-pct="75">75%</button>
+11968:                                                     <button type="button" class="withdraw-pct-btn" data-inr-pct="100">100%</button>
+11969:                                                 </div>
+11970:                                             </div>
+11971:                                         </div>
+11972: 
+11973:                                         <!-- Step 4: Transaction Summary -->
+11974:                                         <div class="kvx-step-item" id="withdrawMoneyStepItem4">
+11975:                                             <div class="kvx-step-indicator">
+11976:                                                 <div class="kvx-step-circle is-inactive" id="withdrawMoneyStepCircle4">4</div>
+11977:                                                 <div class="kvx-step-line" id="withdrawMoneyStepLine4"></div>
+11978:                                             </div>
+11979:                                             <div class="kvx-step-body">
+11980:                                                 <div class="kvx-step-title">Transaction summary</div>
+11981:                                                 <div class="withdraw-receipt-card" style="margin-top: 10px;">
+11982:                                                     <div class="withdraw-receipt-row">
+11983:                                                         <span>Requested Amount</span>
+11984:                                                         <strong id="inrWithdrawPreviewAmount">--</strong>
+11985:                                                     </div>
+11986:                                                     <div class="withdraw-receipt-row">
+11987:                                                         <span>Withdrawal Charge</span>
+11988:                                                         <strong id="inrWithdrawPreviewFee">--</strong>
+11989:                                                     </div>
+11990:                                                     <div class="withdraw-receipt-row">
+11991:                                                         <span>Platform Fee</span>
+11992:                                                         <strong id="inrWithdrawPreviewPlatformCharge">--</strong>
+11993:                                                     </div>
+11994:                                                     <div class="withdraw-receipt-total">
+11995:                                                         <span style="font-weight: 700; font-size: 0.9rem;">You Receive (INR)</span>
+11996:                                                         <strong id="inrWithdrawPreviewNet" style="font-size: 1.15rem; font-weight: 800; font-family: ui-monospace, SFMono-Regular, monospace; color: #10b981;">--</strong>
+11997:                                                     </div>
+11998:                                                     <div style="display: none;"><strong id="inrWithdrawConvUsdt">--</strong></div>
+11999:                                                 </div>
+12000:                                             </div>
+12001:                                         </div>
+12002: 
+12003:                                         <!-- Step 5: Confirm & Submit -->
+12004:                                         <div class="kvx-step-item" id="withdrawMoneyStepItem5">
+12005:                                             <div class="kvx-step-indicator">
+12006:                                                 <div class="kvx-step-circle is-inactive" id="withdrawMoneyStepCircle5">5</div>
+12007:                                             </div>
+12008:                                             <div class="kvx-step-body">
+12009:                                                 <div class="kvx-step-title" style="margin-bottom: 12px;">Confirm &amp; submit</div>
+12010:                                                 <button type="submit" class="withdraw-submit-btn" id="btnSubmitInrWithdraw" data-account-action>
+12011:                                                     <span>Submit Bank Withdrawal</span>
+12012:                                                     <span style="font-size: 1.15rem;">➔</span>
+12013:                                                 </button>
+12014: 
+12015:                                                 <!-- Trust Badges -->
+12016:                                                 <div style="display: flex; align-items: center; justify-content: center; gap: 14px; font-size: 0.74rem; color: rgba(255,255,255,0.5); font-weight: 600; margin-top: 10px;">
+12017:                                                     <span>⚡ Instant IMPS / UPI</span>
+12018:                                                     <span>•</span>
+12019:                                                     <span>🔒 Verified Bank Account</span>
+12020:                                                 </div>
+12021:                                             </div>
+12022:                                         </div>
+12023: 
+12024:                                     </form>
+12025:                                 </div>
+12026: 
+12027:                                 <!-- Card Footer Security Banner -->
+12028:                                 <div class="kvx-deposit-footer-security">
+12029:                                     <div class="kvx-security-brand">
+12030:                                         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+12031:                                         <span>Secured by <strong>Fireblocks</strong></span>
+12032:                                     </div>
+12033:                                     <div class="kvx-security-text">
+12034:                                         Your funds are stored securely, and your withdrawal request is protected with multi-sig protocols.
+12035:                                     </div>
+12036:                                 </div>
+12037: 
+12038:                             </div>
+12039: 
+12040:                             <!-- Regulatory Disclaimer below Card -->
+12041:                             <p class="kvx-deposit-disclaimer">
+12042:                                 Kryvex Trading Services, S.A. de C.V. holds a Digital Asset Service Provider license from the CNAD (License No. PSAD-0045). MetaTrader 5 services, Crypto Perpetuals and CFD Trading for fiat denominated accounts are provided by Kryvex Trading Ltd, regulated by the Financial Services Authority under License No. SD162.
+12043:                             </p>
+12044:                         </div>
+12045: 
+12046:                         <!-- Right Column: Sidebar Cards -->
+12047:                         <div class="kvx-deposit-sidebar">
+12048:                             
+12049:                             <!-- Card 1: Related questions -->
+12050:                             <div class="kvx-sidebar-card">
+12051:                                 <div class="kvx-sidebar-header">
+12052:                                     <h3 class="kvx-sidebar-title">Related questions</h3>
+12053:                                     <a href="/settings?tab=support" class="kvx-support-link">Support 24/7 &gt;</a>
+12054:                                 </div>
+12055:                                 <div class="kvx-faq-list">
+12056:                                     <div class="kvx-faq-item">
+12057:                                         <button type="button" class="kvx-faq-question" data-faq-target="faqWithdraw1">
+12058:                                             <div class="kvx-faq-q-left">
+12059:                                                 <svg class="kvx-doc-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+12060:                                                 <span>How to withdraw funds?</span>
+12061:                                             </div>
+12062:                                             <span class="kvx-faq-arrow">&gt;</span>
+12063:                                         </button>
+12064:                                         <div class="kvx-faq-answer" id="faqWithdraw1" style="display: none;">
+12065:                                             1. Select your network or payment method above.<br>
+12066:                                             2. Paste your destination wallet address or enter bank details.<br>
+12067:                                             3. Enter your desired withdrawal amount.<br>
+12068:                                             4. Review the transaction summary and click "Confirm &amp; Withdraw".
+12069:                                         </div>
+12070:                                     </div>
+12071:                                     <div class="kvx-faq-item">
+12072:                                         <button type="button" class="kvx-faq-question" data-faq-target="faqWithdraw2">
+12073:                                             <div class="kvx-faq-q-left">
+12074:                                                 <svg class="kvx-doc-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+12075:                                                 <span>How long does a withdrawal take?</span>
+12076:                                             </div>
+12077:                                             <span class="kvx-faq-arrow">&gt;</span>
+12078:                                         </button>
+12079:                                         <div class="kvx-faq-answer" id="faqWithdraw2" style="display: none;">
+12080:                                             • <strong>Crypto Payouts:</strong> Processed on-chain within 5 to 15 minutes.<br>
+12081:                                             • <strong>INR Bank Payouts:</strong> Instant IMPS / UPI transfers within 1 to 15 minutes.
+12082:                                         </div>
+12083:                                     </div>
+12084:                                     <div class="kvx-faq-item">
+12085:                                         <button type="button" class="kvx-faq-question" data-faq-target="faqWithdraw3">
+12086:                                             <div class="kvx-faq-q-left">
+12087:                                                 <svg class="kvx-doc-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+12088:                                                 <span>What are withdrawal limits &amp; fees?</span>
+12089:                                             </div>
+12090:                                             <span class="kvx-faq-arrow">&gt;</span>
+12091:                                         </button>
+12092:                                         <div class="kvx-faq-answer" id="faqWithdraw3" style="display: none;">
+12093:                                             • <strong>Minimum Withdrawal:</strong> <span id="faqMinWithdrawLimit">₹100 (INR) or equivalent</span>.<br>
+12094:                                             • <strong>Daily Maximum:</strong> <span id="faqMaxWithdrawLimit">Up to ₹5,00,000 / day depending on KYC</span>.<br>
+12095:                                             • <strong>Fee:</strong> <span id="faqWithdrawFeeText">Transparent network fee calculated automatically</span>.
+12096:                                         </div>
+12097:                                     </div>
+12098:                                 </div>
+12099:                             </div>
+12100: 
+12101:                             <!-- Card 2: Trade with confidence -->
+12102:                             <div class="kvx-sidebar-card">
+12103:                                 <h3 class="kvx-sidebar-title" style="margin-bottom: 20px;">Trade with confidence</h3>
+12104:                                 <div class="kvx-trust-list">
+12105:                                     <div class="kvx-trust-item">
+12106:                                         <div class="kvx-trust-icon">
+12107:                                             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M3 10h18M5 10v11M9 10v11M15 10v11M19 10v11M12 2 2 7h20z"/></svg>
+12108:                                         </div>
+12109:                                         <div class="kvx-trust-text">
+12110:                                             <div class="kvx-trust-heading">Licensed &amp; regulated</div>
+12111:                                             <div class="kvx-trust-sub">Kryvex is an authorized financial services provider. <a href="#" class="kvx-trust-link">Learn more.</a></div>
+12112:                                         </div>
+12113:                                     </div>
+12114:                                     <div class="kvx-trust-item">
+12115:                                         <div class="kvx-trust-icon">
+12116:                                             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+12117:                                         </div>
+12118:                                         <div class="kvx-trust-text">
+12119:                                             <div class="kvx-trust-heading">Instant withdrawals</div>
+12120:                                             <div class="kvx-trust-sub">92% of withdrawals are processed in less than 1 minute.</div>
+12121:                                         </div>
+12122:                                     </div>
+12123:                                     <div class="kvx-trust-item">
+12124:                                         <div class="kvx-trust-icon">
+12125:                                             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+12126:                                         </div>
+12127:                                         <div class="kvx-trust-text">
+12128:                                             <div class="kvx-trust-heading">100% backed &amp; secure</div>
+12129:                                             <div class="kvx-trust-sub">Cold storage and multi-sig technology. Fully backed reserves.</div>
+12130:                                         </div>
+12131:                                     </div>
+12132:                                 </div>
+12133:                             </div>
+12134: 
+12135:                         </div>
+12136: 
+12137:                     </div>
+12138: 
+12139:                     <!-- Withdrawal Requests Activity List below Withdraw Card -->
+12140:                     <div class="kv-card wallet-withdrawals-card dharma-section-card" style="margin-top: 32px; padding: 24px;">
+12141:                         <div class="wallet-panel-head" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+12142:                             <span style="font-size: 1.05rem; font-weight: 700;">Withdrawal requests</span>
+12143:                             <small class="text-muted">Latest wallet activity</small>
+12144:                         </div>
+12145: 
+12146:                         <div class="withdrawal-header-row">
+12147:                             <div>Amount</div>
+12148:                             <div>Charges</div>
+12149:                             <div>You receive</div>
+12150:                             <div>Status</div>
+12151:                             <div>Admin note</div>
+12152:                             <div>Requested</div>
+12153:                         </div>
+12154: 
+12155:                         <div class="wallet-status-list" id="withdrawalRequestsList">
+12156:                             <div class="wallet-empty">Loading withdrawal requests...</div>
+12157:                         </div>
+12158:                         <div class="wallet-pagination-wrap" id="withdrawalPagination" hidden></div>
+12159:                     </div>
+12160:                 </div>
+12161: 
+12162:                 <!-- 3C. TRANSFER HISTORY INNER PANEL -->
+12163:                 <div id="innerPanelHistory" style="{{ $isHistoryRoute ? 'display: block;' : 'display: none;' }}">
+12164:                     <div class="kv-card wallet-ledger-card dharma-section-card" style="padding: 24px;">
+12165:                         <div class="wallet-panel-head" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+12166:                             <span style="font-size: 1.1rem; font-weight: 700;">Ledger History</span>
+12167:                             <small class="text-muted">Latest wallet transactions</small>
+12168:                         </div>
+12169: 
+12170:                         <div class="wallet-ledger-filters" style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px;">
+12171:                             <input type="text" id="ledgerSearchInput" placeholder="Search ledger" style="height: 38px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; color: #fff; padding: 0 12px; font-size: 0.85rem;">
+12172: 
+12173:                             <select id="ledgerAccountFilter" style="height: 38px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; color: #fff; padding: 0 10px; font-size: 0.85rem;">
+12174:                                 <option value="all">All Accounts</option>
+12175:                             </select>
+12176: 
+12177:                             <select id="ledgerCurrencyFilter" style="height: 38px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; color: #fff; padding: 0 10px; font-size: 0.85rem;">
+12178:                                 <option value="all">All Currencies</option>
+12179:                                 <option value="INR">₹ INR</option>
+12180:                                 <option value="USD">$ USD</option>
+12181:                             </select>
+12182: 
+12183:                             <select id="ledgerTypeFilter" style="height: 38px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; color: #fff; padding: 0 10px; font-size: 0.85rem;">
+12184:                                 <option value="all">All Types</option>
+12185:                                 <option value="deposit">Deposit</option>
+12186:                                 <option value="withdraw">Withdraw</option>
+12187:                                 <option value="exchange">Exchange</option>
+12188:                                 <option value="trading">Trading</option>
+12189:
+<truncated 1141 bytes>
+
+NOTE: The output was truncated because it was too long. Use a more targeted query or a smaller range to get the information you need.
+

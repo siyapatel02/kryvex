@@ -1,0 +1,557 @@
+/* ===== KRYVEX ADMIN LIGHT THEME FINAL FIX =====
+   Purpose:
+   - Final light-mode overrides loaded after all admin page CSS.
+   - Fixes dark cards/tables/rows that page-specific CSS may override.
+   - Keeps amount colors readable: profit/credit positive = green, loss/debit negative = red, neutral = dark.
+*/
+
+html[data-admin-theme="light"] {
+    color-scheme: light;
+    --lt-bg: #f4f7fb;
+    --lt-surface: #ffffff;
+    --lt-surface-soft: #f8fafc;
+    --lt-surface-row: #ffffff;
+    --lt-surface-row-alt: #f8fafc;
+    --lt-surface-hover: #eef4fb;
+    --lt-border: rgba(15, 23, 42, 0.10);
+    --lt-border-strong: rgba(15, 23, 42, 0.16);
+    --lt-text: #0f172a;
+    --lt-text-soft: #334155;
+    --lt-muted: #64748b;
+    --lt-accent: #f5c542;
+    --lt-accent-dark: #b77905;
+    --lt-green: #16a34a;
+    --lt-red: #dc2626;
+    --lt-shadow: 0 18px 48px rgba(15, 23, 42, 0.08);
+}
+
+html[data-admin-theme="light"] body,
+html[data-admin-theme="light"] .admin-shell,
+html[data-admin-theme="light"] .admin-main,
+html[data-admin-theme="light"] .admin-content {
+    background: var(--lt-bg) !important;
+    color: var(--lt-text) !important;
+}
+
+/* Readable default text */
+html[data-admin-theme="light"] h1,
+html[data-admin-theme="light"] h2,
+html[data-admin-theme="light"] h3,
+html[data-admin-theme="light"] h4,
+html[data-admin-theme="light"] h5,
+html[data-admin-theme="light"] h6,
+html[data-admin-theme="light"] strong,
+html[data-admin-theme="light"] b,
+html[data-admin-theme="light"] .table-header h2,
+html[data-admin-theme="light"] .table-header h3,
+html[data-admin-theme="light"] .panel-title-row h2,
+html[data-admin-theme="light"] .panel-title-row h3,
+html[data-admin-theme="light"] .card-title-row h2,
+html[data-admin-theme="light"] .page-head h1,
+html[data-admin-theme="light"] .navbar-title h1 {
+    color: var(--lt-text) !important;
+}
+
+html[data-admin-theme="light"] p,
+html[data-admin-theme="light"] small,
+html[data-admin-theme="light"] label,
+html[data-admin-theme="light"] .subtext,
+html[data-admin-theme="light"] .help-text,
+html[data-admin-theme="light"] .muted,
+html[data-admin-theme="light"] .table-header p,
+html[data-admin-theme="light"] .panel-title-row p,
+html[data-admin-theme="light"] .card-title-row p,
+html[data-admin-theme="light"] .page-head span,
+html[data-admin-theme="light"] .navbar-title p {
+    color: var(--lt-muted) !important;
+}
+
+/* Main admin surfaces/cards */
+html[data-admin-theme="light"] .admin-panel,
+html[data-admin-theme="light"] .hover-panel,
+html[data-admin-theme="light"] .hover-card,
+html[data-admin-theme="light"] .dashboard-hero-card,
+html[data-admin-theme="light"] .dashboard-actions-card,
+html[data-admin-theme="light"] .dashboard-record-card,
+html[data-admin-theme="light"] .dash-stat-card,
+html[data-admin-theme="light"] .wallet-card,
+html[data-admin-theme="light"] .wallet-stat-card,
+html[data-admin-theme="light"] .wallet-summary-card,
+html[data-admin-theme="light"] .wallet-overview-card,
+html[data-admin-theme="light"] .wallet-page-card,
+html[data-admin-theme="light"] .wallet-panel,
+html[data-admin-theme="light"] .wallet-record-panel,
+html[data-admin-theme="light"] .wallet-table-card,
+html[data-admin-theme="light"] .wallet-filter-card,
+html[data-admin-theme="light"] .approval-panel,
+html[data-admin-theme="light"] .approval-card,
+html[data-admin-theme="light"] .record-row,
+html[data-admin-theme="light"] .dashboard-list-row,
+html[data-admin-theme="light"] .activity-item,
+html[data-admin-theme="light"] .user-stat-card,
+html[data-admin-theme="light"] .users-stat-card,
+html[data-admin-theme="light"] .user-profile-card,
+html[data-admin-theme="light"] .detail-panel,
+html[data-admin-theme="light"] .risk-card,
+html[data-admin-theme="light"] .mini-meta,
+html[data-admin-theme="light"] .info-list > div,
+html[data-admin-theme="light"] .admin-account-control-card,
+html[data-admin-theme="light"] .admin-market-stat-card,
+html[data-admin-theme="light"] .admin-market-table-card,
+html[data-admin-theme="light"] .admin-market-filter-strip,
+html[data-admin-theme="light"] .metric-card,
+html[data-admin-theme="light"] .stat-card,
+html[data-admin-theme="light"] .report-card-link,
+html[data-admin-theme="light"] .settings-card,
+html[data-admin-theme="light"] .settings-panel,
+html[data-admin-theme="light"] .settings-tabs,
+html[data-admin-theme="light"] .platform-preview,
+html[data-admin-theme="light"] .audit-card,
+html[data-admin-theme="light"] .audit-modal,
+html[data-admin-theme="light"] .audit-detail-section,
+html[data-admin-theme="light"] .filter-card,
+html[data-admin-theme="light"] .admin-filter-card,
+html[data-admin-theme="light"] .admin-pagination {
+    background: linear-gradient(180deg, var(--lt-surface), var(--lt-surface-soft)) !important;
+    border: 1px solid var(--lt-border) !important;
+    color: var(--lt-text) !important;
+    box-shadow: var(--lt-shadow) !important;
+}
+
+/* Hero / page header cards */
+html[data-admin-theme="light"] .page-header,
+html[data-admin-theme="light"] .report-detail-header,
+html[data-admin-theme="light"] .wallet-hero,
+html[data-admin-theme="light"] .settings-hero,
+html[data-admin-theme="light"] .user-detail-head,
+html[data-admin-theme="light"] .admin-market-page-head {
+    background:
+        radial-gradient(circle at top right, rgba(139, 92, 246, 0.10), transparent 38%),
+        radial-gradient(circle at bottom right, rgba(245, 197, 66, 0.13), transparent 38%),
+        linear-gradient(180deg, #ffffff, #f8fafc) !important;
+    border: 1px solid var(--lt-border) !important;
+    color: var(--lt-text) !important;
+    box-shadow: var(--lt-shadow) !important;
+}
+
+html[data-admin-theme="light"] .page-header *,
+html[data-admin-theme="light"] .report-detail-header *,
+html[data-admin-theme="light"] .wallet-hero *,
+html[data-admin-theme="light"] .settings-hero *,
+html[data-admin-theme="light"] .user-detail-head *,
+html[data-admin-theme="light"] .admin-market-page-head * {
+    color: inherit;
+}
+
+/* Subtle card shades for statistic cards */
+html[data-admin-theme="light"] .dash-stat-card,
+html[data-admin-theme="light"] .wallet-card,
+html[data-admin-theme="light"] .wallet-stat-card,
+html[data-admin-theme="light"] .wallet-summary-card,
+html[data-admin-theme="light"] .user-stat-card,
+html[data-admin-theme="light"] .users-stat-card,
+html[data-admin-theme="light"] .admin-market-stat-card,
+html[data-admin-theme="light"] .metric-card,
+html[data-admin-theme="light"] .stat-card,
+html[data-admin-theme="light"] .report-card-link {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+}
+
+html[data-admin-theme="light"] .dash-stat-card::before,
+html[data-admin-theme="light"] .wallet-card::before,
+html[data-admin-theme="light"] .wallet-stat-card::before,
+html[data-admin-theme="light"] .wallet-summary-card::before,
+html[data-admin-theme="light"] .user-stat-card::before,
+html[data-admin-theme="light"] .users-stat-card::before,
+html[data-admin-theme="light"] .admin-market-stat-card::before,
+html[data-admin-theme="light"] .metric-card::before,
+html[data-admin-theme="light"] .stat-card::before,
+html[data-admin-theme="light"] .report-card-link::before {
+    opacity: 0.9 !important;
+    background: radial-gradient(circle at top right, rgba(245, 197, 66, 0.18), transparent 48%) !important;
+}
+
+html[data-admin-theme="light"] .dashboard-stats-grid > *:nth-child(4n+1)::before,
+html[data-admin-theme="light"] .wallet-stats > *:nth-child(4n+1)::before,
+html[data-admin-theme="light"] .wallet-overview-grid > *:nth-child(4n+1)::before,
+html[data-admin-theme="light"] .users-stats-grid > *:nth-child(4n+1)::before,
+html[data-admin-theme="light"] .admin-market-stats-grid > *:nth-child(4n+1)::before,
+html[data-admin-theme="light"] .reports-stats > *:nth-child(4n+1)::before {
+    background: radial-gradient(circle at top right, rgba(139, 92, 246, 0.20), transparent 48%) !important;
+}
+
+html[data-admin-theme="light"] .dashboard-stats-grid > *:nth-child(4n+2)::before,
+html[data-admin-theme="light"] .wallet-stats > *:nth-child(4n+2)::before,
+html[data-admin-theme="light"] .wallet-overview-grid > *:nth-child(4n+2)::before,
+html[data-admin-theme="light"] .users-stats-grid > *:nth-child(4n+2)::before,
+html[data-admin-theme="light"] .admin-market-stats-grid > *:nth-child(4n+2)::before,
+html[data-admin-theme="light"] .reports-stats > *:nth-child(4n+2)::before {
+    background: radial-gradient(circle at top right, rgba(245, 158, 11, 0.20), transparent 48%) !important;
+}
+
+html[data-admin-theme="light"] .dashboard-stats-grid > *:nth-child(4n+3)::before,
+html[data-admin-theme="light"] .wallet-stats > *:nth-child(4n+3)::before,
+html[data-admin-theme="light"] .wallet-overview-grid > *:nth-child(4n+3)::before,
+html[data-admin-theme="light"] .users-stats-grid > *:nth-child(4n+3)::before,
+html[data-admin-theme="light"] .admin-market-stats-grid > *:nth-child(4n+3)::before,
+html[data-admin-theme="light"] .reports-stats > *:nth-child(4n+3)::before {
+    background: radial-gradient(circle at top right, rgba(16, 185, 129, 0.18), transparent 48%) !important;
+}
+
+html[data-admin-theme="light"] .dashboard-stats-grid > *:nth-child(4n+4)::before,
+html[data-admin-theme="light"] .wallet-stats > *:nth-child(4n+4)::before,
+html[data-admin-theme="light"] .wallet-overview-grid > *:nth-child(4n+4)::before,
+html[data-admin-theme="light"] .users-stats-grid > *:nth-child(4n+4)::before,
+html[data-admin-theme="light"] .admin-market-stats-grid > *:nth-child(4n+4)::before,
+html[data-admin-theme="light"] .reports-stats > *:nth-child(4n+4)::before {
+    background: radial-gradient(circle at top right, rgba(14, 165, 233, 0.18), transparent 48%) !important;
+}
+
+/* Hover effect for cards */
+html[data-admin-theme="light"] .admin-panel,
+html[data-admin-theme="light"] .hover-panel,
+html[data-admin-theme="light"] .hover-card,
+html[data-admin-theme="light"] .dash-stat-card,
+html[data-admin-theme="light"] .dashboard-record-card,
+html[data-admin-theme="light"] .wallet-card,
+html[data-admin-theme="light"] .wallet-panel,
+html[data-admin-theme="light"] .wallet-table-card,
+html[data-admin-theme="light"] .admin-market-stat-card,
+html[data-admin-theme="light"] .admin-market-table-card,
+html[data-admin-theme="light"] .report-card-link,
+html[data-admin-theme="light"] .settings-card,
+html[data-admin-theme="light"] .audit-card {
+    transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease, background .22s ease !important;
+}
+
+html[data-admin-theme="light"] .admin-panel:hover,
+html[data-admin-theme="light"] .hover-panel:hover,
+html[data-admin-theme="light"] .hover-card:hover,
+html[data-admin-theme="light"] .dash-stat-card:hover,
+html[data-admin-theme="light"] .dashboard-record-card:hover,
+html[data-admin-theme="light"] .wallet-card:hover,
+html[data-admin-theme="light"] .wallet-panel:hover,
+html[data-admin-theme="light"] .wallet-table-card:hover,
+html[data-admin-theme="light"] .admin-market-stat-card:hover,
+html[data-admin-theme="light"] .admin-market-table-card:hover,
+html[data-admin-theme="light"] .report-card-link:hover,
+html[data-admin-theme="light"] .settings-card:hover,
+html[data-admin-theme="light"] .audit-card:hover {
+    transform: translateY(-2px);
+    border-color: rgba(245, 158, 11, .34) !important;
+    box-shadow: 0 24px 58px rgba(15, 23, 42, .12), 0 0 0 1px rgba(245, 197, 66, .10) !important;
+}
+
+/* Tables */
+html[data-admin-theme="light"] .table-responsive,
+html[data-admin-theme="light"] .table-header {
+    background: transparent !important;
+    color: var(--lt-text) !important;
+    border-color: var(--lt-border) !important;
+}
+
+html[data-admin-theme="light"] table,
+html[data-admin-theme="light"] .admin-table,
+html[data-admin-theme="light"] .compact-table,
+html[data-admin-theme="light"] .orders-table,
+html[data-admin-theme="light"] .positions-table,
+html[data-admin-theme="light"] .deposit-table,
+html[data-admin-theme="light"] .withdrawal-table,
+html[data-admin-theme="light"] .ledger-table,
+html[data-admin-theme="light"] .audit-table {
+    background: #ffffff !important;
+    color: var(--lt-text) !important;
+    border-color: var(--lt-border) !important;
+}
+
+html[data-admin-theme="light"] table thead,
+html[data-admin-theme="light"] table thead tr,
+html[data-admin-theme="light"] table th,
+html[data-admin-theme="light"] .admin-table thead,
+html[data-admin-theme="light"] .admin-table th {
+    background: #edf2f7 !important;
+    color: #334155 !important;
+    border-color: var(--lt-border) !important;
+}
+
+html[data-admin-theme="light"] table tbody tr,
+html[data-admin-theme="light"] .admin-table tbody tr,
+html[data-admin-theme="light"] table td,
+html[data-admin-theme="light"] .admin-table td {
+    background: var(--lt-surface-row) !important;
+    color: var(--lt-text) !important;
+    border-color: var(--lt-border) !important;
+}
+
+html[data-admin-theme="light"] table tbody tr:nth-child(even) td,
+html[data-admin-theme="light"] .admin-table tbody tr:nth-child(even) td {
+    background: var(--lt-surface-row-alt) !important;
+}
+
+html[data-admin-theme="light"] table tbody tr:hover td,
+html[data-admin-theme="light"] .admin-table tbody tr:hover td {
+    background: var(--lt-surface-hover) !important;
+}
+
+/* Filters / forms */
+html[data-admin-theme="light"] input,
+html[data-admin-theme="light"] select,
+html[data-admin-theme="light"] textarea,
+html[data-admin-theme="light"] .search-input,
+html[data-admin-theme="light"] .filter-input,
+html[data-admin-theme="light"] .admin-input,
+html[data-admin-theme="light"] .setting-input,
+html[data-admin-theme="light"] .settings-input,
+html[data-admin-theme="light"] .form-control {
+    background: #ffffff !important;
+    color: var(--lt-text) !important;
+    border: 1px solid var(--lt-border-strong) !important;
+    box-shadow: none !important;
+}
+
+html[data-admin-theme="light"] input::placeholder,
+html[data-admin-theme="light"] textarea::placeholder {
+    color: #94a3b8 !important;
+}
+
+html[data-admin-theme="light"] .filter-btn,
+html[data-admin-theme="light"] .reset-btn,
+html[data-admin-theme="light"] .soft-btn,
+html[data-admin-theme="light"] .secondary-btn,
+html[data-admin-theme="light"] .wallet-tab,
+html[data-admin-theme="light"] .filter-chip,
+html[data-admin-theme="light"] .settings-tab,
+html[data-admin-theme="light"] .admin-tab,
+html[data-admin-theme="light"] .dash-action-btn,
+html[data-admin-theme="light"] .quick-action,
+html[data-admin-theme="light"] .view-all-link,
+html[data-admin-theme="light"] .mini-link,
+html[data-admin-theme="light"] .audit-detail-btn {
+    background: #ffffff !important;
+    color: #334155 !important;
+    border: 1px solid var(--lt-border-strong) !important;
+    box-shadow: 0 8px 20px rgba(15, 23, 42, .05) !important;
+}
+
+html[data-admin-theme="light"] .filter-btn:hover,
+html[data-admin-theme="light"] .reset-btn:hover,
+html[data-admin-theme="light"] .soft-btn:hover,
+html[data-admin-theme="light"] .secondary-btn:hover,
+html[data-admin-theme="light"] .wallet-tab:hover,
+html[data-admin-theme="light"] .filter-chip:hover,
+html[data-admin-theme="light"] .settings-tab:hover,
+html[data-admin-theme="light"] .dash-action-btn:hover,
+html[data-admin-theme="light"] .quick-action:hover,
+html[data-admin-theme="light"] .view-all-link:hover,
+html[data-admin-theme="light"] .mini-link:hover,
+html[data-admin-theme="light"] .audit-detail-btn:hover {
+    color: var(--lt-text) !important;
+    border-color: rgba(245, 158, 11, .35) !important;
+    transform: translateY(-1px);
+}
+
+html[data-admin-theme="light"] .wallet-tab.active,
+html[data-admin-theme="light"] .filter-chip.active,
+html[data-admin-theme="light"] .settings-tab.is-active,
+html[data-admin-theme="light"] .settings-tab.active,
+html[data-admin-theme="light"] .filter-btn,
+html[data-admin-theme="light"] .primary-btn,
+html[data-admin-theme="light"] .btn-primary,
+html[data-admin-theme="light"] button[type="submit"].primary-btn {
+    background: linear-gradient(135deg, #f5c542, #d99818) !important;
+    color: #111827 !important;
+    border-color: rgba(245, 197, 66, .48) !important;
+}
+
+/* Modals */
+html[data-admin-theme="light"] .admin-suspend-box,
+html[data-admin-theme="light"] .admin-block-box,
+html[data-admin-theme="light"] .confirm-modal-box,
+html[data-admin-theme="light"] .modal-box,
+html[data-admin-theme="light"] .audit-modal {
+    background: #ffffff !important;
+    border: 1px solid var(--lt-border) !important;
+    color: var(--lt-text) !important;
+    box-shadow: 0 30px 100px rgba(15, 23, 42, .22) !important;
+}
+
+html[data-admin-theme="light"] .admin-suspend-warning,
+html[data-admin-theme="light"] .admin-block-warning,
+html[data-admin-theme="light"] .risk-note {
+    background: rgba(245, 197, 66, .10) !important;
+    border-color: rgba(245, 197, 66, .22) !important;
+    color: #854d0e !important;
+}
+
+/* Status badges - avoid global span/strong muted overrides */
+html[data-admin-theme="light"] .status-badge,
+html[data-admin-theme="light"] .wallet-status-badge,
+html[data-admin-theme="light"] .activity-status,
+html[data-admin-theme="light"] .direction-badge,
+html[data-admin-theme="light"] .market-badge,
+html[data-admin-theme="light"] .side-badge,
+html[data-admin-theme="light"] .audit-action,
+html[data-admin-theme="light"] .admin-badge {
+    color: inherit !important;
+    border-color: currentColor !important;
+}
+
+html[data-admin-theme="light"] .status-badge.active,
+html[data-admin-theme="light"] .status-badge.approved,
+html[data-admin-theme="light"] .status-badge.completed,
+html[data-admin-theme="light"] .activity-status.completed,
+html[data-admin-theme="light"] .wallet-status-badge.completed,
+html[data-admin-theme="light"] .wallet-status-badge.approved,
+html[data-admin-theme="light"] .direction-badge.credit {
+    color: var(--lt-green) !important;
+    background: rgba(34, 197, 94, .10) !important;
+    border-color: rgba(34, 197, 94, .22) !important;
+}
+
+html[data-admin-theme="light"] .status-badge.pending,
+html[data-admin-theme="light"] .wallet-status-badge.pending,
+html[data-admin-theme="light"] .activity-status.pending,
+html[data-admin-theme="light"] .status-badge.filled,
+html[data-admin-theme="light"] .status-badge.closed {
+    color: #ca8a04 !important;
+    background: rgba(250, 204, 21, .13) !important;
+    border-color: rgba(250, 204, 21, .26) !important;
+}
+
+html[data-admin-theme="light"] .status-badge.rejected,
+html[data-admin-theme="light"] .status-badge.blocked,
+html[data-admin-theme="light"] .wallet-status-badge.rejected,
+html[data-admin-theme="light"] .activity-status.rejected,
+html[data-admin-theme="light"] .direction-badge.debit {
+    color: var(--lt-red) !important;
+    background: rgba(239, 68, 68, .10) !important;
+    border-color: rgba(239, 68, 68, .22) !important;
+}
+
+/* Amount colors */
+html[data-admin-theme="light"] .amount,
+html[data-admin-theme="light"] .dash-amount-cell,
+html[data-admin-theme="light"] .record-amount,
+html[data-admin-theme="light"] .approval-metric strong,
+html[data-admin-theme="light"] .wallet-card strong,
+html[data-admin-theme="light"] .report-card-link strong,
+html[data-admin-theme="light"] .admin-market-stat-card strong {
+    color: var(--lt-text) !important;
+}
+
+html[data-admin-theme="light"] .amount.positive,
+html[data-admin-theme="light"] .record-amount.positive,
+html[data-admin-theme="light"] .dash-amount-cell.positive,
+html[data-admin-theme="light"] .wallet-credit,
+html[data-admin-theme="light"] .pnl-profit,
+html[data-admin-theme="light"] .green-text,
+html[data-admin-theme="light"] .side-badge.buy {
+    color: var(--lt-green) !important;
+}
+
+html[data-admin-theme="light"] .amount.negative,
+html[data-admin-theme="light"] .record-amount.negative,
+html[data-admin-theme="light"] .dash-amount-cell.negative,
+html[data-admin-theme="light"] .wallet-debit,
+html[data-admin-theme="light"] .pnl-loss,
+html[data-admin-theme="light"] .red-text,
+html[data-admin-theme="light"] .side-badge.sell {
+    color: var(--lt-red) !important;
+}
+
+/* When amount sign is printed inside plain cell, keep text readable */
+html[data-admin-theme="light"] td .amount:not(.positive):not(.negative),
+html[data-admin-theme="light"] .amount:not(.positive):not(.negative) {
+    color: var(--lt-text) !important;
+}
+
+/* Dark leftovers from page CSS */
+html[data-admin-theme="light"] .platform-preview,
+html[data-admin-theme="light"] .settings-preview,
+html[data-admin-theme="light"] .record-list,
+html[data-admin-theme="light"] .approval-list,
+html[data-admin-theme="light"] .dashboard-list,
+html[data-admin-theme="light"] .activity-list,
+html[data-admin-theme="light"] .info-list,
+html[data-admin-theme="light"] .wallet-panel-head,
+html[data-admin-theme="light"] .settings-card-head,
+html[data-admin-theme="light"] .admin-market-tabs-row,
+html[data-admin-theme="light"] .compact-filter-actions {
+    background: transparent !important;
+    color: var(--lt-text) !important;
+}
+
+html[data-admin-theme="light"] .empty-state,
+html[data-admin-theme="light"] .success-empty {
+    background: #f8fafc !important;
+    border-color: var(--lt-border) !important;
+    color: var(--lt-muted) !important;
+}
+
+@media (max-width: 760px) {
+    html[data-admin-theme="light"] .admin-market-filter-strip,
+    html[data-admin-theme="light"] .wallet-filter-card {
+        background: #ffffff !important;
+    }
+}
+
+/* Admin Profit Wallet Modal light mode overrides */
+html[data-admin-theme="light"] #adminWithdrawRevenueModal .withdraw-revenue-wide-card {
+    background: #ffffff !important;
+    border: 1px solid rgba(15, 23, 42, 0.12) !important;
+    box-shadow: 0 25px 60px rgba(15, 23, 42, 0.15) !important;
+}
+
+html[data-admin-theme="light"] #adminWithdrawRevenueModal h3,
+html[data-admin-theme="light"] #adminWithdrawRevenueModal h4 {
+    color: #0f172a !important;
+}
+
+html[data-admin-theme="light"] #adminWithdrawRevenueModal p {
+    color: #64748b !important;
+}
+
+html[data-admin-theme="light"] #adminWithdrawRevenueModal .modal-stats-row > div:not(:last-child) {
+    background: #f8fafc !important;
+    border: 1px solid rgba(15, 23, 42, 0.08) !important;
+}
+
+html[data-admin-theme="light"] #adminWithdrawRevenueModal .modal-stats-row > div:not(:last-child) h4 {
+    color: #0f172a !important;
+}
+
+html[data-admin-theme="light"] #adminWithdrawRevenueModal form label {
+    color: #475569 !important;
+}
+
+html[data-admin-theme="light"] #adminWithdrawRevenueModal form select,
+html[data-admin-theme="light"] #adminWithdrawRevenueModal form input {
+    background: #ffffff !important;
+    border: 1px solid rgba(15, 23, 42, 0.15) !important;
+    color: #0f172a !important;
+}
+
+html[data-admin-theme="light"] #adminWithdrawRevenueModal table thead tr {
+    border-bottom: 1px solid rgba(15, 23, 42, 0.08) !important;
+}
+
+html[data-admin-theme="light"] #adminWithdrawRevenueModal table tbody tr {
+    border-bottom: 1px solid rgba(15, 23, 42, 0.02) !important;
+    color: #334155 !important;
+}
+
+html[data-admin-theme="light"] #adminWithdrawRevenueModal #withdrawRevenueClose {
+    color: #475569 !important;
+}
+
+/* Toast text readability in light theme */
+html[data-admin-theme="light"] .app-toast,
+html[data-admin-theme="light"] .app-toast *,
+html[data-admin-theme="light"] .futures-toast,
+html[data-admin-theme="light"] .futures-toast *,
+html[data-admin-theme="light"] .options-toast,
+html[data-admin-theme="light"] .options-toast * {
+    color: #ffffff !important;
+}

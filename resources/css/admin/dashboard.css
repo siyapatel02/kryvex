@@ -1,0 +1,854 @@
+/* ===== Kryvex Admin Dashboard V2 =====
+   Modern sleek design system matching Kryvex platform standards
+*/
+
+.admin-dashboard-v2 {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+/* =========================================================================
+   1. HERO BANNER
+   ========================================================================= */
+.dashboard-hero-card {
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background:
+        radial-gradient(circle at 85% 20%, rgba(124, 58, 237, 0.15), transparent 45%),
+        linear-gradient(135deg, #0d121f 0%, #090d16 100%);
+    border-radius: 18px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 24px 28px;
+}
+
+.dashboard-hero-content {
+    min-width: 0;
+}
+
+.dashboard-eyebrow {
+    margin: 0 0 6px;
+    color: #a78bfa;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.dashboard-hero-card h1 {
+    margin: 0;
+    color: #ffffff;
+    font-size: clamp(24px, 3vw, 32px);
+    font-weight: 850;
+    letter-spacing: -0.03em;
+}
+
+.dashboard-subtitle {
+    display: block;
+    margin-top: 6px;
+    color: #94a3b8;
+    font-size: 13.5px;
+}
+
+.dashboard-hero-meta {
+    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(18, 24, 38, 0.75);
+    padding: 10px 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+}
+
+.meta-calendar-icon {
+    flex-shrink: 0;
+    color: #a78bfa;
+}
+
+.meta-datetime strong {
+    display: block;
+    color: #f8fafc;
+    font-size: 13px;
+    font-weight: 750;
+}
+
+.meta-datetime small {
+    display: block;
+    margin-top: 2px;
+    color: #94a3b8;
+    font-size: 11.5px;
+    font-weight: 600;
+}
+
+/* =========================================================================
+   2. STATS GRID (4x2)
+   ========================================================================= */
+.dashboard-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.dash-stat-card,
+.dash-stat-card:visited,
+.dash-stat-card:hover,
+.dash-stat-card:focus,
+.dash-stat-card:active {
+    color: inherit;
+    text-decoration: none !important;
+}
+
+.dash-stat-card {
+    position: relative;
+    overflow: hidden;
+    min-height: 142px;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: #111726;
+    padding: 18px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.22s ease;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.16);
+}
+
+.dash-stat-card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(124, 58, 237, 0.35);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), 0 0 15px rgba(124, 58, 237, 0.12);
+}
+
+.dash-stat-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.dash-stat-icon-wrap {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.dash-stat-icon-wrap.icon-blue {
+    background: rgba(59, 130, 246, 0.15);
+    color: #60a5fa;
+    border: 1px solid rgba(59, 130, 246, 0.25);
+}
+
+.dash-stat-icon-wrap.icon-purple {
+    background: rgba(139, 92, 246, 0.15);
+    color: #a78bfa;
+    border: 1px solid rgba(139, 92, 246, 0.25);
+}
+
+.dash-stat-icon-wrap.icon-indigo {
+    background: rgba(99, 102, 241, 0.15);
+    color: #818cf8;
+    border: 1px solid rgba(99, 102, 241, 0.25);
+}
+
+.dash-stat-icon-wrap.icon-purple-alt {
+    background: rgba(168, 85, 247, 0.15);
+    color: #c084fc;
+    border: 1px solid rgba(168, 85, 247, 0.25);
+}
+
+.dash-stat-icon-wrap.icon-green {
+    background: rgba(34, 197, 94, 0.15);
+    color: #4ade80;
+    border: 1px solid rgba(34, 197, 94, 0.25);
+}
+
+.dash-stat-icon-wrap.icon-red {
+    background: rgba(239, 68, 68, 0.15);
+    color: #f87171;
+    border: 1px solid rgba(239, 68, 68, 0.25);
+}
+
+.dash-stat-icon-wrap.icon-teal {
+    background: rgba(20, 184, 166, 0.15);
+    color: #2dd4bf;
+    border: 1px solid rgba(20, 184, 166, 0.25);
+}
+
+.dash-stat-icon-wrap.icon-gold {
+    background: rgba(245, 158, 11, 0.15);
+    color: #fbbf24;
+    border: 1px solid rgba(245, 158, 11, 0.25);
+}
+
+.dash-stat-trend {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.dash-stat-trend.positive span {
+    background: rgba(16, 185, 129, 0.12);
+    color: #10b981;
+    border: 1px solid rgba(16, 185, 129, 0.22);
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 750;
+    padding: 2px 7px;
+}
+
+.dash-stat-trend.negative span {
+    background: rgba(239, 68, 68, 0.12);
+    color: #ef4444;
+    border: 1px solid rgba(239, 68, 68, 0.22);
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 750;
+    padding: 2px 7px;
+}
+
+.trend-sparkline {
+    flex-shrink: 0;
+}
+
+.dash-stat-body {
+    min-width: 0;
+}
+
+.dash-stat-label {
+    display: block;
+    color: #94a3b8;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.dash-stat-value {
+    display: block;
+    margin-top: 6px;
+    color: #ffffff;
+    font-size: clamp(20px, 2.4vw, 26px);
+    font-weight: 850;
+    letter-spacing: -0.03em;
+    line-height: 1.2;
+}
+
+.dash-stat-value.val-green {
+    color: #22c55e !important;
+}
+
+.dash-stat-value.val-red {
+    color: #f43f5e !important;
+}
+
+.dash-stat-value.val-gold {
+    color: #f59e0b !important;
+}
+
+.dash-stat-desc {
+    display: block;
+    margin-top: 4px;
+    color: #64748b;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+/* =========================================================================
+   3. QUICK ACTIONS CARD
+   ========================================================================= */
+.dashboard-actions-card {
+    background: #111726;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 18px;
+    padding: 22px 24px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.16);
+}
+
+.dashboard-section-head.compact {
+    margin-bottom: 16px;
+}
+
+.dashboard-section-head h2 {
+    margin: 0;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+}
+
+.dashboard-section-head p {
+    margin: 4px 0 0;
+    color: #64748b;
+    font-size: 12.5px;
+}
+
+.dashboard-action-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 14px;
+}
+
+.dash-action-btn,
+.dash-action-btn:visited,
+.dash-action-btn:hover,
+.dash-action-btn:active {
+    color: inherit;
+    text-decoration: none;
+}
+
+.dash-action-btn {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    background: rgba(18, 24, 38, 0.6);
+    padding: 14px 16px;
+    transition: all 0.2s ease;
+}
+
+.dash-action-btn:hover {
+    background: rgba(18, 24, 38, 0.95);
+    border-color: rgba(124, 58, 237, 0.35);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+}
+
+.dash-action-icon {
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.dash-action-icon.icon-blue {
+    background: rgba(59, 130, 246, 0.15);
+    color: #60a5fa;
+}
+
+.dash-action-icon.icon-red {
+    background: rgba(239, 68, 68, 0.15);
+    color: #f87171;
+}
+
+.dash-action-icon.icon-green {
+    background: rgba(34, 197, 94, 0.15);
+    color: #4ade80;
+}
+
+.dash-action-icon.icon-gold {
+    background: rgba(245, 158, 11, 0.15);
+    color: #fbbf24;
+}
+
+.dash-action-text strong {
+    display: block;
+    color: #ffffff;
+    font-size: 13.5px;
+    font-weight: 750;
+}
+
+.dash-action-text small {
+    display: block;
+    margin-top: 2px;
+    color: #64748b;
+    font-size: 11.5px;
+}
+
+/* =========================================================================
+   4. 2-COLUMN RECORDS GRID (Recent Users, Deposits, Withdrawals)
+   ========================================================================= */
+.dashboard-record-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.dashboard-record-card {
+    background: #111726;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 18px;
+    padding: 22px 24px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.16);
+    display: flex;
+    flex-direction: column;
+}
+
+.dashboard-section-head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.dash-view-all-btn {
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.05);
+    color: #cbd5e1;
+    padding: 5px 12px;
+    font-size: 12px;
+    font-weight: 700;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: all 0.2s ease;
+}
+
+.dash-view-all-btn:hover {
+    background: rgba(124, 58, 237, 0.15);
+    border-color: rgba(124, 58, 237, 0.35);
+    color: #ffffff;
+}
+
+.dashboard-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.dashboard-list-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    background: rgba(18, 24, 38, 0.5);
+    padding: 12px 14px;
+    transition: all 0.2s ease;
+}
+
+.dashboard-list-row:hover {
+    background: rgba(18, 24, 38, 0.85);
+    border-color: rgba(255, 255, 255, 0.08);
+}
+
+.dash-user-cell {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 0;
+}
+
+.dash-avatar {
+    width: 34px;
+    height: 34px;
+    flex: 0 0 34px;
+    border-radius: 50%;
+    background: #1e293b;
+    color: #94a3b8;
+    font-size: 12px;
+    font-weight: 750;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dash-avatar.deposit-avatar {
+    background: rgba(16, 185, 129, 0.15);
+    color: #10b981;
+}
+
+.dash-user-meta strong {
+    display: block;
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 750;
+    line-height: 1.2;
+}
+
+.dash-user-meta small {
+    display: block;
+    color: #64748b;
+    font-size: 11px;
+    margin-top: 2px;
+}
+
+.dash-row-right {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-shrink: 0;
+}
+
+.dash-time-meta {
+    text-align: right;
+}
+
+.dash-time-meta span {
+    display: block;
+    color: #94a3b8;
+    font-size: 11.5px;
+    font-weight: 600;
+}
+
+.dash-time-meta small {
+    display: block;
+    color: #64748b;
+    font-size: 10.5px;
+}
+
+.dash-amount-cell {
+    text-align: right;
+}
+
+.dash-amount-cell strong {
+    display: block;
+    color: #ffffff;
+    font-size: 13.5px;
+    font-weight: 800;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.dash-amount-cell small {
+    display: block;
+    color: #64748b;
+    font-size: 11px;
+}
+
+/* =========================================================================
+   5. WITHDRAWALS HANDLING CARD
+   ========================================================================= */
+.dashboard-withdrawals-card {
+    grid-column: 1 / -1;
+}
+
+.dashboard-withdrawal-row {
+    display: grid;
+    grid-template-columns: 1.8fr 1fr 1fr auto 1.4fr;
+    align-items: center;
+    gap: 14px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    background: rgba(18, 24, 38, 0.5);
+    padding: 12px 14px;
+    transition: all 0.2s ease;
+}
+
+.dashboard-withdrawal-row:hover {
+    background: rgba(18, 24, 38, 0.85);
+    border-color: rgba(255, 255, 255, 0.08);
+}
+
+.withdrawal-main-info strong {
+    display: block;
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 750;
+}
+
+.withdrawal-main-info small {
+    display: block;
+    color: #64748b;
+    font-size: 11px;
+    margin-top: 2px;
+}
+
+.withdrawal-money-info span {
+    display: block;
+    color: #64748b;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.withdrawal-money-info strong {
+    display: block;
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 800;
+    font-family: 'JetBrains Mono', monospace;
+    margin-top: 1px;
+}
+
+.withdrawal-money-info small {
+    display: block;
+    color: #94a3b8;
+    font-size: 10.5px;
+}
+
+.dashboard-withdrawal-actions {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.dash-approve-btn,
+.dash-reject-btn {
+    border-radius: 8px;
+    padding: 6px 12px;
+    font-size: 12px;
+    font-weight: 750;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.dash-approve-btn {
+    border: 1px solid rgba(34, 197, 94, 0.3);
+    background: rgba(34, 197, 94, 0.12);
+    color: #4ade80;
+}
+.dash-approve-btn:hover {
+    background: rgba(34, 197, 94, 0.25);
+    color: #ffffff;
+}
+
+.dash-reject-btn {
+    border: 1px solid rgba(239, 68, 68, 0.3);
+    background: rgba(239, 68, 68, 0.12);
+    color: #f87171;
+}
+.dash-reject-btn:hover {
+    background: rgba(239, 68, 68, 0.25);
+    color: #ffffff;
+}
+
+.dashboard-completed-text {
+    color: #64748b;
+    font-size: 12px;
+    font-weight: 750;
+}
+
+.dashboard-empty {
+    border-radius: 12px;
+    border: 1px dashed rgba(255, 255, 255, 0.08);
+    background: rgba(18, 24, 38, 0.3);
+    color: #64748b;
+    font-size: 13px;
+    padding: 24px;
+    text-align: center;
+}
+
+/* Status Badges */
+.status-badge {
+    width: fit-content;
+    border-radius: 6px;
+    padding: 3px 10px;
+    font-size: 11px;
+    font-weight: 750;
+    text-transform: capitalize;
+}
+
+.status-badge.active,
+.status-badge.completed,
+.status-badge.approved,
+.status-badge.filled {
+    color: #10b981;
+    background: rgba(16, 185, 129, 0.12);
+    border: 1px solid rgba(16, 185, 129, 0.25);
+}
+
+.status-badge.pending,
+.status-badge.scheduled,
+.status-badge.unverified {
+    color: #f59e0b;
+    background: rgba(245, 158, 11, 0.12);
+    border: 1px solid rgba(245, 158, 11, 0.25);
+}
+
+.status-badge.rejected,
+.status-badge.blocked,
+.status-badge.suspended,
+.status-badge.failed {
+    color: #ef4444;
+    background: rgba(239, 68, 68, 0.12);
+    border: 1px solid rgba(239, 68, 68, 0.25);
+}
+
+/* =========================================================================
+   6. RESPONSIVE BREAKPOINTS
+   ========================================================================= */
+@media (max-width: 1250px) {
+    .dashboard-stats-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .dashboard-action-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .dashboard-withdrawal-row {
+        grid-template-columns: 1.5fr 1fr 1fr auto;
+    }
+
+    .dashboard-withdrawal-actions {
+        grid-column: 1 / -1;
+        justify-content: flex-start;
+    }
+}
+
+@media (max-width: 900px) {
+    .dashboard-record-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .dashboard-withdrawal-row {
+        grid-template-columns: 1fr;
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 560px) {
+    .dashboard-hero-card {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .dashboard-hero-meta {
+        width: 100%;
+    }
+
+    .dashboard-stats-grid,
+    .dashboard-action-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .dashboard-record-card,
+    .dashboard-actions-card {
+        padding: 16px;
+    }
+}
+
+/* =========================================================================
+   7. LIGHT THEME OVERRIDES (Admin Light Mode)
+   ========================================================================= */
+html[data-admin-theme="light"] body,
+html[data-admin-theme="light"] .admin-shell,
+html[data-admin-theme="light"] .admin-main {
+    background: #f8fafc !important;
+    color: #0f172a !important;
+}
+
+html[data-admin-theme="light"] .admin-sidebar {
+    background: #ffffff !important;
+    border-right: 1px solid #e2e8f0 !important;
+}
+
+html[data-admin-theme="light"] .sidebar-brand strong {
+    color: #0f172a !important;
+}
+
+html[data-admin-theme="light"] .nav-item {
+    color: #475569 !important;
+}
+
+html[data-admin-theme="light"] .nav-item:hover {
+    background: #f1f5f9 !important;
+    color: #0f172a !important;
+}
+
+html[data-admin-theme="light"] .nav-item.active {
+    background: #f5f3ff !important;
+    border-color: #c4b5fd !important;
+    color: #7c3aed !important;
+}
+
+html[data-admin-theme="light"] .nav-item.active .nav-icon {
+    color: #7c3aed !important;
+    stroke: #7c3aed !important;
+}
+
+html[data-admin-theme="light"] .sidebar-status-box {
+    background: #f8fafc !important;
+    border-color: #e2e8f0 !important;
+}
+
+html[data-admin-theme="light"] .sidebar-status-title {
+    color: #0f172a !important;
+}
+
+html[data-admin-theme="light"] .sidebar-logout-btn {
+    background: #f1f5f9 !important;
+    border-color: #e2e8f0 !important;
+    color: #475569 !important;
+}
+
+html[data-admin-theme="light"] .admin-navbar {
+    background: rgba(255, 255, 255, 0.9) !important;
+    border-bottom: 1px solid #e2e8f0 !important;
+}
+
+html[data-admin-theme="light"] .admin-search-wrap,
+html[data-admin-theme="light"] .admin-theme-toggle,
+html[data-admin-theme="light"] .admin-profile {
+    background: #f1f5f9 !important;
+    border-color: #cbd5e1 !important;
+}
+
+html[data-admin-theme="light"] .admin-search-wrap input {
+    color: #0f172a !important;
+}
+
+html[data-admin-theme="light"] .admin-theme-toggle {
+    color: #334155 !important;
+}
+
+html[data-admin-theme="light"] .profile-info strong {
+    color: #0f172a !important;
+}
+
+html[data-admin-theme="light"] .dashboard-hero-card {
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%) !important;
+    border-color: #e2e8f0 !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05) !important;
+}
+
+html[data-admin-theme="light"] .dashboard-hero-card h1 {
+    color: #0f172a !important;
+}
+
+html[data-admin-theme="light"] .dashboard-hero-meta {
+    background: #ffffff !important;
+    border-color: #e2e8f0 !important;
+}
+
+html[data-admin-theme="light"] .meta-datetime strong {
+    color: #0f172a !important;
+}
+
+html[data-admin-theme="light"] .dash-stat-card,
+html[data-admin-theme="light"] .dashboard-actions-card,
+html[data-admin-theme="light"] .dashboard-record-card {
+    background: #ffffff !important;
+    border-color: #e2e8f0 !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04) !important;
+}
+
+html[data-admin-theme="light"] .dash-stat-value,
+html[data-admin-theme="light"] .dashboard-section-head h2,
+html[data-admin-theme="light"] .dash-action-text strong,
+html[data-admin-theme="light"] .dash-user-meta strong,
+html[data-admin-theme="light"] .dash-amount-cell strong,
+html[data-admin-theme="light"] .withdrawal-main-info strong,
+html[data-admin-theme="light"] .withdrawal-money-info strong {
+    color: #0f172a !important;
+}
+
+html[data-admin-theme="light"] .dash-action-btn,
+html[data-admin-theme="light"] .dashboard-list-row,
+html[data-admin-theme="light"] .dashboard-withdrawal-row {
+    background: #f8fafc !important;
+    border-color: #e2e8f0 !important;
+}
+
+html[data-admin-theme="light"] .dash-view-all-btn {
+    background: #f1f5f9 !important;
+    border-color: #cbd5e1 !important;
+    color: #334155 !important;
+}
+

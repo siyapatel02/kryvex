@@ -1,0 +1,354 @@
+/* ==========================================================================
+   KRYVEX LEARN & ACADEMY PAGE STYLES (learn.css)
+   ========================================================================== */
+
+/* Page Wrapper */
+.learn-page {
+    background-color: #080b11;
+    color: #f1f5f9;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Category Filter Tabs */
+.learn-tab-btn {
+    background: rgba(15, 23, 42, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: #94a3b8;
+    padding: 8px 18px;
+    border-radius: 9999px;
+    font-size: 12px;
+    font-weight: 700;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.learn-tab-btn:hover {
+    color: #ffffff;
+    border-color: rgba(168, 85, 247, 0.4);
+    background: rgba(168, 85, 247, 0.1);
+}
+
+.learn-tab-btn.active {
+    background: #7c3aed !important;
+    color: #ffffff !important;
+    border-color: #9333ea !important;
+    box-shadow: 0 0 16px rgba(168, 85, 247, 0.4);
+}
+
+/* Guide Cards */
+.learn-guide-card {
+    background: rgba(14, 19, 31, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.learn-guide-card:hover {
+    border-color: rgba(168, 85, 247, 0.5) !important;
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(168, 85, 247, 0.15);
+}
+
+/* Step Walkthrough Cards */
+.step-number-badge {
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, rgba(124, 58, 237, 0.2), rgba(15, 23, 42, 0.9));
+    border: 1px solid rgba(168, 85, 247, 0.4);
+    color: #c084fc;
+    font-weight: 900;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 12px rgba(168, 85, 247, 0.2);
+}
+
+/* Glossary Accordions */
+.glossary-item {
+    background: rgba(14, 19, 31, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 16px;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    overflow: hidden;
+}
+
+.glossary-item:hover {
+    border-color: rgba(168, 85, 247, 0.4);
+    background: rgba(17, 23, 40, 0.95);
+}
+
+.glossary-item.is-open {
+    border-color: #a855f7 !important;
+    background: rgba(18, 24, 42, 0.95) !important;
+    box-shadow: 0 0 24px rgba(168, 85, 247, 0.12);
+}
+
+.glossary-header {
+    width: 100%;
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+}
+
+.glossary-icon {
+    display: inline-block;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), color 0.3s ease;
+    user-select: none;
+}
+
+.glossary-content {
+    display: block !important;
+    max-height: 0 !important;
+    opacity: 0 !important;
+    overflow: hidden !important;
+    padding: 0 20px !important;
+    color: #94a3b8;
+    font-size: 13px;
+    line-height: 1.6;
+    border-top: 1px solid transparent !important;
+    transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+                opacity 0.35s ease,
+                padding 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+                border-color 0.3s ease !important;
+}
+
+.glossary-item.is-open .glossary-content {
+    max-height: 250px !important;
+    opacity: 1 !important;
+    padding: 12px 20px 18px !important;
+    border-top-color: rgba(255, 255, 255, 0.07) !important;
+}
+
+.glossary-item.is-open .glossary-icon {
+    color: #a855f7 !important;
+}
+
+/* Search Highlight */
+.search-highlight {
+    background: rgba(168, 85, 247, 0.25);
+    color: #f3e8ff;
+    padding: 0 2px;
+    border-radius: 3px;
+}
+
+/* ==========================================================================
+   COMPREHENSIVE LIGHT THEME OVERRIDES FOR LEARN & ACADEMY PAGE
+   ========================================================================== */
+html[data-theme="light"] .learn-page,
+html.theme-light .learn-page {
+    background-color: #f8fafc !important;
+    color: #0f172a !important;
+}
+
+/* Section Dividers */
+html[data-theme="light"] .learn-page section,
+html.theme-light .learn-page section {
+    border-color: #e2e8f0 !important;
+}
+
+/* Titles, Headings & Text */
+html[data-theme="light"] .learn-page h1,
+html[data-theme="light"] .learn-page h2,
+html[data-theme="light"] .learn-page h3,
+html[data-theme="light"] .learn-page h4,
+html[data-theme="light"] .learn-page strong:not(.learn-btn-primary):not([class*="bg-"]),
+html[data-theme="light"] .learn-page .text-white:not(.learn-btn-primary):not(.learn-tab-btn.active):not([class*="bg-purple"]):not([class*="bg-emerald"]):not([class*="bg-rose"]),
+html.theme-light .learn-page h1,
+html.theme-light .learn-page h2,
+html.theme-light .learn-page h3,
+html.theme-light .learn-page h4,
+html.theme-light .learn-page strong:not(.learn-btn-primary):not([class*="bg-"]),
+html.theme-light .learn-page .text-white:not(.learn-btn-primary):not(.learn-tab-btn.active):not([class*="bg-purple"]):not([class*="bg-emerald"]):not([class*="bg-rose"]) {
+    color: #0f172a !important;
+}
+
+html[data-theme="light"] .learn-page .text-slate-400,
+html[data-theme="light"] .learn-page .text-slate-500,
+html.theme-light .learn-page .text-slate-400,
+html.theme-light .learn-page .text-slate-500 {
+    color: #64748b !important;
+}
+
+html[data-theme="light"] .learn-page .text-slate-200,
+html[data-theme="light"] .learn-page .text-slate-300,
+html.theme-light .learn-page .text-slate-200,
+html.theme-light .learn-page .text-slate-300 {
+    color: #334155 !important;
+}
+
+/* Search Bar in Light Theme */
+html[data-theme="light"] #learnSearchInput,
+html.theme-light #learnSearchInput {
+    background-color: #ffffff !important;
+    border: 1px solid #cbd5e1 !important;
+    color: #0f172a !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04) !important;
+}
+html[data-theme="light"] #learnSearchInput::placeholder,
+html.theme-light #learnSearchInput::placeholder {
+    color: #94a3b8 !important;
+}
+html[data-theme="light"] #learnSearchInput:focus,
+html.theme-light #learnSearchInput:focus {
+    border-color: #7c3aed !important;
+    box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.15) !important;
+}
+
+/* Category Filter Tabs */
+html[data-theme="light"] .learn-tab-btn,
+html.theme-light .learn-tab-btn {
+    background: #f1f5f9 !important;
+    border: 1px solid #cbd5e1 !important;
+    color: #475569 !important;
+}
+html[data-theme="light"] .learn-tab-btn:hover,
+html.theme-light .learn-tab-btn:hover {
+    background: #e2e8f0 !important;
+    color: #0f172a !important;
+    border-color: #94a3b8 !important;
+}
+html[data-theme="light"] .learn-tab-btn.active,
+html.theme-light .learn-tab-btn.active {
+    background: #7c3aed !important;
+    border-color: #7c3aed !important;
+    color: #ffffff !important;
+    box-shadow: 0 4px 14px rgba(124, 58, 237, 0.25) !important;
+}
+
+/* Guide Cards */
+html[data-theme="light"] .learn-guide-card,
+html.theme-light .learn-guide-card {
+    background: #ffffff !important;
+    border: 1px solid #cbd5e1 !important;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04) !important;
+}
+html[data-theme="light"] .learn-guide-card:hover,
+html.theme-light .learn-guide-card:hover {
+    border-color: #7c3aed !important;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08) !important;
+}
+html[data-theme="light"] .learn-guide-card .bg-purple-950\/80,
+html.theme-light .learn-guide-card .bg-purple-950\/80 {
+    background: #f3e8ff !important;
+    border: 1px solid #e9d5ff !important;
+    color: #7c3aed !important;
+    font-weight: 800 !important;
+}
+html[data-theme="light"] .learn-guide-card .border-t,
+html.theme-light .learn-guide-card .border-t {
+    border-color: #f1f5f9 !important;
+}
+
+/* Step Walkthrough Cards (01 - 05) */
+html[data-theme="light"] .learn-step-card,
+html.theme-light .learn-step-card {
+    background: #ffffff !important;
+    border: 1px solid #cbd5e1 !important;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04) !important;
+}
+html[data-theme="light"] .learn-step-card:hover,
+html.theme-light .learn-step-card:hover {
+    border-color: #7c3aed !important;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06) !important;
+}
+html[data-theme="light"] .step-number-badge,
+html.theme-light .step-number-badge {
+    background: #f3e8ff !important;
+    border: 1px solid #e9d5ff !important;
+    color: #7c3aed !important;
+    box-shadow: none !important;
+}
+
+/* 4 Golden Rules Cards */
+html[data-theme="light"] .learn-rule-card,
+html.theme-light .learn-rule-card {
+    background: #ffffff !important;
+    border: 1px solid #cbd5e1 !important;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04) !important;
+}
+html[data-theme="light"] .learn-rule-card:hover,
+html.theme-light .learn-rule-card:hover {
+    border-color: #7c3aed !important;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06) !important;
+}
+html[data-theme="light"] .learn-rule-badge,
+html.theme-light .learn-rule-badge {
+    background: #f3e8ff !important;
+    border: 1px solid #e9d5ff !important;
+    color: #7c3aed !important;
+}
+
+/* Glossary Visual Card & Accordion Items */
+html[data-theme="light"] .learn-glossary-card,
+html.theme-light .learn-glossary-card {
+    background: #ffffff !important;
+    border: 1px solid #cbd5e1 !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04) !important;
+}
+html[data-theme="light"] .learn-tip-box,
+html.theme-light .learn-tip-box {
+    background: #f8fafc !important;
+    border: 1px solid #e2e8f0 !important;
+    color: #475569 !important;
+}
+
+html[data-theme="light"] .glossary-item,
+html.theme-light .glossary-item {
+    background: #ffffff !important;
+    border: 1px solid #cbd5e1 !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02) !important;
+}
+html[data-theme="light"] .glossary-item:hover,
+html.theme-light .glossary-item:hover {
+    background: #f8fafc !important;
+    border-color: #94a3b8 !important;
+}
+html[data-theme="light"] .glossary-item.is-open,
+html.theme-light .glossary-item.is-open {
+    background: #ffffff !important;
+    border-color: #7c3aed !important;
+    box-shadow: 0 4px 16px rgba(124, 58, 237, 0.08) !important;
+}
+html[data-theme="light"] .glossary-term,
+html.theme-light .glossary-term {
+    color: #0f172a !important;
+}
+html[data-theme="light"] .glossary-content,
+html.theme-light .glossary-content {
+    color: #475569 !important;
+    border-top-color: #f1f5f9 !important;
+}
+
+/* Ready to Trade CTA Box */
+html[data-theme="light"] .learn-cta-card,
+html.theme-light .learn-cta-card {
+    background: #ffffff !important;
+    border: 1px solid #cbd5e1 !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05) !important;
+}
+html[data-theme="light"] .learn-btn-primary,
+html.theme-light .learn-btn-primary {
+    background: #7c3aed !important;
+    color: #ffffff !important;
+}
+html[data-theme="light"] .learn-btn-secondary,
+html.theme-light .learn-btn-secondary {
+    background: #f8fafc !important;
+    border: 1px solid #cbd5e1 !important;
+    color: #0f172a !important;
+}
+html[data-theme="light"] .learn-btn-secondary:hover,
+html.theme-light .learn-btn-secondary:hover {
+    background: #f1f5f9 !important;
+    border-color: #94a3b8 !important;
+}
+

@@ -1,0 +1,2317 @@
+/* ===== GLOBAL LIGHT THEME OVERRIDES FOR KRYVEX ===== */
+
+html[data-theme="light"],
+html.theme-light {
+    color-scheme: light !important;
+    --kv-bg: #f8fafc;
+    --kv-surface: #ffffff;
+    --kv-surface-2: #f1f5f9;
+    --kv-surface-3: #e2e8f0;
+    --kv-text: #0f172a;
+    --kv-text-soft: #334155;
+    --kv-muted: #64748b;
+    --kv-text-muted: #64748b;
+    --kv-line: #e2e8f0;
+    --kv-line-soft: rgba(0, 0, 0, 0.08);
+    --kv-border: #cbd5e1;
+}
+
+/* Universal Native Select Dropdown Dark Mode styling */
+select {
+    color-scheme: dark !important;
+}
+
+select option {
+    background-color: #0b0e14 !important;
+    color: #ffffff !important;
+}
+
+html[data-theme="light"] body,
+html.theme-light body {
+    background-color: #f8fafc !important;
+    color: #0f172a !important;
+}
+
+/* Global Text Colors in Light Mode */
+html[data-theme="light"] h1,
+html[data-theme="light"] h2,
+html[data-theme="light"] h3,
+html[data-theme="light"] h4,
+html[data-theme="light"] h5,
+html[data-theme="light"] h6,
+html[data-theme="light"] strong,
+html[data-theme="light"] b,
+html[data-theme="light"] .text-white,
+html.theme-light h1,
+html.theme-light h2,
+html.theme-light h3,
+html.theme-light h4,
+html.theme-light h5,
+html.theme-light h6,
+html.theme-light strong,
+html.theme-light b,
+html.theme-light .text-white {
+    color: #0f172a !important;
+}
+
+/* Keep text white on primary/colored buttons in light mode */
+html[data-theme="light"] button.bg-purple-600,
+html[data-theme="light"] button.bg-purple-500,
+html[data-theme="light"] button.bg-\[\#7c3aed\],
+html[data-theme="light"] button.bg-emerald-500,
+html[data-theme="light"] button.bg-emerald-600,
+html[data-theme="light"] button.bg-rose-500,
+html[data-theme="light"] a.bg-purple-600,
+html[data-theme="light"] a.bg-purple-500,
+html[data-theme="light"] a.bg-\[\#7c3aed\],
+html[data-theme="light"] a.bg-emerald-500,
+html[data-theme="light"] a.bg-emerald-600,
+html[data-theme="light"] a.bg-rose-500,
+html[data-theme="light"] a.bg-gradient-to-r,
+html[data-theme="light"] .btn-primary,
+html[data-theme="light"] .kv-footer a span.bg-purple-600,
+html[data-theme="light"] .kv-footer span.bg-purple-600,
+html[data-theme="light"] .kv-footer .bg-purple-600,
+html.theme-light button.bg-purple-600,
+html.theme-light button.bg-purple-500,
+html.theme-light button.bg-\[\#7c3aed\],
+html.theme-light button.bg-emerald-500,
+html.theme-light button.bg-emerald-600,
+html.theme-light button.bg-rose-500,
+html.theme-light a.bg-purple-600,
+html.theme-light a.bg-purple-500,
+html.theme-light a.bg-\[\#7c3aed\],
+html.theme-light a.bg-emerald-500,
+html.theme-light a.bg-emerald-600,
+html.theme-light a.bg-rose-500,
+html.theme-light a.bg-gradient-to-r,
+html.theme-light .btn-primary,
+html.theme-light .kv-footer a span.bg-purple-600,
+html.theme-light .kv-footer span.bg-purple-600,
+html.theme-light .kv-footer .bg-purple-600 {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+}
+
+html[data-theme="light"] p,
+html[data-theme="light"] small,
+html[data-theme="light"] label,
+html[data-theme="light"] .text-slate-400,
+html[data-theme="light"] .text-slate-300,
+html.theme-light p,
+html.theme-light small,
+html.theme-light label,
+html.theme-light .text-slate-400,
+html.theme-light .text-slate-300 {
+    color: #475569 !important;
+}
+
+/* Navbar Light Mode Override */
+html[data-theme="light"] header,
+html[data-theme="light"] .kv-navbar,
+html.theme-light header,
+html.theme-light .kv-navbar {
+    background: rgba(255, 255, 255, 0.95) !important;
+    border-bottom: 1px solid #cbd5e1 !important;
+    backdrop-filter: blur(16px);
+}
+
+html[data-theme="light"] .kv-nav-link,
+html[data-theme="light"] .kv-brand,
+html.theme-light .kv-nav-link,
+html.theme-light .kv-brand {
+    color: #0f172a !important;
+}
+
+html[data-theme="light"] .kv-nav-links a,
+html.theme-light .kv-nav-links a {
+    color: #475569 !important;
+    background: transparent !important;
+    border-color: transparent !important;
+}
+
+html[data-theme="light"] .kv-nav-links a:hover,
+html.theme-light .kv-nav-links a:hover {
+    color: #0f172a !important;
+    background: #f1f5f9 !important;
+    border-color: #e2e8f0 !important;
+}
+
+html[data-theme="light"] .kv-nav-links a.active,
+html.theme-light .kv-nav-links a.active {
+    color: #7c3aed !important;
+    -webkit-text-fill-color: #7c3aed !important;
+    background: #f3e8ff !important;
+    border-color: #d8b4fe !important;
+    font-weight: 700 !important;
+    box-shadow: 0 2px 8px rgba(124, 58, 237, 0.12) !important;
+}
+
+html[data-theme="light"] .kv-nav-links.is-open,
+html.theme-light .kv-nav-links.is-open {
+    background: #ffffff !important;
+    border-color: #e2e8f0 !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08) !important;
+}
+
+html[data-theme="light"] .kv-nav-links.is-open a,
+html.theme-light .kv-nav-links.is-open a {
+    color: #334155 !important;
+}
+
+html[data-theme="light"] .kv-nav-links.is-open a:hover,
+html.theme-light .kv-nav-links.is-open a:hover {
+    background: #f8fafc !important;
+    color: #0f172a !important;
+}
+
+html[data-theme="light"] .kv-nav-links.is-open a.active,
+html.theme-light .kv-nav-links.is-open a.active {
+    background: #f3e8ff !important;
+    color: #7c3aed !important;
+    border-color: #d8b4fe !important;
+}
+
+/* Navbar Buttons & Controls in Light Mode */
+html[data-theme="light"] .kv-theme-toggle-btn,
+html.theme-light .kv-theme-toggle-btn {
+    background: #ffffff !important;
+    border-color: #cbd5e1 !important;
+    color: #475569 !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05) !important;
+}
+html[data-theme="light"] .kv-theme-toggle-btn:hover,
+html.theme-light .kv-theme-toggle-btn:hover {
+    background: #f1f5f9 !important;
+    border-color: #7c3aed !important;
+    color: #7c3aed !important;
+}
+html[data-theme="light"] .kv-theme-toggle-btn svg,
+html.theme-light .kv-theme-toggle-btn svg {
+    color: #475569 !important;
+}
+html[data-theme="light"] .kv-theme-toggle-btn:hover svg,
+html.theme-light .kv-theme-toggle-btn:hover svg {
+    color: #7c3aed !important;
+}
+
+html[data-theme="light"] .kv-notification-btn,
+html.theme-light .kv-notification-btn {
+    background: #ffffff !important;
+    border-color: #cbd5e1 !important;
+    color: #475569 !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05) !important;
+}
+html[data-theme="light"] .kv-notification-btn:hover,
+html.theme-light .kv-notification-btn:hover {
+    background: #f1f5f9 !important;
+    border-color: #7c3aed !important;
+    color: #7c3aed !important;
+}
+html[data-theme="light"] .kv-notification-btn svg,
+html.theme-light .kv-notification-btn svg {
+    color: #475569 !important;
+}
+html[data-theme="light"] .kv-notification-btn:hover svg,
+html.theme-light .kv-notification-btn:hover svg {
+    color: #7c3aed !important;
+}
+
+html[data-theme="light"] .kv-mobile-toggle,
+html.theme-light .kv-mobile-toggle {
+    background: #ffffff !important;
+    border-color: #cbd5e1 !important;
+    color: #0f172a !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05) !important;
+}
+
+html[data-theme="light"] .kv-currency-toggle-wrap,
+html.theme-light .kv-currency-toggle-wrap {
+    background: #f1f5f9 !important;
+    border-color: #cbd5e1 !important;
+}
+html[data-theme="light"] .kv-currency-btn:not(.is-active),
+html.theme-light .kv-currency-btn:not(.is-active) {
+    color: #64748b !important;
+}
+
+/* Cards & Surfaces in Light Mode */
+html[data-theme="light"] .settings-card,
+html[data-theme="light"] .dharma-wallet-container,
+html[data-theme="light"] .dharma-wallet-tab-card,
+html[data-theme="light"] .dharma-record-card,
+html[data-theme="light"] .options-chain-panel,
+html[data-theme="light"] .futures-orderbook-panel,
+html[data-theme="light"] .option-order-card,
+html[data-theme="light"] .glossary-item,
+html[data-theme="light"] .kv-avatar-dropdown-card,
+html[data-theme="light"] .balance-info-tooltip,
+html[data-theme="light"] .bg-\[\#0e131f\]\/90,
+html[data-theme="light"] .bg-\[\#0e1320\]\/90,
+html[data-theme="light"] .bg-\[\#121318\],
+html[data-theme="light"] .bg-\[\#060911\],
+html[data-theme="light"] .bg-\[\#0d111a\],
+html[data-theme="light"] .bg-\[\#0f1722\],
+html.theme-light .settings-card,
+html.theme-light .dharma-wallet-container,
+html.theme-light .dharma-wallet-tab-card,
+html.theme-light .dharma-record-card,
+html.theme-light .options-chain-panel,
+html.theme-light .futures-orderbook-panel,
+html.theme-light .option-order-card,
+html.theme-light .glossary-item,
+html.theme-light .kv-avatar-dropdown-card,
+html.theme-light .balance-info-tooltip,
+html.theme-light .bg-\[\#0e131f\]\/90,
+html.theme-light .bg-\[\#0e1320\]\/90,
+html.theme-light .bg-\[\#121318\],
+html.theme-light .bg-\[\#060911\],
+html.theme-light .bg-\[\#0d111a\],
+html.theme-light .bg-\[\#0f1722\] {
+    background: #ffffff !important;
+    border-color: #cbd5e1 !important;
+    color: #0f172a !important;
+    box-shadow: 0 4px 20px rgba(15, 23, 42, 0.06) !important;
+}
+
+/* ==========================================================================
+   GLOBAL MODALS, POPUPS, DRAWERS & DIALOGS (LIGHT THEME OVERRIDES)
+   ========================================================================== */
+
+/* 1. Modal Backdrops */
+html[data-theme="light"] .kv-modal-backdrop,
+html[data-theme="light"] .settings-modal-backdrop,
+html[data-theme="light"] .dharma-modal-backdrop,
+html[data-theme="light"] .futures-modal-backdrop,
+html[data-theme="light"] .options-modal-backdrop,
+html[data-theme="light"] #confirmModal,
+html[data-theme="light"] #baseCurrencyModal,
+html[data-theme="light"] #currencyChangeModal,
+html.theme-light .kv-modal-backdrop,
+html.theme-light .settings-modal-backdrop,
+html.theme-light .dharma-modal-backdrop,
+html.theme-light .futures-modal-backdrop,
+html.theme-light .options-modal-backdrop,
+html.theme-light #confirmModal,
+html.theme-light #baseCurrencyModal,
+html.theme-light #currencyChangeModal {
+    background: rgba(15, 23, 42, 0.5) !important;
+    backdrop-filter: blur(8px) !important;
+}
+
+/* 2. All Modal Cards & Popup Dialogs */
+html[data-theme="light"] .settings-modal-card,
+html[data-theme="light"] .dharma-modal-card,
+html[data-theme="light"] .futures-modal-card,
+html[data-theme="light"] .options-modal-card,
+html[data-theme="light"] .kv-modal-card,
+html[data-theme="light"] .broker-modal-card,
+html[data-theme="light"] .install-app-modal-card,
+html[data-theme="light"] .convert-modal-card,
+html[data-theme="light"] .create-account-card,
+html[data-theme="light"] .confirm-card,
+html[data-theme="light"] .admin-modal-card,
+html[data-theme="light"] .modal-box,
+html[data-theme="light"] .modal-dialog,
+html[data-theme="light"] .modal-content,
+html[data-theme="light"] #confirmModal > div,
+html[data-theme="light"] #baseCurrencyModal > div,
+html[data-theme="light"] #currencyChangeModal > div,
+html[data-theme="light"] #createAccountModalBackdrop .futures-modal-card,
+html.theme-light .settings-modal-card,
+html.theme-light .dharma-modal-card,
+html.theme-light .futures-modal-card,
+html.theme-light .options-modal-card,
+html.theme-light .kv-modal-card,
+html.theme-light .broker-modal-card,
+html.theme-light .install-app-modal-card,
+html.theme-light .convert-modal-card,
+html.theme-light .create-account-card,
+html.theme-light .confirm-card,
+html.theme-light .admin-modal-card,
+html.theme-light .modal-box,
+html.theme-light .modal-dialog,
+html.theme-light .modal-content,
+html.theme-light #confirmModal > div,
+html.theme-light #baseCurrencyModal > div,
+html.theme-light #currencyChangeModal > div,
+html.theme-light #createAccountModalBackdrop .futures-modal-card {
+    background: #ffffff !important;
+    border: 1px solid #e2e8f0 !important;
+    color: #0f172a !important;
+    box-shadow: 0 25px 60px -15px rgba(15, 23, 42, 0.18), 0 0 0 1px rgba(0, 0, 0, 0.05) !important;
+}
+
+/* 3. Modal Header & Typography */
+html[data-theme="light"] .settings-modal-head,
+html[data-theme="light"] .dharma-modal-head,
+html[data-theme="light"] .futures-modal-header,
+html[data-theme="light"] .kv-modal-head,
+html.theme-light .settings-modal-head,
+html.theme-light .dharma-modal-head,
+html.theme-light .futures-modal-header,
+html.theme-light .kv-modal-head {
+    border-bottom: 1px solid #e2e8f0 !important;
+}
+
+html[data-theme="light"] .settings-modal-card h2,
+html[data-theme="light"] .settings-modal-card h3,
+html[data-theme="light"] .settings-modal-card h4,
+html[data-theme="light"] .dharma-modal-card h2,
+html[data-theme="light"] .dharma-modal-card h3,
+html[data-theme="light"] .dharma-modal-card h4,
+html[data-theme="light"] .futures-modal-card h2,
+html[data-theme="light"] .futures-modal-card h3,
+html[data-theme="light"] .futures-modal-card h4,
+html[data-theme="light"] .kv-modal-card h2,
+html[data-theme="light"] .kv-modal-card h3,
+html[data-theme="light"] .kv-modal-card h4,
+html[data-theme="light"] .install-app-modal-card h2,
+html[data-theme="light"] .install-app-modal-card h3,
+html[data-theme="light"] #confirmModal h2,
+html[data-theme="light"] #confirmModal h3,
+html.theme-light .settings-modal-card h2,
+html.theme-light .settings-modal-card h3,
+html.theme-light .settings-modal-card h4,
+html.theme-light .dharma-modal-card h2,
+html.theme-light .dharma-modal-card h3,
+html.theme-light .dharma-modal-card h4,
+html.theme-light .futures-modal-card h2,
+html.theme-light .futures-modal-card h3,
+html.theme-light .futures-modal-card h4,
+html.theme-light .kv-modal-card h2,
+html.theme-light .kv-modal-card h3,
+html.theme-light .kv-modal-card h4,
+html.theme-light .install-app-modal-card h2,
+html.theme-light .install-app-modal-card h3,
+html.theme-light #confirmModal h2,
+html.theme-light #confirmModal h3 {
+    color: #0f172a !important;
+}
+
+html[data-theme="light"] .settings-modal-card p,
+html[data-theme="light"] .dharma-modal-card p,
+html[data-theme="light"] .futures-modal-card p,
+html[data-theme="light"] .kv-modal-card p,
+html[data-theme="light"] .install-app-modal-card p,
+html[data-theme="light"] #confirmModal p,
+html.theme-light .settings-modal-card p,
+html.theme-light .dharma-modal-card p,
+html.theme-light .futures-modal-card p,
+html.theme-light .kv-modal-card p,
+html.theme-light .install-app-modal-card p,
+html.theme-light #confirmModal p {
+    color: #475569 !important;
+}
+
+html[data-theme="light"] .settings-modal-card label,
+html[data-theme="light"] .dharma-modal-card label,
+html[data-theme="light"] .futures-modal-card label,
+html[data-theme="light"] .kv-modal-card label,
+html[data-theme="light"] .settings-modal-card span,
+html[data-theme="light"] .dharma-modal-card span,
+html[data-theme="light"] .futures-modal-card span,
+html[data-theme="light"] .kv-modal-card span,
+html.theme-light .settings-modal-card label,
+html.theme-light .dharma-modal-card label,
+html.theme-light .futures-modal-card label,
+html.theme-light .kv-modal-card label,
+html.theme-light .settings-modal-card span,
+html.theme-light .dharma-modal-card span,
+html.theme-light .futures-modal-card span,
+html.theme-light .kv-modal-card span {
+    color: #475569 !important;
+}
+
+html[data-theme="light"] .settings-modal-card strong,
+html[data-theme="light"] .dharma-modal-card strong,
+html[data-theme="light"] .futures-modal-card strong,
+html[data-theme="light"] .kv-modal-card strong,
+html.theme-light .settings-modal-card strong,
+html.theme-light .dharma-modal-card strong,
+html.theme-light .futures-modal-card strong,
+html.theme-light .kv-modal-card strong {
+    color: #0f172a !important;
+}
+
+/* 4. Modal Close Buttons */
+html[data-theme="light"] .settings-modal-close,
+html[data-theme="light"] .dharma-modal-close,
+html[data-theme="light"] .convert-close-btn,
+html[data-theme="light"] .modal-cancel-btn,
+html[data-theme="light"] .kv-modal-close,
+html.theme-light .settings-modal-close,
+html.theme-light .dharma-modal-close,
+html.theme-light .convert-close-btn,
+html.theme-light .modal-cancel-btn,
+html.theme-light .kv-modal-close {
+    color: #64748b !important;
+    background: transparent !important;
+}
+html[data-theme="light"] .settings-modal-close:hover,
+html[data-theme="light"] .dharma-modal-close:hover,
+html[data-theme="light"] .convert-close-btn:hover,
+html[data-theme="light"] .modal-cancel-btn:hover,
+html[data-theme="light"] .kv-modal-close:hover,
+html.theme-light .settings-modal-close:hover,
+html.theme-light .dharma-modal-close:hover,
+html.theme-light .convert-close-btn:hover,
+html.theme-light .modal-cancel-btn:hover,
+html.theme-light .kv-modal-close:hover {
+    color: #0f172a !important;
+}
+
+/* 5. Modal Inputs, Textareas & Selects */
+html[data-theme="light"] .settings-modal-card input,
+html[data-theme="light"] .settings-modal-card select,
+html[data-theme="light"] .settings-modal-card textarea,
+html[data-theme="light"] .dharma-modal-card input,
+html[data-theme="light"] .dharma-modal-card select,
+html[data-theme="light"] .dharma-modal-card textarea,
+html[data-theme="light"] .futures-modal-card input,
+html[data-theme="light"] .futures-modal-card select,
+html[data-theme="light"] .futures-modal-card textarea,
+html[data-theme="light"] .kv-modal-card input,
+html[data-theme="light"] .kv-modal-card select,
+html[data-theme="light"] .kv-modal-card textarea,
+html.theme-light .settings-modal-card input,
+html.theme-light .settings-modal-card select,
+html.theme-light .settings-modal-card textarea,
+html.theme-light .dharma-modal-card input,
+html.theme-light .dharma-modal-card select,
+html.theme-light .dharma-modal-card textarea,
+html.theme-light .futures-modal-card input,
+html.theme-light .futures-modal-card select,
+html.theme-light .futures-modal-card textarea,
+html.theme-light .kv-modal-card input,
+html.theme-light .kv-modal-card select,
+html.theme-light .kv-modal-card textarea {
+    background: #ffffff !important;
+    border: 1px solid #cbd5e1 !important;
+    color: #0f172a !important;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04) !important;
+}
+
+html[data-theme="light"] .settings-modal-card input::placeholder,
+html[data-theme="light"] .dharma-modal-card input::placeholder,
+html[data-theme="light"] .futures-modal-card input::placeholder,
+html[data-theme="light"] .kv-modal-card input::placeholder,
+html.theme-light .settings-modal-card input::placeholder,
+html.theme-light .dharma-modal-card input::placeholder,
+html.theme-light .futures-modal-card input::placeholder,
+html.theme-light .kv-modal-card input::placeholder {
+    color: #94a3b8 !important;
+}
+
+/* 6. Modal Nested Sub-boxes, Options, Rows */
+html[data-theme="light"] .broker-option-card,
+html[data-theme="light"] .broker-plan-card,
+html[data-theme="light"] .install-step-item,
+html[data-theme="light"] .settings-modal-card div[style*="background:rgba(255,255,255"],
+html[data-theme="light"] .settings-modal-card div[style*="background: rgba(255, 255, 255"],
+html[data-theme="light"] .settings-modal-card div[style*="background:rgba(0,0,0"],
+html[data-theme="light"] .settings-modal-card div[style*="background: rgba(0, 0, 0"],
+html[data-theme="light"] .settings-modal-card label[style*="background:rgba(255,255,255"],
+html[data-theme="light"] .settings-modal-card label[style*="background: rgba(255, 255, 255"],
+html[data-theme="light"] .dharma-modal-card div[style*="background:rgba(255,255,255"],
+html[data-theme="light"] .dharma-modal-card div[style*="background: rgba(255, 255, 255"],
+html[data-theme="light"] .dharma-modal-card div[style*="background:rgba(0,0,0"],
+html[data-theme="light"] .dharma-modal-card div[style*="background: rgba(0, 0, 0"],
+html[data-theme="light"] .futures-modal-card div[style*="background:rgba(255,255,255"],
+html[data-theme="light"] .futures-modal-card div[style*="background: rgba(255, 255, 255"],
+html.theme-light .broker-option-card,
+html.theme-light .broker-plan-card,
+html.theme-light .install-step-item,
+html.theme-light .settings-modal-card div[style*="background:rgba(255,255,255"],
+html.theme-light .settings-modal-card div[style*="background: rgba(255, 255, 255"],
+html.theme-light .settings-modal-card div[style*="background:rgba(0,0,0"],
+html.theme-light .settings-modal-card div[style*="background: rgba(0, 0, 0"],
+html.theme-light .settings-modal-card label[style*="background:rgba(255,255,255"],
+html.theme-light .settings-modal-card label[style*="background: rgba(255, 255, 255"],
+html.theme-light .dharma-modal-card div[style*="background:rgba(255,255,255"],
+html.theme-light .dharma-modal-card div[style*="background: rgba(255, 255, 255"],
+html.theme-light .dharma-modal-card div[style*="background:rgba(0,0,0"],
+html.theme-light .dharma-modal-card div[style*="background: rgba(0, 0, 0"],
+html.theme-light .futures-modal-card div[style*="background:rgba(255,255,255"],
+html.theme-light .futures-modal-card div[style*="background: rgba(255, 255, 255"] {
+    background: #f8fafc !important;
+    border-color: #e2e8f0 !important;
+    color: #0f172a !important;
+}
+
+html[data-theme="light"] .broker-option-card:hover,
+html[data-theme="light"] .broker-plan-card:hover,
+html.theme-light .broker-option-card:hover,
+html.theme-light .broker-plan-card:hover {
+    background: #f1f5f9 !important;
+    border-color: #cbd5e1 !important;
+}
+
+html[data-theme="light"] .broker-option-card.active,
+html[data-theme="light"] .broker-plan-card.active,
+html.theme-light .broker-option-card.active,
+html.theme-light .broker-plan-card.active {
+    background: #f5f3ff !important;
+    border-color: #7c3aed !important;
+}
+
+/* 7. Modal Buttons */
+html[data-theme="light"] .modal-cancel-btn,
+html[data-theme="light"] #cancelBtn,
+html.theme-light .modal-cancel-btn,
+html.theme-light #cancelBtn {
+    background: #f1f5f9 !important;
+    color: #475569 !important;
+    border: 1px solid #cbd5e1 !important;
+    border-radius: 10px !important;
+    padding: 8px 16px !important;
+    font-weight: 600 !important;
+}
+
+html[data-theme="light"] .modal-cancel-btn:hover,
+html[data-theme="light"] #cancelBtn:hover,
+html.theme-light .modal-cancel-btn:hover,
+html.theme-light #cancelBtn:hover {
+    background: #e2e8f0 !important;
+    color: #0f172a !important;
+}
+
+html[data-theme="light"] .settings-modal-card button[type="submit"].btn-purple,
+html[data-theme="light"] .modal-submit-btn,
+html[data-theme="light"] #confirmBtn,
+html.theme-light .settings-modal-card button[type="submit"].btn-purple,
+html.theme-light .modal-submit-btn,
+html.theme-light #confirmBtn {
+    background: #7c3aed !important;
+    color: #ffffff !important;
+    font-weight: 700 !important;
+    border-radius: 10px !important;
+    box-shadow: 0 2px 10px rgba(124, 58, 237, 0.3) !important;
+}
+
+html[data-theme="light"] .settings-modal-card button[type="submit"].btn-purple:hover,
+html[data-theme="light"] .modal-submit-btn:hover,
+html[data-theme="light"] #confirmBtn:hover,
+html.theme-light .settings-modal-card button[type="submit"].btn-purple:hover,
+html.theme-light .modal-submit-btn:hover,
+html.theme-light #confirmBtn:hover {
+    background: #6d28d9 !important;
+    color: #ffffff !important;
+    text-decoration: none !important;
+}
+
+/* Settings Specific Rows */
+html[data-theme="light"] .settings-row,
+html.theme-light .settings-row {
+    border-bottom-color: #e2e8f0 !important;
+}
+
+html[data-theme="light"] .settings-item-title,
+html.theme-light .settings-item-title {
+    color: #0f172a !important;
+}
+
+html[data-theme="light"] .settings-item-desc,
+html[data-theme="light"] .settings-status-text,
+html.theme-light .settings-item-desc,
+html.theme-light .settings-status-text {
+    color: #64748b !important;
+}
+
+html[data-theme="light"] .settings-action-btn,
+html.theme-light .settings-action-btn {
+    background: transparent !important;
+    background-color: transparent !important;
+    color: #7c3aed !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    font-weight: 700 !important;
+    text-decoration: none !important;
+}
+
+html[data-theme="light"] .settings-action-btn:hover,
+html.theme-light .settings-action-btn:hover {
+    background: transparent !important;
+    background-color: transparent !important;
+    color: #6d28d9 !important;
+    text-decoration: underline !important;
+}
+
+html[data-theme="light"] .settings-action-btn.btn-danger,
+html.theme-light .settings-action-btn.btn-danger {
+    background: transparent !important;
+    background-color: transparent !important;
+    color: #ef4444 !important;
+    border: none !important;
+}
+
+html[data-theme="light"] .settings-action-btn.btn-danger:hover,
+html.theme-light .settings-action-btn.btn-danger:hover {
+    color: #dc2626 !important;
+    text-decoration: underline !important;
+}
+
+/* Account Profile Sub-Page in Light Mode */
+html[data-theme="light"] #accountProfileSubPageView .profile-clean-row,
+html.theme-light #accountProfileSubPageView .profile-clean-row {
+    border-bottom: 1px solid #e2e8f0 !important;
+}
+
+html[data-theme="light"] #accountProfileSubPageView .profile-clean-label,
+html.theme-light #accountProfileSubPageView .profile-clean-label {
+    color: #64748b !important;
+    font-weight: 600 !important;
+}
+
+html[data-theme="light"] #accountProfileSubPageView .profile-clean-value,
+html[data-theme="light"] #accountProfileSubPageView .user-display-name,
+html[data-theme="light"] #accountProfileSubPageView .user-display-email,
+html[data-theme="light"] #accountProfileSubPageView #accountProfileClientIdText,
+html[data-theme="light"] #accountProfileSubPageView #accountProfileMemberSinceText,
+html[data-theme="light"] #accountProfileSubPageView #dashBrokerType,
+html[data-theme="light"] #accountProfileSubPageView #subPageWalletSnapshotText,
+html[data-theme="light"] #accountProfileSubPageView #subPagePrefCurrText,
+html[data-theme="light"] #accountProfileSubPageView #subPageReferralCodeText,
+html.theme-light #accountProfileSubPageView .profile-clean-value,
+html.theme-light #accountProfileSubPageView .user-display-name,
+html.theme-light #accountProfileSubPageView .user-display-email,
+html.theme-light #accountProfileSubPageView #accountProfileClientIdText,
+html.theme-light #accountProfileSubPageView #accountProfileMemberSinceText,
+html.theme-light #accountProfileSubPageView #dashBrokerType,
+html.theme-light #accountProfileSubPageView #subPageWalletSnapshotText,
+html.theme-light #accountProfileSubPageView #subPagePrefCurrText,
+html.theme-light #accountProfileSubPageView #subPageReferralCodeText {
+    color: #0f172a !important;
+    font-weight: 700 !important;
+}
+
+html[data-theme="light"] #accountProfileSubPageView .profile-clean-desc,
+html[data-theme="light"] #accountProfileSubPageView #subPageReferralEarnedText,
+html.theme-light #accountProfileSubPageView .profile-clean-desc,
+html.theme-light #accountProfileSubPageView #subPageReferralEarnedText {
+    color: #64748b !important;
+}
+
+html[data-theme="light"] #accountProfileSubPageView .profile-clean-desc strong,
+html.theme-light #accountProfileSubPageView .profile-clean-desc strong {
+    color: #7c3aed !important;
+}
+
+html[data-theme="light"] #accountProfileSubPageView .profile-clean-icon,
+html.theme-light #accountProfileSubPageView .profile-clean-icon {
+    background: #f1f5f9 !important;
+    border: 1px solid #e2e8f0 !important;
+}
+
+html[data-theme="light"] #accountProfileSubPageView .settings-card-title,
+html.theme-light #accountProfileSubPageView .settings-card-title {
+    color: #7c3aed !important;
+    font-weight: 800 !important;
+}
+
+html[data-theme="light"] #accountProfileSubPageView #accountProfileMobileText,
+html.theme-light #accountProfileSubPageView #accountProfileMobileText {
+    color: #0284c7 !important;
+    font-weight: 700 !important;
+}
+
+html[data-theme="light"] #accountProfileSubPageView #subPageBankStatusText,
+html.theme-light #accountProfileSubPageView #subPageBankStatusText {
+    color: #64748b !important;
+    font-weight: 700 !important;
+}
+
+/* Broker Plan & Active Badge in Light Mode */
+html[data-theme="light"] .broker-plan-desc,
+html[data-theme="light"] #dashBrokerPlan,
+html[data-theme="light"] #dashBrokerPlan span,
+html.theme-light .broker-plan-desc,
+html.theme-light #dashBrokerPlan,
+html.theme-light #dashBrokerPlan span {
+    color: #64748b !important;
+}
+
+html[data-theme="light"] .broker-plan-name,
+html.theme-light .broker-plan-name {
+    color: #7c3aed !important;
+    font-weight: 800 !important;
+}
+
+html[data-theme="light"] .broker-plan-val,
+html[data-theme="light"] #dashBrokerPlan strong,
+html.theme-light .broker-plan-val,
+html.theme-light #dashBrokerPlan strong {
+    color: #0f172a !important;
+    font-weight: 700 !important;
+}
+
+html[data-theme="light"] #dashBrokerBadge span,
+html.theme-light #dashBrokerBadge span {
+    background: #dcfce7 !important;
+    border: 1px solid #86efac !important;
+    color: #15803d !important;
+    padding: 2px 8px !important;
+    font-weight: 700 !important;
+    display: inline-block !important;
+}
+
+/* Orderbook & Recent Trades Table in Light Mode */
+html[data-theme="light"] .options-chain-table thead th,
+html[data-theme="light"] .recent-trades-head,
+html[data-theme="light"] .recent-trades-table-header,
+html.theme-light .options-chain-table thead th,
+html.theme-light .recent-trades-head,
+html.theme-light .recent-trades-table-header {
+    background: #f1f5f9 !important;
+    color: #334155 !important;
+    border-color: #cbd5e1 !important;
+}
+
+html[data-theme="light"] .options-chain-table tbody tr,
+html.theme-light .options-chain-table tbody tr {
+    background: #ffffff !important;
+    border-color: #e2e8f0 !important;
+}
+
+html[data-theme="light"] .options-chain-table tbody tr:hover,
+html.theme-light .options-chain-table tbody tr:hover {
+    background: #f8fafc !important;
+}
+
+html[data-theme="light"] .strike-cell,
+html.theme-light .strike-cell {
+    background: #f1f5f9 !important;
+    color: #0f172a !important;
+}
+
+/* Form Inputs & Select Controls */
+html[data-theme="light"] input,
+html[data-theme="light"] select,
+html[data-theme="light"] textarea,
+html.theme-light input,
+html.theme-light select,
+html.theme-light textarea {
+    background-color: #ffffff !important;
+    color: #0f172a !important;
+    border-color: #cbd5e1 !important;
+}
+
+/* Footer Light Mode Override */
+html[data-theme="light"] footer,
+html[data-theme="light"] .kv-footer,
+html[data-theme="light"] .kv-footer.bg-\[\#060911\],
+html.theme-light footer,
+html.theme-light .kv-footer,
+html.theme-light .kv-footer.bg-\[\#060911\] {
+    background-color: #f8fafc !important;
+    border-top-color: #e2e8f0 !important;
+    color: #0f172a !important;
+}
+
+html[data-theme="light"] .kv-footer .border-slate-800\/60,
+html[data-theme="light"] .kv-footer .border-slate-800\/80,
+html[data-theme="light"] .kv-footer .border-slate-800,
+html[data-theme="light"] .kv-footer .border-b,
+html[data-theme="light"] .kv-footer .border-t,
+html.theme-light .kv-footer .border-slate-800\/60,
+html.theme-light .kv-footer .border-slate-800\/80,
+html.theme-light .kv-footer .border-slate-800,
+html.theme-light .kv-footer .border-b,
+html.theme-light .kv-footer .border-t {
+    border-color: #e2e8f0 !important;
+}
+
+/* Footer Top Status Pills */
+html[data-theme="light"] .kv-footer .bg-emerald-950\/40,
+html.theme-light .kv-footer .bg-emerald-950\/40 {
+    background: #ecfdf5 !important;
+    border-color: #a7f3d0 !important;
+    color: #059669 !important;
+}
+
+html[data-theme="light"] .kv-footer .bg-purple-950\/40,
+html.theme-light .kv-footer .bg-purple-950\/40 {
+    background: #faf5ff !important;
+    border-color: #e9d5ff !important;
+    color: #7c3aed !important;
+}
+
+html[data-theme="light"] .kv-footer .bg-slate-900,
+html.theme-light .kv-footer .bg-slate-900 {
+    background: #f1f5f9 !important;
+    border-color: #cbd5e1 !important;
+    color: #334155 !important;
+}
+
+/* Universal Footer Link Styling (Dark Default) */
+.kv-footer-link {
+    color: #94a3b8;
+    transition: all 0.2s ease-in-out;
+    display: inline-block;
+    position: relative;
+    text-decoration: none;
+}
+
+.kv-footer-link:hover {
+    color: #ffffff !important;
+    transform: translateX(3px);
+}
+
+.kv-footer-bottom-link {
+    color: #94a3b8;
+    transition: all 0.2s ease-in-out;
+    text-decoration: none;
+}
+
+.kv-footer-bottom-link:hover {
+    color: #ffffff !important;
+    text-decoration: underline;
+}
+
+.kv-footer-link.active,
+.kv-footer-bottom-link.active,
+.kv-footer-link.active-purple,
+.kv-footer-bottom-link.active-purple {
+    color: #c084fc !important;
+    font-weight: 700 !important;
+}
+
+.kv-footer-link.active-emerald,
+.kv-footer-bottom-link.active-emerald {
+    color: #34d399 !important;
+    font-weight: 700 !important;
+}
+
+/* Footer Links & Headings in Light Mode */
+html[data-theme="light"] .kv-footer h4,
+html.theme-light .kv-footer h4 {
+    color: #64748b !important;
+}
+
+html[data-theme="light"] .kv-footer a,
+html.theme-light .kv-footer a {
+    color: #475569 !important;
+}
+
+html[data-theme="light"] .kv-footer-link,
+html[data-theme="light"] .kv-footer-bottom-link,
+html.theme-light .kv-footer-link,
+html.theme-light .kv-footer-bottom-link {
+    color: #64748b !important;
+}
+
+html[data-theme="light"] .kv-footer-link:hover,
+html.theme-light .kv-footer-link:hover {
+    color: #7c3aed !important;
+    transform: translateX(3px);
+}
+
+html[data-theme="light"] .kv-footer-bottom-link:hover,
+html.theme-light .kv-footer-bottom-link:hover {
+    color: #7c3aed !important;
+    text-decoration: underline;
+}
+
+html[data-theme="light"] .kv-footer a.active,
+html[data-theme="light"] .kv-footer a.is-active,
+html[data-theme="light"] .kv-footer-link.active,
+html[data-theme="light"] .kv-footer-bottom-link.active,
+html[data-theme="light"] .kv-footer-link.active-purple,
+html[data-theme="light"] .kv-footer-bottom-link.active-purple,
+html.theme-light .kv-footer a.active,
+html.theme-light .kv-footer a.is-active,
+html.theme-light .kv-footer-link.active,
+html.theme-light .kv-footer-bottom-link.active,
+html.theme-light .kv-footer-link.active-purple,
+html.theme-light .kv-footer-bottom-link.active-purple {
+    color: #7c3aed !important;
+    font-weight: 700 !important;
+}
+
+html[data-theme="light"] .kv-footer-link.active-emerald,
+html[data-theme="light"] .kv-footer-bottom-link.active-emerald,
+html.theme-light .kv-footer-link.active-emerald,
+html.theme-light .kv-footer-bottom-link.active-emerald {
+    color: #059669 !important;
+    font-weight: 700 !important;
+}
+
+html[data-theme="light"] .kv-footer p,
+html.theme-light .kv-footer p {
+    color: #64748b !important;
+}
+
+/* Footer Mobile & Platform Card */
+html[data-theme="light"] .kv-footer .bg-\[\#0e1320\]\/90,
+html.theme-light .kv-footer .bg-\[\#0e1320\]\/90 {
+    background: #ffffff !important;
+    border-color: #e2e8f0 !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05) !important;
+}
+
+html[data-theme="light"] .kv-footer .bg-purple-500\/20,
+html.theme-light .kv-footer .bg-purple-500\/20 {
+    background-color: #f3e8ff !important;
+    border-color: #d8b4fe !important;
+    color: #7e22ce !important;
+}
+
+html[data-theme="light"] .kv-footer a.bg-slate-800,
+html.theme-light .kv-footer a.bg-slate-800 {
+    background: #f1f5f9 !important;
+    border: 1px solid #cbd5e1 !important;
+    color: #0f172a !important;
+}
+html[data-theme="light"] .kv-footer a.bg-slate-800:hover,
+html.theme-light .kv-footer a.bg-slate-800:hover {
+    background: #e2e8f0 !important;
+}
+
+/* Footer Risk Warning Box */
+html[data-theme="light"] .kv-footer .bg-\[\#0a0e17\],
+html.theme-light .kv-footer .bg-\[\#0a0e17\] {
+    background: #f1f5f9 !important;
+    border-color: #e2e8f0 !important;
+    color: #64748b !important;
+}
+html[data-theme="light"] .kv-footer .bg-\[\#0a0e17\] strong,
+html.theme-light .kv-footer .bg-\[\#0a0e17\] strong {
+    color: #334155 !important;
+}
+
+/* Footer Bottom Copyright Line */
+html[data-theme="light"] .kv-footer .bg-\[\#04060a\],
+html.theme-light .kv-footer .bg-\[\#04060a\] {
+    background: #f8fafc !important;
+    border-top-color: #e2e8f0 !important;
+}
+html[data-theme="light"] .kv-footer .bg-\[\#04060a\] span,
+html[data-theme="light"] .kv-footer .bg-\[\#04060a\] a,
+html.theme-light .kv-footer .bg-\[\#04060a\] span,
+html.theme-light .kv-footer .bg-\[\#04060a\] a {
+    color: #64748b !important;
+}
+html[data-theme="light"] .kv-footer .bg-\[\#04060a\] a:hover,
+html.theme-light .kv-footer .bg-\[\#04060a\] a:hover {
+    color: #7c3aed !important;
+}
+
+/* ===== In-Page Mobile Currency Toggle (Options & Futures) ===== */
+.options-account-currency-row,
+.futures-account-currency-row {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.mobile-page-currency-toggle {
+    display: none;
+    align-items: center;
+}
+
+.mobile-page-currency-toggle .kv-currency-toggle-wrap {
+    display: inline-flex;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 999px;
+    padding: 2px;
+    height: 36px;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.mobile-page-currency-toggle .kv-currency-btn {
+    background: transparent;
+    border: none;
+    color: rgba(255, 255, 255, 0.6);
+    border-radius: 999px;
+    padding: 4px 10px;
+    font-size: 11px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.mobile-page-currency-toggle .kv-currency-btn.is-active {
+    background: #7c3aed;
+    color: #ffffff;
+    font-weight: 750;
+    box-shadow: 0 2px 8px rgba(124, 58, 237, 0.4);
+}
+
+/* Breakpoint 900px: where navbar links collapse into hamburger */
+@media (max-width: 900px) {
+    .options-account-currency-row,
+    .futures-account-currency-row {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        gap: 8px !important;
+        width: 100% !important;
+    }
+
+    .options-account-currency-row .trading-account-selector-wrapper,
+    .futures-account-currency-row .trading-account-selector-wrapper {
+        flex: 1 !important;
+        min-width: 0 !important;
+        width: auto !important;
+    }
+
+    .options-account-currency-row .trading-account-selector-btn,
+    .futures-account-currency-row .trading-account-selector-btn {
+        width: 100% !important;
+        display: flex !important;
+        justify-content: space-between !important;
+    }
+
+    .mobile-page-currency-toggle {
+        display: inline-flex !important;
+        flex-shrink: 0 !important;
+    }
+
+    .kv-header #navCurrencyToggleWrap {
+        display: none !important;
+    }
+}
+
+/* When desktop / links are visible (> 900px): Navbar shows currency, page hides it */
+@media (min-width: 901px) {
+    .mobile-page-currency-toggle {
+        display: none !important;
+    }
+    .kv-header #navCurrencyToggleWrap {
+        display: inline-flex;
+    }
+    .kv-header #navCurrencyToggleWrap.is-demo-hidden {
+        display: none !important;
+    }
+}
+
+#navCurrencyToggleWrap.is-demo-hidden {
+    display: none !important;
+}
+
+/* ===== GOOGLE AUTO-TRANSLATE CLEAN OVERRIDES ===== */
+.goog-te-banner-frame.skiptranslate,
+.goog-te-banner-frame,
+#goog-gt-tt,
+.goog-te-balloon-frame,
+.goog-tooltip,
+.goog-tooltip:hover {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+}
+
+body {
+    top: 0px !important;
+    position: static !important;
+}
+
+.skiptranslate:not(.goog-te-gadget) {
+    display: none !important;
+}
+
+#google_translate_element {
+    display: none !important;
+}
+
+font[style] {
+    background-color: transparent !important;
+    box-shadow: none !important;
+}
+
+/* =========================================================================
+   UNIVERSAL VIBRANT TRADING RED & GREEN COLORS (FOR LIGHT & DARK THEME)
+   ========================================================================= */
+.market-positive,
+.text-emerald-400,
+.text-emerald-500,
+.text-green-400,
+.text-green-500,
+.opt-pnl-positive,
+.pos-pnl.market-positive,
+td.market-positive,
+span.market-positive,
+strong.market-positive,
+div.market-positive,
+p.market-positive,
+.rt-row.buy,
+.rt-row.buy .rt-price,
+.ob-row.bid .ob-price,
+.call-bid,
+.put-bid,
+html[data-theme="light"] .market-positive,
+html[data-theme="light"] .text-emerald-400,
+html[data-theme="light"] .text-emerald-500,
+html[data-theme="light"] .text-green-400,
+html[data-theme="light"] .text-green-500,
+html[data-theme="light"] .opt-pnl-positive,
+html[data-theme="light"] .pos-pnl.market-positive,
+html[data-theme="light"] td.market-positive,
+html[data-theme="light"] span.market-positive,
+html[data-theme="light"] strong.market-positive,
+html[data-theme="light"] div.market-positive,
+html[data-theme="light"] p.market-positive,
+html[data-theme="light"] #futuresChange.market-positive,
+html[data-theme="light"] #orderLivePnl.market-positive,
+html[data-theme="light"] #orderLivePnlFooter.market-positive,
+html[data-theme="light"] #orderTotalOverallPnlFooter.market-positive,
+html[data-theme="light"] .rt-row.buy,
+html[data-theme="light"] .rt-row.buy .rt-price,
+html[data-theme="light"] .ob-row.bid .ob-price,
+html[data-theme="light"] .call-bid,
+html[data-theme="light"] .put-bid,
+html.theme-light .market-positive,
+html.theme-light .text-emerald-400,
+html.theme-light .text-emerald-500,
+html.theme-light .text-green-400,
+html.theme-light .text-green-500,
+html.theme-light .opt-pnl-positive,
+html.theme-light .pos-pnl.market-positive,
+html.theme-light td.market-positive,
+html.theme-light span.market-positive,
+html.theme-light strong.market-positive,
+html.theme-light div.market-positive,
+html.theme-light p.market-positive,
+html.theme-light #futuresChange.market-positive,
+html.theme-light #orderLivePnl.market-positive,
+html.theme-light #orderLivePnlFooter.market-positive,
+html.theme-light #orderTotalOverallPnlFooter.market-positive,
+html.theme-light .rt-row.buy,
+html.theme-light .rt-row.buy .rt-price,
+html.theme-light .ob-row.bid .ob-price,
+html.theme-light .call-bid,
+html.theme-light .put-bid {
+    color: #10b981 !important;
+}
+
+.market-negative,
+.text-red-400,
+.text-red-500,
+.text-rose-400,
+.text-rose-500,
+.opt-pnl-negative,
+.pos-pnl.market-negative,
+td.market-negative,
+span.market-negative,
+strong.market-negative,
+div.market-negative,
+p.market-negative,
+.rt-row.sell,
+.rt-row.sell .rt-price,
+.ob-row.ask .ob-price,
+.call-ask,
+.put-ask,
+html[data-theme="light"] .market-negative,
+html[data-theme="light"] .text-red-400,
+html[data-theme="light"] .text-red-500,
+html[data-theme="light"] .text-rose-400,
+html[data-theme="light"] .text-rose-500,
+html[data-theme="light"] .opt-pnl-negative,
+html[data-theme="light"] .pos-pnl.market-negative,
+html[data-theme="light"] td.market-negative,
+html[data-theme="light"] span.market-negative,
+html[data-theme="light"] strong.market-negative,
+html[data-theme="light"] div.market-negative,
+html[data-theme="light"] p.market-negative,
+html[data-theme="light"] #futuresChange.market-negative,
+html[data-theme="light"] #orderLivePnl.market-negative,
+html[data-theme="light"] #orderLivePnlFooter.market-negative,
+html[data-theme="light"] #orderTotalOverallPnlFooter.market-negative,
+html[data-theme="light"] .rt-row.sell,
+html[data-theme="light"] .rt-row.sell .rt-price,
+html[data-theme="light"] .ob-row.ask .ob-price,
+html[data-theme="light"] .call-ask,
+html[data-theme="light"] .put-ask,
+html.theme-light .market-negative,
+html.theme-light .text-red-400,
+html.theme-light .text-red-500,
+html.theme-light .text-rose-400,
+html.theme-light .text-rose-500,
+html.theme-light .opt-pnl-negative,
+html.theme-light .pos-pnl.market-negative,
+html.theme-light td.market-negative,
+html.theme-light span.market-negative,
+html.theme-light strong.market-negative,
+html.theme-light div.market-negative,
+html.theme-light p.market-negative,
+html.theme-light #futuresChange.market-negative,
+html.theme-light #orderLivePnl.market-negative,
+html.theme-light #orderLivePnlFooter.market-negative,
+html.theme-light #orderTotalOverallPnlFooter.market-negative,
+html.theme-light .rt-row.sell,
+html.theme-light .rt-row.sell .rt-price,
+html.theme-light .ob-row.ask .ob-price,
+html.theme-light .call-ask,
+html.theme-light .put-ask {
+    color: #f43f5e !important;
+}
+
+/* =========================================================================
+   AUTH PAGES LIGHT THEME OVERRIDES (LOGIN, REGISTER, FORGOT PASSWORD, OTP)
+   ========================================================================= */
+html[data-theme="light"] .auth-split-wrapper,
+html.theme-light .auth-split-wrapper {
+    background-color: #f8fafc !important;
+}
+
+html[data-theme="light"] .auth-split-wrapper > div.absolute.rounded-full,
+html.theme-light .auth-split-wrapper > div.absolute.rounded-full {
+    opacity: 0.25 !important;
+}
+
+/* Main Split Screen Container */
+html[data-theme="light"] .auth-split-wrapper .max-w-5xl,
+html.theme-light .auth-split-wrapper .max-w-5xl {
+    background: #ffffff !important;
+    border-color: #e2e8f0 !important;
+    box-shadow: 0 25px 60px -12px rgba(15, 23, 42, 0.12) !important;
+}
+
+/* LEFT SECTION: Branding & Feature Highlights */
+html[data-theme="light"] .auth-split-wrapper .lg\:col-span-6:first-child,
+html.theme-light .auth-split-wrapper .lg\:col-span-6:first-child {
+    background: linear-gradient(145deg, #f8fafc 0%, #f1f5f9 100%) !important;
+    border-color: #e2e8f0 !important;
+}
+
+html[data-theme="light"] .auth-split-wrapper .lg\:col-span-6:first-child .absolute.inset-0,
+html.theme-light .auth-split-wrapper .lg\:col-span-6:first-child .absolute.inset-0 {
+    opacity: 0.12 !important;
+}
+
+html[data-theme="light"] .auth-split-wrapper .lg\:col-span-6:first-child span.text-white,
+html.theme-light .auth-split-wrapper .lg\:col-span-6:first-child span.text-white,
+html[data-theme="light"] .auth-split-wrapper .lg\:col-span-6:first-child h1.text-white,
+html.theme-light .auth-split-wrapper .lg\:col-span-6:first-child h1.text-white {
+    color: #0f172a !important;
+}
+
+html[data-theme="light"] .auth-split-wrapper .bg-purple-500\/10,
+html.theme-light .auth-split-wrapper .bg-purple-500\/10 {
+    background: #f3e8ff !important;
+    border-color: #d8b4fe !important;
+    color: #7e22ce !important;
+}
+
+html[data-theme="light"] .auth-split-wrapper h1 span,
+html.theme-light .auth-split-wrapper h1 span {
+    background: linear-gradient(to right, #7c3aed, #4f46e5) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+}
+
+html[data-theme="light"] .auth-split-wrapper .text-slate-400,
+html.theme-light .auth-split-wrapper .text-slate-400 {
+    color: #475569 !important;
+}
+
+/* Feature Cards inside Left Section */
+html[data-theme="light"] .auth-split-wrapper .p-4.rounded-2xl,
+html.theme-light .auth-split-wrapper .p-4.rounded-2xl {
+    background: #ffffff !important;
+    border-color: #e2e8f0 !important;
+    box-shadow: 0 4px 14px rgba(15, 23, 42, 0.05) !important;
+}
+
+html[data-theme="light"] .auth-split-wrapper .p-4.rounded-2xl h3,
+html.theme-light .auth-split-wrapper .p-4.rounded-2xl h3 {
+    color: #0f172a !important;
+}
+
+html[data-theme="light"] .auth-split-wrapper .p-4.rounded-2xl p,
+html.theme-light .auth-split-wrapper .p-4.rounded-2xl p {
+    color: #64748b !important;
+}
+
+html[data-theme="light"] .auth-split-wrapper .pt-5.border-t,
+html.theme-light .auth-split-wrapper .pt-5.border-t {
+    border-color: #e2e8f0 !important;
+    color: #64748b !important;
+}
+
+html[data-theme="light"] .auth-split-wrapper .pt-5.border-t strong,
+html.theme-light .auth-split-wrapper .pt-5.border-t strong {
+    color: #0f172a !important;
+}
+
+/* RIGHT SECTION: Forms */
+html[data-theme="light"] .auth-split-wrapper .lg\:col-span-6:last-child,
+html.theme-light .auth-split-wrapper .lg\:col-span-6:last-child {
+    background: #ffffff !important;
+}
+
+html[data-theme="light"] .auth-split-wrapper .lg\:hidden span.text-white,
+html.theme-light .auth-split-wrapper .lg\:hidden span.text-white {
+    color: #0f172a !important;
+}
+
+html[data-theme="light"] .auth-head p.text-purple-400,
+html.theme-light .auth-head p.text-purple-400 {
+    color: #7c3aed !important;
+    font-weight: 700 !important;
+}
+
+html[data-theme="light"] .auth-head h2.text-white,
+html.theme-light .auth-head h2.text-white {
+    color: #0f172a !important;
+}
+
+html[data-theme="light"] .auth-head p.text-slate-400,
+html.theme-light .auth-head p.text-slate-400 {
+    color: #475569 !important;
+}
+
+/* Google Sign-in Button */
+html[data-theme="light"] .google-auth-btn,
+html.theme-light .google-auth-btn {
+    background: #f8fafc !important;
+    border: 1px solid #cbd5e1 !important;
+    color: #0f172a !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05) !important;
+}
+
+html[data-theme="light"] .google-auth-btn:hover,
+html.theme-light .google-auth-btn:hover {
+    background: #f1f5f9 !important;
+    border-color: #7c3aed !important;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08) !important;
+}
+
+html[data-theme="light"] .google-auth-btn span,
+html[data-theme="light"] .google-auth-btn .google-btn-text,
+html.theme-light .google-auth-btn span,
+html.theme-light .google-auth-btn .google-btn-text {
+    color: #0f172a !important;
+}
+
+/* Divider */
+html[data-theme="light"] .auth-divider,
+html.theme-light .auth-divider {
+    color: #64748b !important;
+}
+
+html[data-theme="light"] .auth-divider::before,
+html[data-theme="light"] .auth-divider::after,
+html.theme-light .auth-divider::before,
+html.theme-light .auth-divider::after {
+    background: #e2e8f0 !important;
+}
+
+/* Labels & Inputs */
+html[data-theme="light"] .auth-split-wrapper .auth-form label,
+html.theme-light .auth-split-wrapper .auth-form label {
+    color: #334155 !important;
+    font-weight: 600 !important;
+}
+
+html[data-theme="light"] .auth-split-wrapper .auth-form input:not([type="checkbox"]):not([type="radio"]),
+html.theme-light .auth-split-wrapper .auth-form input:not([type="checkbox"]):not([type="radio"]) {
+    background: #ffffff !important;
+    border: 1px solid #cbd5e1 !important;
+    color: #0f172a !important;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04) !important;
+}
+
+html[data-theme="light"] .auth-split-wrapper .auth-form input:not([type="checkbox"]):not([type="radio"]):focus,
+html.theme-light .auth-split-wrapper .auth-form input:not([type="checkbox"]):not([type="radio"]):focus {
+    border-color: #7c3aed !important;
+    box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.15) !important;
+    background: #ffffff !important;
+}
+
+html[data-theme="light"] .auth-split-wrapper .auth-form input::placeholder,
+html.theme-light .auth-split-wrapper .auth-form input::placeholder {
+    color: #94a3b8 !important;
+}
+
+/* Password Toggle Icon */
+html[data-theme="light"] .password-toggle svg,
+html.theme-light .password-toggle svg {
+    color: #64748b !important;
+}
+
+html[data-theme="light"] .password-toggle:hover svg,
+html.theme-light .password-toggle:hover svg {
+    color: #7c3aed !important;
+}
+
+/* Checkbox */
+html[data-theme="light"] .auth-checkbox,
+html.theme-light .auth-checkbox {
+    color: #334155 !important;
+}
+
+html[data-theme="light"] .auth-checkbox input[type="checkbox"],
+html.theme-light .auth-checkbox input[type="checkbox"] {
+    border: 1.5px solid #cbd5e1 !important;
+    background: #ffffff !important;
+    accent-color: #7c3aed !important;
+}
+
+/* Submit & Action Buttons */
+html[data-theme="light"] .auth-split-wrapper .auth-submit.kv-btn-primary,
+html.theme-light .auth-split-wrapper .auth-submit.kv-btn-primary,
+html[data-theme="light"] .auth-split-wrapper button[type="submit"].kv-btn-primary,
+html.theme-light .auth-split-wrapper button[type="submit"].kv-btn-primary,
+html[data-theme="light"] .auth-split-wrapper .kv-btn-primary,
+html.theme-light .auth-split-wrapper .kv-btn-primary {
+    background: #7c3aed !important;
+    color: #ffffff !important;
+    border: none !important;
+    font-weight: 700 !important;
+    box-shadow: 0 4px 14px rgba(124, 58, 237, 0.35) !important;
+}
+
+html[data-theme="light"] .auth-split-wrapper .auth-submit.kv-btn-primary:hover,
+html.theme-light .auth-split-wrapper .auth-submit.kv-btn-primary:hover,
+html[data-theme="light"] .auth-split-wrapper .kv-btn-primary:hover,
+html.theme-light .auth-split-wrapper .kv-btn-primary:hover {
+    background: #6d28d9 !important;
+}
+
+html[data-theme="light"] .auth-split-wrapper .kv-btn-outline,
+html.theme-light .auth-split-wrapper .kv-btn-outline {
+    background: #f8fafc !important;
+    border: 1px solid #cbd5e1 !important;
+    color: #334155 !important;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04) !important;
+}
+
+html[data-theme="light"] .auth-split-wrapper .kv-btn-outline:hover,
+html.theme-light .auth-split-wrapper .kv-btn-outline:hover {
+    background: #f1f5f9 !important;
+    border-color: #94a3b8 !important;
+    color: #0f172a !important;
+}
+
+/* Bottom Footer Links */
+html[data-theme="light"] .auth-bottom,
+html.theme-light .auth-bottom {
+    color: #64748b !important;
+}
+
+html[data-theme="light"] .auth-bottom a,
+html.theme-light .auth-bottom a,
+html[data-theme="light"] .auth-bottom button,
+html.theme-light .auth-bottom button {
+    color: #7c3aed !important;
+    font-weight: 700 !important;
+}
+
+html[data-theme="light"] .auth-dot-separator,
+html.theme-light .auth-dot-separator {
+    color: #cbd5e1 !important;
+}
+
+/* OTP & Secondary Forms */
+html[data-theme="light"] .auth-otp-meta,
+html.theme-light .auth-otp-meta {
+    background: #f8fafc !important;
+    border: 1px solid #e2e8f0 !important;
+    color: #475569 !important;
+}
+
+html[data-theme="light"] .auth-otp-meta strong,
+html.theme-light .auth-otp-meta strong {
+    color: #7c3aed !important;
+}
+
+html[data-theme="light"] .auth-otp-meta button,
+html.theme-light .auth-otp-meta button {
+    color: #7c3aed !important;
+}
+
+html[data-theme="light"] .auth-form-title,
+html.theme-light .auth-form-title {
+    background: #f5f3ff !important;
+    border: 1px solid #ddd6fe !important;
+}
+
+html[data-theme="light"] .auth-form-title strong,
+html.theme-light .auth-form-title strong {
+    color: #5b21b6 !important;
+}
+
+html[data-theme="light"] .auth-form-title span,
+html.theme-light .auth-form-title span {
+    color: #6b21a8 !important;
+}
+
+html[data-theme="light"] .auth-tiny-note,
+html.theme-light .auth-tiny-note {
+    color: #64748b !important;
+}
+
+html[data-theme="light"] .auth-alert,
+html.theme-light .auth-alert {
+    background: #f8fafc !important;
+    border-color: #cbd5e1 !important;
+    color: #334155 !important;
+}
+
+html[data-theme="light"] .auth-alert.is-success,
+html.theme-light .auth-alert.is-success {
+    background: #f0fdf4 !important;
+    border-color: #86efac !important;
+    color: #15803d !important;
+}
+
+html[data-theme="light"] .auth-alert.is-error,
+html.theme-light .auth-alert.is-error {
+    background: #fef2f2 !important;
+    border-color: #fca5a5 !important;
+    color: #b91c1c !important;
+}
+
+/* =========================================================================
+   HOME PAGE ACCOUNT SECURITY ICON & CARD LIGHT THEME OVERRIDES
+   ========================================================================= */
+html[data-theme="light"] .bg-\[\#0e131f\]\/90,
+html.theme-light .bg-\[\#0e131f\]\/90 {
+    background: #ffffff !important;
+    border-color: #e2e8f0 !important;
+    box-shadow: 0 4px 20px rgba(15, 23, 42, 0.05) !important;
+}
+
+html[data-theme="light"] .bg-\[\#0e131f\]\/90 span.w-10.h-10,
+html.theme-light .bg-\[\#0e131f\]\/90 span.w-10.h-10 {
+    background: #f3e8ff !important;
+    border-color: #d8b4fe !important;
+    color: #7c3aed !important;
+    box-shadow: 0 2px 8px rgba(124, 58, 237, 0.12) !important;
+}
+
+html[data-theme="light"] .bg-\[\#0e131f\]\/90 span.w-10.h-10 svg,
+html.theme-light .bg-\[\#0e131f\]\/90 span.w-10.h-10 svg {
+    color: #7c3aed !important;
+    stroke: #7c3aed !important;
+}
+
+html[data-theme="light"] .bg-\[\#0e131f\]\/90 span.px-2\.5.py-0\.5,
+html.theme-light .bg-\[\#0e131f\]\/90 span.px-2\.5.py-0\.5 {
+    background: #f1f5f9 !important;
+    border-color: #cbd5e1 !important;
+    color: #334155 !important;
+}
+
+html[data-theme="light"] .bg-purple-950\/60,
+html[data-theme="light"] .bg-purple-950\/40,
+html[data-theme="light"] .bg-purple-950\/80,
+html[data-theme="light"] .bg-purple-950,
+html.theme-light .bg-purple-950\/60,
+html.theme-light .bg-purple-950\/40,
+html.theme-light .bg-purple-950\/80,
+html.theme-light .bg-purple-950 {
+    background: #f3e8ff !important;
+    background-color: #f3e8ff !important;
+    border-color: #d8b4fe !important;
+    color: #7c3aed !important;
+    -webkit-text-fill-color: #7c3aed !important;
+}
+
+
+/* Navbar Guest Action Buttons */
+#guestNavActions .kv-btn-primary,
+.kv-navbar .kv-btn-primary,
+html[data-theme="light"] #guestNavActions .kv-btn-primary,
+html[data-theme="light"] .kv-navbar .kv-btn-primary,
+html.theme-light #guestNavActions .kv-btn-primary,
+html.theme-light .kv-navbar .kv-btn-primary {
+    background: #8b5cf6 !important;
+    background-color: #8b5cf6 !important;
+    border-color: #8b5cf6 !important;
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    font-weight: 700 !important;
+}
+
+#guestNavActions .kv-btn-primary:hover,
+.kv-navbar .kv-btn-primary:hover,
+html[data-theme="light"] #guestNavActions .kv-btn-primary:hover,
+html[data-theme="light"] .kv-navbar .kv-btn-primary:hover,
+html.theme-light #guestNavActions .kv-btn-primary:hover,
+html.theme-light .kv-navbar .kv-btn-primary:hover {
+    background: #7c3aed !important;
+    background-color: #7c3aed !important;
+    border-color: #7c3aed !important;
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+}
+
+/* =========================================================================
+   UNIVERSAL PAGINATION LIGHT THEME OVERRIDES (Wallet, Futures, Options, Admin, Portfolio)
+   ========================================================================= */
+html[data-theme="light"] .wallet-pagination-wrap,
+html[data-theme="light"] .pagination-wrap,
+html[data-theme="light"] .admin-pagination,
+html.theme-light .wallet-pagination-wrap,
+html.theme-light .pagination-wrap,
+html.theme-light .admin-pagination {
+    color: #475569 !important;
+}
+
+/* Inactive buttons (Prev, Next, 2, 3, 126...) */
+html[data-theme="light"] .wallet-pagination-wrap button:not(.active):not(.is-active),
+html[data-theme="light"] .kv-pagination-btn:not(.is-active),
+html[data-theme="light"] .pagination-btn:not(.active),
+html[data-theme="light"] .admin-pagination .pagination-btn:not(.active),
+html.theme-light .wallet-pagination-wrap button:not(.active):not(.is-active),
+html.theme-light .kv-pagination-btn:not(.is-active),
+html.theme-light .pagination-btn:not(.active),
+html.theme-light .admin-pagination .pagination-btn:not(.active) {
+    background: #f1f5f9 !important;
+    background-color: #f1f5f9 !important;
+    border: 1px solid #cbd5e1 !important;
+    border-color: #cbd5e1 !important;
+    color: #334155 !important;
+    -webkit-text-fill-color: #334155 !important;
+    font-weight: 600 !important;
+    border-radius: 8px !important;
+    padding: 6px 14px !important;
+    min-width: 36px !important;
+    height: 36px !important;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05) !important;
+}
+
+/* Hover state on inactive buttons */
+html[data-theme="light"] .wallet-pagination-wrap button:not(.active):not(.is-active):hover:not(:disabled),
+html[data-theme="light"] .kv-pagination-btn:not(.is-active):hover:not(:disabled),
+html[data-theme="light"] .pagination-btn:not(.active):hover:not(.disabled),
+html[data-theme="light"] .admin-pagination a.pagination-btn:hover,
+html.theme-light .wallet-pagination-wrap button:not(.active):not(.is-active):hover:not(:disabled),
+html.theme-light .kv-pagination-btn:not(.is-active):hover:not(:disabled),
+html.theme-light .pagination-btn:not(.active):hover:not(.disabled),
+html.theme-light .admin-pagination a.pagination-btn:hover {
+    background: #e2e8f0 !important;
+    background-color: #e2e8f0 !important;
+    border-color: #94a3b8 !important;
+    color: #0f172a !important;
+    -webkit-text-fill-color: #0f172a !important;
+}
+
+/* Active page button (Page 1) */
+html[data-theme="light"] .wallet-pagination-wrap button.active,
+html[data-theme="light"] .wallet-pagination-wrap button.is-active,
+html[data-theme="light"] .kv-pagination-btn.is-active,
+html[data-theme="light"] .pagination-btn.active,
+html[data-theme="light"] .admin-pagination .pagination-btn.active,
+html.theme-light .wallet-pagination-wrap button.active,
+html.theme-light .wallet-pagination-wrap button.is-active,
+html.theme-light .kv-pagination-btn.is-active,
+html.theme-light .pagination-btn.active,
+html.theme-light .admin-pagination .pagination-btn.active {
+    background: #8b5cf6 !important;
+    background-color: #8b5cf6 !important;
+    border: 1px solid #7c3aed !important;
+    border-color: #7c3aed !important;
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    font-weight: 800 !important;
+    border-radius: 8px !important;
+    padding: 6px 14px !important;
+    min-width: 36px !important;
+    height: 36px !important;
+    box-shadow: 0 4px 12px rgba(139, 92, 246, 0.35) !important;
+}
+
+/* Disabled buttons (Prev/Next when on first/last page) */
+html[data-theme="light"] .wallet-pagination-wrap button:disabled,
+html[data-theme="light"] .kv-pagination-btn:disabled,
+html[data-theme="light"] .pagination-btn.disabled,
+html[data-theme="light"] .admin-pagination .pagination-btn.disabled,
+html.theme-light .wallet-pagination-wrap button:disabled,
+html.theme-light .kv-pagination-btn:disabled,
+html.theme-light .pagination-btn.disabled,
+html.theme-light .admin-pagination .pagination-btn.disabled {
+    background: #f8fafc !important;
+    background-color: #f8fafc !important;
+    border: 1px solid #e2e8f0 !important;
+    border-color: #e2e8f0 !important;
+    color: #94a3b8 !important;
+    -webkit-text-fill-color: #94a3b8 !important;
+    opacity: 0.6 !important;
+    cursor: not-allowed !important;
+    box-shadow: none !important;
+}
+
+/* Ellipsis (...) */
+html[data-theme="light"] .wallet-pagination-wrap span,
+html[data-theme="light"] .kv-pagination-ellipsis,
+html[data-theme="light"] .pagination-dots,
+html[data-theme="light"] .admin-pagination .pagination-dots,
+html.theme-light .wallet-pagination-wrap span,
+html.theme-light .kv-pagination-ellipsis,
+html.theme-light .pagination-dots,
+html.theme-light .admin-pagination .pagination-dots {
+    color: #64748b !important;
+    -webkit-text-fill-color: #64748b !important;
+    font-weight: 700 !important;
+    padding: 0 6px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+/* =========================================================================
+   SUPPORT TAB & STAT BADGES (OPEN / TOTAL) LIGHT THEME
+   ========================================================================= */
+html[data-theme="light"] .support-header-banner,
+html.theme-light .support-header-banner {
+    background: linear-gradient(135deg, #f8fafc, #f1f5f9) !important;
+    border: 1px solid #e2e8f0 !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04) !important;
+}
+
+html[data-theme="light"] .support-icon-wrap,
+html.theme-light .support-icon-wrap {
+    background: #f3e8ff !important;
+    border: 1px solid #d8b4fe !important;
+}
+
+html[data-theme="light"] .support-icon-wrap svg,
+html.theme-light .support-icon-wrap svg {
+    stroke: #7c3aed !important;
+}
+
+html[data-theme="light"] .support-banner-title,
+html.theme-light .support-banner-title {
+    color: #0f172a !important;
+}
+
+html[data-theme="light"] .support-banner-desc,
+html.theme-light .support-banner-desc {
+    color: #64748b !important;
+}
+
+/* OPEN & TOTAL Stat Boxes */
+html[data-theme="light"] .support-stat-box,
+html.theme-light .support-stat-box {
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    border: 1px solid #e2e8f0 !important;
+    border-color: #e2e8f0 !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04) !important;
+}
+
+html[data-theme="light"] .support-stat-label,
+html.theme-light .support-stat-label {
+    color: #7c3aed !important;
+    -webkit-text-fill-color: #7c3aed !important;
+    font-weight: 800 !important;
+}
+
+html[data-theme="light"] .support-stat-val,
+html.theme-light .support-stat-val {
+    color: #0f172a !important;
+    -webkit-text-fill-color: #0f172a !important;
+    font-weight: 800 !important;
+}
+
+/* Topic Selection Cards */
+html[data-theme="light"] .support-topic-card:not(.active-topic),
+html.theme-light .support-topic-card:not(.active-topic) {
+    background: #ffffff !important;
+    border: 1px solid #e2e8f0 !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04) !important;
+}
+
+html[data-theme="light"] .support-topic-card:not(.active-topic):hover,
+html.theme-light .support-topic-card:not(.active-topic):hover {
+    background: #f8fafc !important;
+    border-color: #cbd5e1 !important;
+}
+
+html[data-theme="light"] .support-topic-card.active-topic,
+html.theme-light .support-topic-card.active-topic {
+    background: #f3e8ff !important;
+    border: 1px solid #d8b4fe !important;
+    box-shadow: 0 2px 8px rgba(124, 58, 237, 0.12) !important;
+}
+
+html[data-theme="light"] .support-topic-card strong,
+html.theme-light .support-topic-card strong {
+    color: #0f172a !important;
+}
+
+html[data-theme="light"] .support-topic-card span,
+html.theme-light .support-topic-card span {
+    color: #64748b !important;
+}
+
+html[data-theme="light"] .support-topic-card.active-topic strong,
+html.theme-light .support-topic-card.active-topic strong {
+    color: #7c3aed !important;
+}
+
+/* =========================================================================
+   TRADING ACCOUNT SELECTOR, DROPDOWN & CREATE ACCOUNT (FUTURES & OPTIONS)
+   ========================================================================= */
+html[data-theme="light"] .trading-account-selector-btn,
+html.theme-light .trading-account-selector-btn {
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    border: 1px solid #cbd5e1 !important;
+    border-color: #cbd5e1 !important;
+    color: #0f172a !important;
+    -webkit-text-fill-color: #0f172a !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05) !important;
+}
+
+html[data-theme="light"] .trading-account-dropdown,
+html[data-theme="light"] .wallet-strip .trading-account-dropdown,
+html.theme-light .trading-account-dropdown,
+html.theme-light .wallet-strip .trading-account-dropdown {
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    border: 1px solid #e2e8f0 !important;
+    border-color: #e2e8f0 !important;
+    box-shadow: 0 12px 30px rgba(15, 23, 42, 0.12) !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+}
+
+html[data-theme="light"] .account-dropdown-head,
+html.theme-light .account-dropdown-head {
+    color: #64748b !important;
+    -webkit-text-fill-color: #64748b !important;
+    border-bottom: 1px solid #f1f5f9 !important;
+    font-weight: 750 !important;
+}
+
+html[data-theme="light"] .account-dropdown-item,
+html.theme-light .account-dropdown-item {
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    border: 1px solid transparent !important;
+    color: #0f172a !important;
+    -webkit-text-fill-color: #0f172a !important;
+    font-weight: 600 !important;
+}
+
+html[data-theme="light"] .account-dropdown-item:hover,
+html.theme-light .account-dropdown-item:hover {
+    background: #f1f5f9 !important;
+    background-color: #f1f5f9 !important;
+    border-color: #e2e8f0 !important;
+    color: #0f172a !important;
+    -webkit-text-fill-color: #0f172a !important;
+}
+
+html[data-theme="light"] .account-dropdown-item.is-active,
+html.theme-light .account-dropdown-item.is-active {
+    background: #f5f3ff !important;
+    background-color: #f5f3ff !important;
+    border: 1px solid #d8b4fe !important;
+    border-color: #d8b4fe !important;
+    color: #7c3aed !important;
+    -webkit-text-fill-color: #7c3aed !important;
+    font-weight: 800 !important;
+}
+
+html[data-theme="light"] .account-item-check,
+html.theme-light .account-item-check {
+    color: #7c3aed !important;
+    -webkit-text-fill-color: #7c3aed !important;
+    font-weight: 900 !important;
+}
+
+html[data-theme="light"] .account-dropdown-footer,
+html.theme-light .account-dropdown-footer {
+    background: transparent !important;
+    background-color: transparent !important;
+    border-top: 1px solid #f1f5f9 !important;
+    padding-top: 6px !important;
+    margin-top: 4px !important;
+}
+
+html[data-theme="light"] .create-account-action-btn,
+html.theme-light .create-account-action-btn {
+    background: #f5f3ff !important;
+    background-color: #f5f3ff !important;
+    border: 1.5px dashed #c084fc !important;
+    border-color: #c084fc !important;
+    color: #7c3aed !important;
+    -webkit-text-fill-color: #7c3aed !important;
+    font-weight: 750 !important;
+    box-shadow: none !important;
+}
+
+html[data-theme="light"] .create-account-action-btn span,
+html.theme-light .create-account-action-btn span {
+    color: #7c3aed !important;
+    -webkit-text-fill-color: #7c3aed !important;
+    font-weight: 750 !important;
+}
+
+html[data-theme="light"] .create-account-action-btn:hover,
+html.theme-light .create-account-action-btn:hover {
+    background: #ede9fe !important;
+    background-color: #ede9fe !important;
+    border-color: #7c3aed !important;
+    color: #6d28d9 !important;
+    -webkit-text-fill-color: #6d28d9 !important;
+}
+
+html[data-theme="light"] .create-account-action-btn:hover span,
+html.theme-light .create-account-action-btn:hover span {
+    color: #6d28d9 !important;
+    -webkit-text-fill-color: #6d28d9 !important;
+}
+
+/* Create Trading Account Modal in Light Theme */
+html[data-theme="light"] .create-account-card,
+html.theme-light .create-account-card {
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    border: 1px solid #e2e8f0 !important;
+    border-color: #e2e8f0 !important;
+    color: #0f172a !important;
+    box-shadow: 0 20px 45px rgba(15, 23, 42, 0.15) !important;
+}
+
+html[data-theme="light"] .create-account-card h3,
+html.theme-light .create-account-card h3 {
+    color: #0f172a !important;
+    -webkit-text-fill-color: #0f172a !important;
+    font-weight: 800 !important;
+}
+
+html[data-theme="light"] .create-account-card span,
+html[data-theme="light"] .create-account-card label,
+html.theme-light .create-account-card span,
+html.theme-light .create-account-card label {
+    color: #475569 !important;
+}
+
+html[data-theme="light"] .create-account-card input#newAccountName,
+html.theme-light .create-account-card input#newAccountName {
+    background: #f8fafc !important;
+    background-color: #f8fafc !important;
+    border: 1px solid #cbd5e1 !important;
+    border-color: #cbd5e1 !important;
+    color: #0f172a !important;
+    -webkit-text-fill-color: #0f172a !important;
+}
+
+html[data-theme="light"] .create-account-card #btnCloseCreateAccountModal,
+html[data-theme="light"] .create-account-card #btnCancelCreateAccount,
+html.theme-light .create-account-card #btnCloseCreateAccountModal,
+html.theme-light .create-account-card #btnCancelCreateAccount {
+    color: #64748b !important;
+    -webkit-text-fill-color: #64748b !important;
+}
+
+html[data-theme="light"] .create-account-card #btnCancelCreateAccount,
+html.theme-light .create-account-card #btnCancelCreateAccount {
+    background: #f1f5f9 !important;
+    border: 1px solid #cbd5e1 !important;
+}
+
+html[data-theme="light"] .create-account-card #btnSubmitCreateAccount,
+html.theme-light .create-account-card #btnSubmitCreateAccount {
+    background: #7c3aed !important;
+    background-color: #7c3aed !important;
+    border: 1px solid #7c3aed !important;
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    font-weight: 700 !important;
+}
+
+/* =========================================================================
+   UNIVERSAL NOTIFICATIONS DRAWER & CARDS LIGHT THEME
+   ========================================================================= */
+html[data-theme="light"] .kv-notification-backdrop,
+html.theme-light .kv-notification-backdrop {
+    background: rgba(15, 23, 42, 0.25) !important;
+    backdrop-filter: blur(3px) !important;
+    -webkit-backdrop-filter: blur(3px) !important;
+}
+
+html[data-theme="light"] .kv-notification-drawer,
+html.theme-light .kv-notification-drawer {
+    background: #f8fafc !important;
+    background-color: #f8fafc !important;
+    border-left: 1px solid #e2e8f0 !important;
+    box-shadow: -10px 0 35px rgba(15, 23, 42, 0.12) !important;
+    color: #0f172a !important;
+}
+
+html[data-theme="light"] .kv-notification-head,
+html.theme-light .kv-notification-head {
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    border-bottom: 1px solid #e2e8f0 !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02) !important;
+}
+
+html[data-theme="light"] .kv-notif-head-title strong,
+html.theme-light .kv-notif-head-title strong {
+    color: #0f172a !important;
+    -webkit-text-fill-color: #0f172a !important;
+    font-weight: 800 !important;
+    font-size: 16px !important;
+}
+
+html[data-theme="light"] .kv-notif-head-actions #markNotificationsRead,
+html.theme-light .kv-notif-head-actions #markNotificationsRead {
+    background: rgba(245, 158, 11, 0.12) !important;
+    color: #b45309 !important;
+    -webkit-text-fill-color: #b45309 !important;
+    border: 1px solid rgba(245, 158, 11, 0.3) !important;
+    font-weight: 750 !important;
+    border-radius: 6px !important;
+    padding: 5px 12px !important;
+}
+html[data-theme="light"] .kv-notif-head-actions #markNotificationsRead:hover,
+html.theme-light .kv-notif-head-actions #markNotificationsRead:hover {
+    background: rgba(245, 158, 11, 0.22) !important;
+    color: #92400e !important;
+    -webkit-text-fill-color: #92400e !important;
+    border-color: rgba(245, 158, 11, 0.5) !important;
+}
+
+html[data-theme="light"] .kv-notif-close-btn,
+html.theme-light .kv-notif-close-btn {
+    color: #64748b !important;
+    -webkit-text-fill-color: #64748b !important;
+}
+html[data-theme="light"] .kv-notif-close-btn:hover,
+html.theme-light .kv-notif-close-btn:hover {
+    color: #0f172a !important;
+    -webkit-text-fill-color: #0f172a !important;
+    background: #f1f5f9 !important;
+}
+
+html[data-theme="light"] .kv-notification-list,
+html.theme-light .kv-notification-list {
+    background: #f8fafc !important;
+    background-color: #f8fafc !important;
+}
+
+html[data-theme="light"] .kv-notification-item,
+html.theme-light .kv-notification-item {
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    border: 1px solid #e2e8f0 !important;
+    border-radius: 12px !important;
+    box-shadow: 0 1px 4px rgba(15, 23, 42, 0.04) !important;
+    padding: 14px 16px !important;
+}
+html[data-theme="light"] .kv-notification-item:hover,
+html.theme-light .kv-notification-item:hover {
+    background: #ffffff !important;
+    border-color: #cbd5e1 !important;
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08) !important;
+}
+
+html[data-theme="light"] .kv-notification-item.unread,
+html.theme-light .kv-notification-item.unread {
+    background: #ffffff !important;
+    border: 1.5px solid #a855f7 !important;
+    box-shadow: 0 2px 10px rgba(168, 85, 247, 0.1) !important;
+}
+
+html[data-theme="light"] .kv-notification-item strong,
+html.theme-light .kv-notification-item strong {
+    color: #0f172a !important;
+    -webkit-text-fill-color: #0f172a !important;
+    font-weight: 800 !important;
+    font-size: 13.5px !important;
+}
+
+html[data-theme="light"] .kv-notification-item p,
+html.theme-light .kv-notification-item p {
+    color: #334155 !important;
+    -webkit-text-fill-color: #334155 !important;
+    font-size: 12.5px !important;
+    line-height: 1.45 !important;
+    margin: 4px 0 0 !important;
+}
+
+html[data-theme="light"] .kv-notification-item small,
+html.theme-light .kv-notification-item small {
+    color: #64748b !important;
+    -webkit-text-fill-color: #64748b !important;
+    font-size: 11px !important;
+    font-weight: 500 !important;
+}
+
+html[data-theme="light"] .kv-notification-empty,
+html.theme-light .kv-notification-empty {
+    color: #64748b !important;
+    -webkit-text-fill-color: #64748b !important;
+}
+
+/* Notification Type Badges in Light Theme */
+html[data-theme="light"] .kv-notification-type.inform,
+html[data-theme="light"] .kv-notification-type.info,
+html[data-theme="light"] .kv-notification-type.update,
+html[data-theme="light"] .kv-notification-type.account,
+html.theme-light .kv-notification-type.inform,
+html.theme-light .kv-notification-type.info,
+html.theme-light .kv-notification-type.update,
+html.theme-light .kv-notification-type.account {
+    background: #eff6ff !important;
+    background-color: #eff6ff !important;
+    color: #1d4ed8 !important;
+    -webkit-text-fill-color: #1d4ed8 !important;
+    border: 1px solid #93c5fd !important;
+    font-weight: 800 !important;
+    font-size: 10px !important;
+    letter-spacing: 0.5px !important;
+    border-radius: 999px !important;
+    padding: 3px 8px !important;
+}
+
+html[data-theme="light"] .kv-notification-type.approval,
+html[data-theme="light"] .kv-notification-type.withdrawal,
+html[data-theme="light"] .kv-notification-type.success,
+html[data-theme="light"] .kv-notification-type.active,
+html.theme-light .kv-notification-type.approval,
+html.theme-light .kv-notification-type.withdrawal,
+html.theme-light .kv-notification-type.success,
+html.theme-light .kv-notification-type.active {
+    background: #ecfdf5 !important;
+    background-color: #ecfdf5 !important;
+    color: #15803d !important;
+    -webkit-text-fill-color: #15803d !important;
+    border: 1px solid #86efac !important;
+    font-weight: 800 !important;
+    font-size: 10px !important;
+    letter-spacing: 0.5px !important;
+    border-radius: 999px !important;
+    padding: 3px 8px !important;
+}
+
+html[data-theme="light"] .kv-notification-type.rejection,
+html[data-theme="light"] .kv-notification-type.alert,
+html[data-theme="light"] .kv-notification-type.error,
+html[data-theme="light"] .kv-notification-type.blocked,
+html.theme-light .kv-notification-type.rejection,
+html.theme-light .kv-notification-type.alert,
+html.theme-light .kv-notification-type.error,
+html.theme-light .kv-notification-type.blocked {
+    background: #fef2f2 !important;
+    background-color: #fef2f2 !important;
+    color: #b91c1c !important;
+    -webkit-text-fill-color: #b91c1c !important;
+    border: 1px solid #fecaca !important;
+    font-weight: 800 !important;
+    font-size: 10px !important;
+    letter-spacing: 0.5px !important;
+    border-radius: 999px !important;
+    padding: 3px 8px !important;
+}
+
+html[data-theme="light"] .kv-notification-type.warning,
+html[data-theme="light"] .kv-notification-type.maintenance,
+html.theme-light .kv-notification-type.warning,
+html.theme-light .kv-notification-type.maintenance {
+    background: #fffbeb !important;
+    background-color: #fffbeb !important;
+    color: #b45309 !important;
+    -webkit-text-fill-color: #b45309 !important;
+    border: 1px solid #fde68a !important;
+    font-weight: 800 !important;
+    font-size: 10px !important;
+    letter-spacing: 0.5px !important;
+    border-radius: 999px !important;
+    padding: 3px 8px !important;
+}
+
+/* ========================================================
+   GLOBAL SMOOTH SCROLLING ANIMATIONS & MODERN SCROLLBARS
+   ======================================================== */
+
+html {
+    scroll-behavior: smooth !important;
+}
+
+/* Lenis classes integration */
+html.lenis,
+html.lenis body {
+    height: auto;
+}
+
+.lenis:not(.lenis-autoToggle).lenis-stopped {
+    overflow: clip;
+}
+
+.lenis [data-lenis-prevent],
+.lenis [data-lenis-prevent-wheel],
+.lenis [data-lenis-prevent-touch] {
+    overscroll-behavior: contain;
+}
+
+/* Ensure smooth touch and momentum scrolling on all scrollable elements */
+* {
+    -webkit-overflow-scrolling: touch;
+}
+
+.overflow-y-auto,
+.overflow-x-auto,
+.overflow-auto,
+[data-scrollable],
+.wallet-ledger-table-wrap,
+.futures-record-table-wrap,
+.options-chain-table-wrap,
+.admin-table-responsive,
+.table-responsive {
+    scroll-behavior: smooth;
+    overscroll-behavior: contain;
+}
+
+/* Modern, ultra-sleek custom scrollbars for entire application */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.16);
+    border-radius: 9999px;
+    transition: background 0.25s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(168, 85, 247, 0.55);
+}
+
+::-webkit-scrollbar-corner {
+    background: transparent;
+}
+
+/* Firefox scrollbars */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.18) transparent;
+}
+
+/* Light Mode Scrollbars */
+html[data-theme="light"] ::-webkit-scrollbar-thumb,
+html.theme-light ::-webkit-scrollbar-thumb,
+html[data-admin-theme="light"] ::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.18);
+}
+
+html[data-theme="light"] ::-webkit-scrollbar-thumb:hover,
+html.theme-light ::-webkit-scrollbar-thumb:hover,
+html[data-admin-theme="light"] ::-webkit-scrollbar-thumb:hover {
+    background: rgba(124, 58, 237, 0.6);
+}
+
+html[data-theme="light"] *,
+html.theme-light *,
+html[data-admin-theme="light"] * {
+    scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
+}
+

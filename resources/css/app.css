@@ -1,0 +1,1622 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700;800&display=swap');
+@import 'tailwindcss';
+
+@import './base/variables.css';
+@import './base/reset.css';
+
+@import './components/buttons.css';
+@import './components/navbar.css';
+@import './components/footer.css';
+@import './components/cards.css';
+
+
+/* ===== KRYVEX GLOBAL FONT SYSTEM =====
+   Main UI: Inter
+   Trading/finance numbers: JetBrains Mono
+*/
+
+html,
+body,
+button,
+input,
+select,
+textarea {
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+/* Trading / finance numeric font */
+.price,
+.amount,
+.balance,
+.market-price,
+.wallet-balance,
+.order-book-table,
+.futures-record-table td,
+.wallet-ledger-table td,
+.options-chain-table td,
+.admin-table td,
+.markets-table td,
+.market-table td,
+
+/* Cards and dashboard numeric values */
+.kv-card strong,
+.kv-card small,
+.stat-card strong,
+.stat-card small,
+.market-stat-card strong,
+.market-stat-card small,
+.market-summary-card strong,
+.market-summary-card small,
+.market-overview-card strong,
+.market-overview-card small,
+.wallet-card strong,
+.wallet-card small,
+.wallet-summary-card strong,
+.wallet-summary-card small,
+.wallet-mini-card strong,
+.wallet-mini-card small,
+
+/* Markets page */
+.markets-page table td,
+.markets-page .kv-card strong,
+.markets-page .kv-card small,
+.markets-page .ticker-price,
+.markets-page .ticker-change,
+.markets-page .ticker-volume,
+.markets-page .market-volume,
+.markets-page .market-leverage,
+
+/* Futures / Options */
+.metric-primary strong,
+.metric-secondary strong,
+.info-item strong,
+.option-order-card strong,
+.selected-contract-card strong,
+.contract-detail-list strong,
+.order-estimate-box strong,
+.order-estimate strong,
+.order-book-mid,
+
+/* Class-name based fallback */
+[class*="price"],
+[class*="amount"],
+[class*="balance"],
+[class*="volume"],
+[class*="leverage"],
+[class*="change"],
+[class*="total"],
+[class*="metric"] strong,
+[class*="stat"] strong,
+[class*="stat"] small {
+    font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-variant-numeric: tabular-nums;
+}
+/* ===== KRYVEX GLOBAL YELLOW ACCENT HELPERS ===== */
+
+.kv-accent-text {
+    color: var(--kv-yellow) !important;
+}
+
+.kv-accent-border {
+    border-color: var(--kv-yellow-border) !important;
+}
+
+.kv-accent-glow {
+    box-shadow: 0 0 24px var(--kv-yellow-glow) !important;
+}
+
+/* ===== GLOBAL TOAST ===== */
+
+.app-toast {
+    position: fixed;
+    top: 24px;
+    right: 24px;
+    min-width: 280px;
+    max-width: 420px;
+    padding: 16px 18px;
+    border-radius: 16px;
+    z-index: 999999;
+    color: #ffffff;
+    box-shadow: 0 22px 55px rgba(0,0,0,0.35);
+    animation: toastIn 0.35s cubic-bezier(0.21, 1.02, 0.43, 1.01);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.app-toast:nth-of-type(2) { top: 96px; }
+.app-toast:nth-of-type(3) { top: 168px; }
+
+.app-toast.success {
+    background: #0f8f54;
+    border-left: 5px solid #22c55e;
+}
+
+.app-toast.warning {
+    background: #a16207;
+    border-left: 5px solid #f59e0b;
+}
+
+.app-toast.info {
+    background: #1e3a8a;
+    border-left: 5px solid #3b82f6;
+}
+
+.app-toast.error,
+.app-toast.alert {
+    background: #b91c1c;
+    border-left: 5px solid #ef4444;
+}
+
+.app-toast strong {
+    display: block;
+    font-size: 15px;
+    margin-bottom: 4px;
+}
+
+.app-toast p {
+    margin: 0;
+    font-size: 14px;
+    opacity: 0.92;
+}
+
+.app-toast,
+.app-toast * {
+    color: #ffffff !important;
+}
+
+@keyframes toastIn {
+    from {
+        opacity: 0;
+        transform: translateX(60px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Mobile: bottom-center, full width */
+@media (max-width: 640px) {
+    .app-toast {
+        top: auto;
+        bottom: calc(24px + env(safe-area-inset-bottom));
+        right: 16px;
+        left: 16px;
+        min-width: unset;
+        max-width: unset;
+        width: calc(100% - 32px);
+        animation: toastInMobile 0.35s cubic-bezier(0.21, 1.02, 0.43, 1.01);
+    }
+    .app-toast:nth-of-type(2) { bottom: calc(96px + env(safe-area-inset-bottom)); top: auto; }
+    .app-toast:nth-of-type(3) { bottom: calc(168px + env(safe-area-inset-bottom)); top: auto; }
+}
+
+@keyframes toastInMobile {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== MODAL SYSTEM ===== */
+
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999999;
+}
+
+.modal-overlay.hidden {
+    display: none;
+}
+
+.modal-box {
+    width: 380px;
+    background: #111;
+    border-radius: 16px;
+    padding: 22px;
+    color: #fff;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    animation: pop .2s ease;
+}
+
+.modal-box h3 {
+    margin: 0 0 8px;
+}
+
+.modal-box p {
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.btn-cancel {
+    padding: 8px 14px;
+    border-radius: 10px;
+    background: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-confirm {
+    padding: 8px 14px;
+    border-radius: 10px;
+    background: #dc2626;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+@keyframes pop {
+    from {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+/* ===== Kryvex Account Suspension Banner - Compact Below Navbar ===== */
+
+/* ===== User Account Status Banner - Compact Below Navbar =====
+   Purpose:
+   - Shows suspend/block warning on user side.
+   - Compact right-side banner below navbar so navigation is not blocked.
+   - Supports scheduled suspend, active suspend, scheduled block and active block.
+*/
+
+.kryvex-account-banner {
+    position: fixed;
+    top: 82px;
+    right: 18px;
+    left: auto;
+    z-index: 99999;
+    width: min(360px, calc(100% - 24px));
+    display: flex;
+    gap: 10px;
+    padding: 11px 12px;
+    border-radius: 16px;
+    transform: none;
+    pointer-events: none;
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    box-shadow:
+        0 24px 70px rgba(0, 0, 0, 0.42),
+        inset 0 1px 0 rgba(255, 255, 255, 0.06);
+    animation: kryvexBannerSlideIn 0.24s ease;
+}
+
+.kryvex-account-banner.hidden {
+    display: none;
+}
+
+.kryvex-account-banner.warning {
+    border: 1px solid rgba(250, 204, 21, 0.34);
+    background:
+        radial-gradient(circle at top left, rgba(250, 204, 21, 0.16), transparent 35%),
+        rgba(44, 30, 10, 0.78);
+    color: #fef3c7;
+}
+
+.kryvex-account-banner.danger {
+    border: 1px solid rgba(248, 113, 113, 0.38);
+    background:
+        radial-gradient(circle at top left, rgba(248, 113, 113, 0.16), transparent 35%),
+        rgba(43, 12, 14, 0.82);
+    color: #fee2e2;
+}
+
+.kryvex-account-banner-icon {
+    width: 32px;
+    height: 32px;
+    flex: 0 0 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 900;
+}
+
+.kryvex-account-banner.warning .kryvex-account-banner-icon {
+    color: #facc15;
+    background: rgba(250, 204, 21, 0.14);
+    border: 1px solid rgba(250, 204, 21, 0.22);
+}
+
+.kryvex-account-banner.danger .kryvex-account-banner-icon {
+    color: #f87171;
+    background: rgba(248, 113, 113, 0.14);
+    border: 1px solid rgba(248, 113, 113, 0.24);
+}
+
+.kryvex-account-banner-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.kryvex-account-banner-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 6px;
+}
+
+.kryvex-account-banner-top strong {
+    color: #ffffff;
+    font-size: 13px;
+    line-height: 1.2;
+    font-weight: 1000;
+    letter-spacing: -0.02em;
+}
+
+.kryvex-account-pill {
+    white-space: nowrap;
+    border-radius: 999px;
+    padding: 5px 8px;
+    font-size: 10px;
+    font-weight: 900;
+}
+
+.warning-pill {
+    color: #fde68a;
+    background: rgba(250, 204, 21, 0.14);
+    border: 1px solid rgba(250, 204, 21, 0.22);
+}
+
+.danger-pill {
+    color: #fecaca;
+    background: rgba(248, 113, 113, 0.14);
+    border: 1px solid rgba(248, 113, 113, 0.24);
+}
+
+.kryvex-account-reason {
+    margin: 0 0 7px;
+    color: rgba(255, 255, 255, 0.86);
+    font-size: 11px;
+    line-height: 1.3;
+}
+
+.kryvex-account-reason:empty {
+    display: none;
+}
+
+.kryvex-account-banner-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 7px;
+}
+
+.kryvex-account-banner-grid div {
+    border-radius: 11px;
+    padding: 7px 8px;
+    background: rgba(255, 255, 255, 0.075);
+    border: 1px solid rgba(255, 255, 255, 0.075);
+}
+
+.kryvex-account-banner-grid small {
+    display: block;
+    margin-bottom: 3px;
+    color: rgba(255, 255, 255, 0.62);
+    font-size: 9px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.kryvex-account-banner-grid b {
+    display: block;
+    color: #ffffff;
+    font-size: 10.5px;
+    line-height: 1.25;
+    font-weight: 950;
+}
+
+.kryvex-account-advice {
+    margin-top: 7px;
+    color: rgba(255, 255, 255, 0.70);
+    font-size: 10.5px;
+    line-height: 1.3;
+}
+
+/* Disabled actions when user is suspended or blocked */
+.kryvex-disabled-action {
+    opacity: 0.45 !important;
+    cursor: not-allowed !important;
+    pointer-events: none !important;
+}
+
+@keyframes kryvexBannerSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-12px) scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* ===== Navbar Restricted Account Label =====
+   Purpose:
+   - Shows Suspended / Blocked in navbar instead of user name.
+*/
+
+#navUserProfileButton.account-suspended,
+#navUserProfileButton.account-blocked {
+    font-weight: 900;
+}
+
+#navUserProfileButton.account-suspended {
+    border-color: rgba(250, 204, 21, 0.38);
+    color: #facc15;
+    box-shadow: 0 0 22px rgba(250, 204, 21, 0.10);
+}
+
+#navUserProfileButton.account-blocked {
+    border-color: rgba(248, 113, 113, 0.42);
+    color: #f87171;
+    box-shadow: 0 0 22px rgba(248, 113, 113, 0.10);
+}
+
+.kv-profile-dot.account-suspended {
+    background: rgba(250, 204, 21, 0.16);
+    color: #facc15;
+}
+
+.kv-profile-dot.account-blocked {
+    background: rgba(248, 113, 113, 0.16);
+    color: #f87171;
+}
+
+/* ===== Restricted Account Balance Mask =====
+   Purpose:
+   - Prevents balance flicker.
+   - Even if futures/options/wallet JS refreshes real balance,
+     suspended/blocked users only see --.
+*/
+
+body.kryvex-account-restricted [data-sensitive-balance],
+body.kryvex-account-restricted #demoAvailable,
+body.kryvex-account-restricted #demoLocked,
+body.kryvex-account-restricted #pendingWithdrawalBalance,
+body.kryvex-account-restricted #minimumReserve,
+body.kryvex-account-restricted #maxWithdrawAmount,
+body.kryvex-account-restricted #orderWalletAvailable,
+body.kryvex-account-restricted #orderWalletLocked,
+body.kryvex-account-restricted #orderLivePnl,
+body.kryvex-account-restricted #orderEstimatedEquity,
+body.kryvex-account-restricted #optionsAvailableBalance,
+body.kryvex-account-restricted #optionsLockedBalance {
+    position: relative !important;
+    color: transparent !important;
+    -webkit-text-fill-color: transparent !important;
+    font-size: 0 !important;
+}
+
+body.kryvex-account-restricted [data-sensitive-balance]::after,
+body.kryvex-account-restricted #demoAvailable::after,
+body.kryvex-account-restricted #demoLocked::after,
+body.kryvex-account-restricted #pendingWithdrawalBalance::after,
+body.kryvex-account-restricted #minimumReserve::after,
+body.kryvex-account-restricted #maxWithdrawAmount::after,
+body.kryvex-account-restricted #orderWalletAvailable::after,
+body.kryvex-account-restricted #orderWalletLocked::after,
+body.kryvex-account-restricted #orderLivePnl::after,
+body.kryvex-account-restricted #orderEstimatedEquity::after,
+body.kryvex-account-restricted #optionsAvailableBalance::after,
+body.kryvex-account-restricted #optionsLockedBalance::after {
+    content: "--";
+    color: #e5e7eb !important;
+    -webkit-text-fill-color: #e5e7eb !important;
+    font-size: 18px !important;
+    font-weight: 900 !important;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .kryvex-account-banner {
+        top: 70px;
+        right: 10px;
+        width: calc(100% - 20px);
+        padding: 11px 12px;
+    }
+
+    .kryvex-account-banner-top {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 6px;
+    }
+
+    .kryvex-account-banner-grid {
+        grid-template-columns: 1fr;
+    }
+}
+/* ===== User Maintenance Mode Popup =====
+   Purpose:
+   - Shows when admin turns maintenance mode on.
+   - Users can close it and continue view-only browsing.
+   - It appears again when user tries blocked actions like login, wallet, buy/sell or close trade.
+*/
+.kryvex-maintenance-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 999999;
+    display: none;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 92px 16px 16px;
+    pointer-events: none;
+}
+
+.kryvex-maintenance-modal.is-open {
+    display: flex;
+}
+
+.kryvex-maintenance-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.18);
+    pointer-events: none;
+}
+
+.kryvex-maintenance-card {
+    position: relative;
+    width: min(460px, calc(100% - 24px));
+    display: grid;
+    grid-template-columns: 42px 1fr;
+    gap: 13px;
+    padding: 16px;
+    border-radius: 20px;
+    border: 1px solid rgba(250, 204, 21, 0.34);
+    background:
+        radial-gradient(circle at top left, rgba(250, 204, 21, 0.16), transparent 38%),
+        rgba(18, 20, 27, 0.88);
+    color: #fff;
+    box-shadow: 0 28px 90px rgba(0, 0, 0, 0.50);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    pointer-events: auto;
+    animation: kryvexMaintenanceDrop 0.24s ease;
+}
+
+.kryvex-maintenance-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.06);
+    color: rgba(255, 255, 255, 0.82);
+    font-size: 20px;
+    line-height: 1;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.kryvex-maintenance-close:hover {
+    background: rgba(255, 255, 255, 0.12);
+    color: #fff;
+}
+
+.kryvex-maintenance-icon {
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 14px;
+    border: 1px solid rgba(250, 204, 21, 0.24);
+    background: rgba(250, 204, 21, 0.14);
+    color: #facc15;
+    font-size: 22px;
+    font-weight: 1000;
+}
+
+.kryvex-maintenance-eyebrow {
+    margin: 0 0 3px;
+    color: #facc15;
+    font-size: 11px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.kryvex-maintenance-card h2 {
+    margin: 0;
+    padding-right: 34px;
+    color: #ffffff;
+    font-size: 17px;
+    font-weight: 1000;
+    letter-spacing: -0.02em;
+}
+
+.kryvex-maintenance-text {
+    margin: 7px 0 0;
+    color: rgba(255, 255, 255, 0.84);
+    font-size: 13px;
+    line-height: 1.45;
+}
+
+.kryvex-maintenance-help {
+    margin-top: 11px;
+    border-radius: 13px;
+    border: 1px solid rgba(250, 204, 21, 0.18);
+    background: rgba(250, 204, 21, 0.08);
+    color: #fde68a;
+    padding: 10px 11px;
+    font-size: 12px;
+    line-height: 1.45;
+}
+
+@keyframes kryvexMaintenanceDrop {
+    from {
+        opacity: 0;
+        transform: translateY(-14px) scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@media (max-width: 640px) {
+    .kryvex-maintenance-modal {
+        padding-top: 76px;
+    }
+
+    .kryvex-maintenance-card {
+        width: calc(100% - 10px);
+        grid-template-columns: 36px 1fr;
+        padding: 14px;
+    }
+
+    .kryvex-maintenance-icon {
+        width: 36px;
+        height: 36px;
+        border-radius: 12px;
+        font-size: 18px;
+    }
+}
+
+/* ===== KRYVEX GLOBAL EYEBROW / SECTION LABEL COLOR ===== */
+/* Used for small uppercase labels like MARKETS, KRYVEX OPTIONS, DEMO WALLET */
+
+.kv-eyebrow,
+.eyebrow,
+.page-eyebrow,
+.section-eyebrow,
+.options-hero .kv-eyebrow,
+.markets-hero .kv-eyebrow,
+.wallet-head .kv-eyebrow,
+.futures-page .kv-eyebrow {
+    color: var(--kv-yellow) !important;
+    letter-spacing: 0.12em;
+    font-weight: 800;
+}
+/* ===== KYC Verification Page ===== */
+.kyc-page {
+    min-height: 100vh;
+    padding: 92px 16px 48px;
+    background:
+        radial-gradient(circle at top left, rgba(245, 197, 66, 0.08), transparent 34%),
+        radial-gradient(circle at top right, rgba(59, 130, 246, 0.08), transparent 36%),
+        var(--kv-bg, #07080b);
+    color: var(--kv-text, #f4f4f5);
+}
+
+.kyc-shell {
+    width: min(1180px, 100%);
+    margin: 0 auto;
+    display: grid;
+    gap: 18px;
+}
+
+.kyc-hero {
+    padding: 24px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 18px;
+}
+
+.kyc-hero h1 {
+    margin: 4px 0 8px;
+    font-size: clamp(28px, 4vw, 44px);
+    line-height: 1;
+}
+
+.kyc-hero p {
+    max-width: 760px;
+    margin: 0;
+    color: var(--kv-muted, #9ca3af);
+    line-height: 1.6;
+}
+
+.kyc-status-card {
+    min-width: 190px;
+    padding: 14px 16px;
+    border: 1px solid rgba(245, 158, 11, .35);
+    border-radius: 16px;
+    background: rgba(245, 158, 11, .08);
+    display: grid;
+    gap: 5px;
+}
+
+.kyc-status-card span {
+    color: var(--kv-muted, #9ca3af);
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.kyc-status-card strong {
+    font-size: 18px;
+}
+
+.kyc-status-card[data-status="verified"] {
+    border-color: rgba(34, 197, 94, .45);
+    background: rgba(34, 197, 94, .10);
+}
+
+.kyc-status-card[data-status="rejected"] {
+    border-color: rgba(239, 68, 68, .45);
+    background: rgba(239, 68, 68, .10);
+}
+
+.kyc-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.25fr) minmax(300px, .75fr);
+    gap: 18px;
+    align-items: start;
+}
+
+.kyc-form,
+.kyc-help {
+    padding: 22px;
+    display: grid;
+    gap: 18px;
+}
+
+.kyc-step-head {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+}
+
+.kyc-step-head > span,
+.kyc-flow-row b {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: rgba(245, 197, 66, .14);
+    border: 1px solid rgba(245, 197, 66, .42);
+    color: var(--kv-yellow, #f5c542);
+    font-weight: 900;
+    flex: 0 0 auto;
+}
+
+.kyc-step-head h2,
+.kyc-help h2 {
+    margin: 0 0 6px;
+    font-size: 20px;
+}
+
+.kyc-step-head p,
+.kyc-help p {
+    margin: 0;
+    color: var(--kv-muted, #9ca3af);
+    line-height: 1.55;
+}
+
+.kyc-form label {
+    display: grid;
+    gap: 8px;
+    color: var(--kv-muted, #9ca3af);
+    font-size: 13px;
+    font-weight: 800;
+}
+
+.kyc-form input[type="text"],
+.kyc-form input[type="file"] {
+    width: 100%;
+    min-height: 44px;
+    border: 1px solid var(--kv-line, rgba(255,255,255,.10));
+    border-radius: 13px;
+    background: var(--kv-surface-2, #111827);
+    color: var(--kv-text, #f4f4f5);
+    padding: 10px 12px;
+    outline: none;
+}
+
+.kyc-form input:focus {
+    border-color: var(--kv-yellow, #f5c542);
+}
+
+.kyc-upload-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+}
+
+.kyc-upload-card {
+    min-height: 210px;
+    padding: 15px;
+    border: 1px dashed rgba(245, 197, 66, .35);
+    border-radius: 18px;
+    background: rgba(255,255,255,.025);
+    align-content: start;
+}
+
+.kyc-upload-card span {
+    color: var(--kv-text, #f4f4f5);
+    font-size: 15px;
+}
+
+.kyc-upload-card small {
+    color: var(--kv-muted, #9ca3af);
+}
+
+.kyc-upload-card img {
+    width: 100%;
+    max-height: 150px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-top: 8px;
+    border: 1px solid var(--kv-line, rgba(255,255,255,.10));
+}
+
+.kyc-progress {
+    padding: 13px 14px;
+    border: 1px solid rgba(59, 130, 246, .28);
+    background: rgba(59, 130, 246, .08);
+    border-radius: 16px;
+    display: grid;
+    gap: 9px;
+}
+
+.kyc-progress span {
+    color: #bfdbfe;
+    font-weight: 800;
+    font-size: 13px;
+}
+
+.kyc-progress div {
+    width: 100%;
+    height: 8px;
+    overflow: hidden;
+    border-radius: 999px;
+    background: rgba(255,255,255,.08);
+}
+
+.kyc-progress i {
+    display: block;
+    height: 100%;
+    width: 0;
+    border-radius: inherit;
+    background: linear-gradient(90deg, #3b82f6, #f5c542);
+    transition: width .2s ease;
+}
+
+.kyc-match-box {
+    padding: 14px;
+    border-radius: 16px;
+    border: 1px solid rgba(245, 158, 11, .30);
+    background: rgba(245, 158, 11, .08);
+}
+
+.kyc-match-box.is-success {
+    border-color: rgba(34, 197, 94, .45);
+    background: rgba(34, 197, 94, .10);
+}
+
+.kyc-match-box.is-error {
+    border-color: rgba(239, 68, 68, .45);
+    background: rgba(239, 68, 68, .10);
+}
+
+.kyc-match-box strong {
+    display: block;
+    margin-bottom: 4px;
+}
+
+.kyc-match-box p {
+    margin: 0;
+    color: var(--kv-muted, #9ca3af);
+    line-height: 1.5;
+}
+
+.kyc-submit-btn {
+    width: 100%;
+    justify-content: center;
+    min-height: 46px;
+}
+
+.kyc-submit-btn:disabled {
+    opacity: .55;
+    cursor: wait;
+}
+
+.kyc-flow-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--kv-line, rgba(255,255,255,.08));
+}
+
+.kyc-flow-row span {
+    color: var(--kv-text, #f4f4f5);
+    font-weight: 700;
+}
+
+.kyc-flow-row.is-done b {
+    background: rgba(34, 197, 94, .14);
+    border-color: rgba(34, 197, 94, .42);
+    color: #86efac;
+}
+
+.kyc-note {
+    padding: 14px;
+    border-radius: 16px;
+    display: grid;
+    gap: 5px;
+}
+
+.kyc-note.warning {
+    border: 1px solid rgba(245, 158, 11, .32);
+    background: rgba(245, 158, 11, .08);
+}
+
+.kyc-note.success {
+    border: 1px solid rgba(34, 197, 94, .32);
+    background: rgba(34, 197, 94, .08);
+}
+
+@media (max-width: 880px) {
+    .kyc-page {
+        padding-top: 86px;
+    }
+    .kyc-hero,
+    .kyc-grid {
+        grid-template-columns: 1fr;
+    }
+    .kyc-hero {
+        flex-direction: column;
+    }
+    .kyc-status-card {
+        width: 100%;
+    }
+}
+
+@media (max-width: 640px) {
+    .kyc-upload-grid {
+        grid-template-columns: 1fr;
+    }
+    .kyc-form,
+    .kyc-help,
+    .kyc-hero {
+        padding: 18px;
+    }
+}
+
+/* ===== KRYVEX GLOBAL PAGINATION STYLES ===== */
+.wallet-pagination-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-top: 18px;
+    padding: 12px 0;
+}
+.kv-pagination-btn,
+.wallet-pagination-wrap button {
+    background: rgba(255, 255, 255, 0.06) !important;
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+    color: #cbd5e1 !important;
+    padding: 6px 14px !important;
+    border-radius: 8px !important;
+    font-size: 12px !important;
+    font-weight: 600 !important;
+    cursor: pointer !important;
+    transition: all 0.2s ease !important;
+    min-width: 36px !important;
+    height: 36px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+.kv-pagination-btn:hover:not(:disabled),
+.wallet-pagination-wrap button:hover:not(:disabled) {
+    background: rgba(139, 92, 246, 0.2) !important;
+    color: #ffffff !important;
+    border-color: rgba(139, 92, 246, 0.5) !important;
+}
+.kv-pagination-btn.is-active,
+.wallet-pagination-wrap button.active,
+.wallet-pagination-wrap button.is-active {
+    background: #8b5cf6 !important;
+    color: #ffffff !important;
+    border-color: #8b5cf6 !important;
+    font-weight: 700 !important;
+    box-shadow: 0 0 14px rgba(139, 92, 246, 0.45) !important;
+}
+.kv-pagination-btn:disabled,
+.wallet-pagination-wrap button:disabled {
+    opacity: 0.35 !important;
+    cursor: not-allowed !important;
+}
+.kv-pagination-ellipsis,
+.wallet-pagination-wrap span {
+    font-size: 12px !important;
+    color: #94a3b8 !important;
+    padding: 0 4px !important;
+}
+
+/* ===== SPLIT CURRENCY TABS (USD / USDT vs INR) ===== */
+.wallet-currency-tabs {
+    display: none !important;
+    gap: 8px;
+    border-radius: 12px;
+    padding: 5px;
+    background: rgba(0, 0, 0, 0.45);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.wallet-cur-tab {
+    flex: 1;
+    padding: 11px 16px;
+    background: transparent;
+    border: none;
+    color: rgba(255, 255, 255, 0.65);
+    font-size: 0.9rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border-radius: 8px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    letter-spacing: 0.02em;
+}
+
+.wallet-cur-tab:hover {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+/* Active State for DEPOSIT (SOLID GREEN) */
+.wallet-deposit-card .wallet-cur-tab.is-active,
+.is-deposit .wallet-cur-tab.is-active,
+#futuresWalletModal.is-deposit .wallet-cur-tab.is-active,
+#walletModalBackdrop.is-deposit .wallet-cur-tab.is-active {
+    background: #22c55e !important;
+    color: #ffffff !important;
+    box-shadow: 0 4px 14px rgba(34, 197, 94, 0.35);
+}
+
+/* Active State for WITHDRAW (SOLID RED/PINK) */
+.wallet-withdraw-card .wallet-cur-tab.is-active,
+.is-withdraw .wallet-cur-tab.is-active,
+#futuresWalletModal.is-withdraw .wallet-cur-tab.is-active,
+#walletModalBackdrop.is-withdraw .wallet-cur-tab.is-active {
+    background: #f43f5e !important;
+    color: #ffffff !important;
+    box-shadow: 0 4px 14px rgba(244, 63, 94, 0.35);
+}
+
+/* ==========================================================================
+   DEPOSIT & WITHDRAW ACTION THEMING (GREEN FOR DEPOSIT, RED FOR WITHDRAW)
+   ========================================================================== */
+
+/* --- DEPOSIT THEME (SOLID GREEN: #22c55e) --- */
+.wallet-deposit-card,
+#demoCreditForm,
+#inrDepositForm {
+    border-color: rgba(34, 197, 94, 0.35) !important;
+}
+
+.wallet-deposit-card:hover {
+    border-color: rgba(34, 197, 94, 0.6) !important;
+    box-shadow: 0 18px 50px rgba(34, 197, 94, 0.12) !important;
+}
+
+/* Deposit Submit Buttons */
+.wallet-deposit-card .wallet-submit,
+#demoCreditForm button[type="submit"],
+#inrDepositForm button[type="submit"],
+#futuresWalletModal.is-deposit #walletModalSubmit,
+#walletModalBackdrop.is-deposit #walletModalSubmit {
+    background: #22c55e !important;
+    color: #ffffff !important;
+    border: none !important;
+    font-weight: 700 !important;
+    box-shadow: 0 4px 14px rgba(34, 197, 94, 0.35) !important;
+    transition: all 0.2s ease !important;
+}
+
+.wallet-deposit-card .wallet-submit:hover,
+#demoCreditForm button[type="submit"]:hover,
+#inrDepositForm button[type="submit"]:hover,
+#futuresWalletModal.is-deposit #walletModalSubmit:hover,
+#walletModalBackdrop.is-deposit #walletModalSubmit:hover {
+    background: #16a34a !important;
+    color: #ffffff !important;
+    box-shadow: 0 6px 20px rgba(34, 197, 94, 0.5) !important;
+    transform: translateY(-1px);
+}
+
+/* Copy Deposit Address Button */
+#copyDepositAddressButton,
+#optionWalletCopyDepositAddress,
+#futuresWalletCopyDepositAddress {
+    background: #22c55e !important;
+    color: #ffffff !important;
+    border: none !important;
+    border-radius: 6px !important;
+    padding: 4px 12px !important;
+    font-weight: 600 !important;
+    cursor: pointer !important;
+}
+
+#copyDepositAddressButton:hover,
+#optionWalletCopyDepositAddress:hover,
+#futuresWalletCopyDepositAddress:hover {
+    background: #16a34a !important;
+}
+
+/* Deposit Modal Header Icon Badge & Max Button */
+#futuresWalletModal.is-deposit #walletModalIcon,
+#walletModalBackdrop.is-deposit #walletModalIcon,
+#futuresWalletModal.is-deposit .wallet-modal-icon,
+#walletModalBackdrop.is-deposit .wallet-modal-icon {
+    background: #22c55e !important;
+    color: #ffffff !important;
+}
+
+#futuresWalletModal.is-deposit #walletAmountMaxButton,
+#walletModalBackdrop.is-deposit #walletAmountMaxButton {
+    border-color: #22c55e !important;
+    color: #22c55e !important;
+}
+
+#futuresWalletModal.is-deposit #walletAmountMaxButton:hover,
+#walletModalBackdrop.is-deposit #walletAmountMaxButton:hover {
+    background: #22c55e !important;
+    color: #ffffff !important;
+}
+
+#depositMinimumText {
+    color: #22c55e !important;
+}
+
+
+/* --- WITHDRAW THEME (SOLID RED/PINK: #f43f5e) --- */
+.wallet-withdraw-card,
+#withdrawForm,
+#inrWithdrawForm {
+    border-color: rgba(244, 63, 94, 0.35) !important;
+}
+
+.wallet-withdraw-card:hover {
+    border-color: rgba(244, 63, 94, 0.6) !important;
+    box-shadow: 0 18px 50px rgba(244, 63, 94, 0.12) !important;
+}
+
+/* Save Address & Max Buttons in Withdraw Context */
+#saveWithdrawAddressButton,
+.wallet-withdraw-card .wallet-secondary-btn,
+.wallet-withdraw-card .wallet-input-max-btn {
+    border: 1px solid rgba(244, 63, 94, 0.6) !important;
+    color: #f43f5e !important;
+    background: rgba(244, 63, 94, 0.08) !important;
+    font-weight: 600 !important;
+}
+
+#saveWithdrawAddressButton:hover,
+.wallet-withdraw-card .wallet-secondary-btn:hover,
+.wallet-withdraw-card .wallet-input-max-btn:hover {
+    background: #f43f5e !important;
+    color: #ffffff !important;
+}
+
+/* Withdraw Submit Buttons */
+.wallet-withdraw-card .wallet-submit,
+#withdrawForm button[type="submit"],
+#inrWithdrawForm button[type="submit"],
+#futuresWalletModal.is-withdraw #walletModalSubmit,
+#walletModalBackdrop.is-withdraw #walletModalSubmit {
+    background: #f43f5e !important;
+    color: #ffffff !important;
+    border: none !important;
+    font-weight: 700 !important;
+    box-shadow: 0 4px 14px rgba(244, 63, 94, 0.35) !important;
+    transition: all 0.2s ease !important;
+}
+
+.wallet-withdraw-card .wallet-submit:hover,
+#withdrawForm button[type="submit"]:hover,
+#inrWithdrawForm button[type="submit"]:hover,
+#futuresWalletModal.is-withdraw #walletModalSubmit:hover,
+#walletModalBackdrop.is-withdraw #walletModalSubmit:hover {
+    background: #e11d48 !important;
+    color: #ffffff !important;
+    box-shadow: 0 6px 20px rgba(244, 63, 94, 0.5) !important;
+    transform: translateY(-1px);
+}
+
+/* Withdraw Modal Header Icon Badge & Max Button */
+#futuresWalletModal.is-withdraw #walletModalIcon,
+#walletModalBackdrop.is-withdraw #walletModalIcon,
+#futuresWalletModal.is-withdraw .wallet-modal-icon,
+#walletModalBackdrop.is-withdraw .wallet-modal-icon {
+    background: #f43f5e !important;
+    color: #ffffff !important;
+}
+
+#futuresWalletModal.is-withdraw #walletAmountMaxButton,
+#walletModalBackdrop.is-withdraw #walletAmountMaxButton {
+    border-color: #f43f5e !important;
+    color: #f43f5e !important;
+}
+
+#futuresWalletModal.is-withdraw #walletAmountMaxButton:hover,
+#walletModalBackdrop.is-withdraw #walletAmountMaxButton:hover {
+    background: #f43f5e !important;
+    color: #ffffff !important;
+}
+
+/* --- TRANSFER THEME (SOLID YELLOW: #facc15) --- */
+#futuresWalletModal.is-transfer #walletModalSubmit,
+#walletModalBackdrop.is-transfer #walletModalSubmit {
+    background: var(--kv-yellow, #facc15) !important;
+    color: #0f172a !important;
+    border: none !important;
+    font-weight: 700 !important;
+    box-shadow: 0 4px 14px rgba(250, 204, 21, 0.35) !important;
+    transition: all 0.2s ease !important;
+}
+
+#futuresWalletModal.is-transfer #walletModalSubmit:hover,
+#walletModalBackdrop.is-transfer #walletModalSubmit:hover {
+    background: #eab308 !important;
+    color: #0f172a !important;
+    box-shadow: 0 6px 20px rgba(250, 204, 21, 0.5) !important;
+    transform: translateY(-1px);
+}
+
+#futuresWalletModal.is-transfer #walletModalIcon,
+#walletModalBackdrop.is-transfer #walletModalIcon,
+#futuresWalletModal.is-transfer .wallet-modal-icon,
+#walletModalBackdrop.is-transfer .wallet-modal-icon {
+    background: var(--kv-yellow, #facc15) !important;
+    color: #0f172a !important;
+}
+
+#futuresWalletModal.is-transfer #walletAmountMaxButton,
+#walletModalBackdrop.is-transfer #walletAmountMaxButton {
+    border-color: var(--kv-yellow, #facc15) !important;
+    color: var(--kv-yellow, #facc15) !important;
+}
+
+#futuresWalletModal.is-transfer #walletAmountMaxButton:hover,
+#walletModalBackdrop.is-transfer #walletAmountMaxButton:hover {
+    background: var(--kv-yellow, #facc15) !important;
+    color: #0f172a !important;
+}
+
+/* Withdraw Highlight / Receive Text */
+#withdrawPreviewNet,
+#inrWithdrawConvUsdt,
+#futuresWithdrawPreviewNet,
+#optionsWithdrawPreviewNet,
+.receive-row strong,
+.receive-row span,
+#optionsWalletWithdrawPreview .receive-row,
+#futuresWalletWithdrawPreview .receive-row {
+    color: #f43f5e !important;
+}
+
+/* --- DEPOSIT INPUT BORDERS & PREVIEW BOXES (GREEN: #22c55e) --- */
+.wallet-deposit-card .wallet-input-with-button,
+.wallet-deposit-card input:focus,
+.wallet-deposit-card select:focus,
+#demoCreditForm .wallet-input-with-button,
+#inrDepositForm .wallet-input-with-button,
+#futuresWalletModal.is-deposit .wallet-input-with-button,
+#futuresWalletModal.is-deposit input:focus,
+#futuresWalletModal.is-deposit select:focus,
+#walletModalBackdrop.is-deposit .wallet-input-with-button,
+#walletModalBackdrop.is-deposit input:focus,
+#walletModalBackdrop.is-deposit select:focus {
+    border-color: #22c55e !important;
+    box-shadow: 0 0 0 2px rgba(34, 197, 94, 0.18) !important;
+}
+
+.wallet-deposit-card .withdraw-preview-card,
+.wallet-deposit-card .wallet-withdraw-preview,
+#futuresWalletModal.is-deposit .wallet-withdraw-preview,
+#futuresWalletModal.is-deposit .mini-withdraw-preview,
+#walletModalBackdrop.is-deposit .wallet-withdraw-preview,
+#walletModalBackdrop.is-deposit .withdraw-preview-card {
+    border: 1px solid rgba(34, 197, 94, 0.45) !important;
+    background: rgba(34, 197, 94, 0.04) !important;
+}
+
+.wallet-deposit-card .wallet-input-max-btn,
+#futuresWalletModal.is-deposit .wallet-input-max-btn,
+#futuresWalletModal.is-deposit #walletActionMaxButton,
+#walletModalBackdrop.is-deposit .wallet-input-max-btn,
+#walletModalBackdrop.is-deposit #walletAmountMaxButton {
+    border-color: #22c55e !important;
+    color: #22c55e !important;
+}
+
+
+/* --- WITHDRAW INPUT BORDERS & PREVIEW BOXES (RED: #f43f5e) --- */
+.wallet-withdraw-card .wallet-input-with-button,
+.wallet-withdraw-card input:focus,
+.wallet-withdraw-card select:focus,
+#withdrawForm .wallet-input-with-button,
+#inrWithdrawForm .wallet-input-with-button,
+#futuresWalletModal.is-withdraw .wallet-input-with-button,
+#futuresWalletModal.is-withdraw input:focus,
+#futuresWalletModal.is-withdraw select:focus,
+#walletModalBackdrop.is-withdraw .wallet-input-with-button,
+#walletModalBackdrop.is-withdraw input:focus,
+#walletModalBackdrop.is-withdraw select:focus {
+    border-color: #f43f5e !important;
+    box-shadow: 0 0 0 2px rgba(244, 63, 94, 0.18) !important;
+}
+
+.wallet-withdraw-card .withdraw-preview-card,
+.wallet-withdraw-card .wallet-withdraw-preview,
+#futuresWalletModal.is-withdraw .wallet-withdraw-preview,
+#futuresWalletModal.is-withdraw .mini-withdraw-preview,
+#walletModalBackdrop.is-withdraw .wallet-withdraw-preview,
+#walletModalBackdrop.is-withdraw .withdraw-preview-card {
+    border: 1px solid rgba(244, 63, 94, 0.45) !important;
+    background: rgba(244, 63, 94, 0.04) !important;
+}
+
+.wallet-withdraw-card .wallet-input-max-btn,
+#futuresWalletModal.is-withdraw .wallet-input-max-btn,
+#futuresWalletModal.is-withdraw #walletActionMaxButton,
+#walletModalBackdrop.is-withdraw .wallet-input-max-btn,
+#walletModalBackdrop.is-withdraw #walletAmountMaxButton {
+    border-color: #f43f5e !important;
+    color: #f43f5e !important;
+}
+
+/* Trading Account Selector Dropdown Component */
+.trading-account-selector-wrapper {
+    position: relative;
+    display: inline-block;
+    z-index: 100;
+}
+
+.trading-account-selector-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 14px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 8px;
+    color: #ffffff;
+    font-size: 0.88rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.trading-account-selector-btn:hover {
+    background: rgba(255, 255, 255, 0.09);
+    border-color: rgba(255, 255, 255, 0.25);
+    transform: translateY(-1px);
+}
+
+.account-badge-icon {
+    font-size: 1rem;
+    color: #f59e0b;
+}
+
+.account-caret {
+    font-size: 0.75rem;
+    color: var(--kv-muted, #94a3b8);
+    transition: transform 0.2s ease;
+}
+
+.trading-account-dropdown {
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 0;
+    min-width: 230px;
+    background: #121621;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    z-index: 1050;
+}
+
+.account-dropdown-head {
+    padding: 10px 14px 6px 14px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--kv-muted, #94a3b8);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.account-dropdown-list {
+    max-height: 220px;
+    overflow-y: auto;
+    padding: 4px 0;
+}
+
+.account-dropdown-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px 14px;
+    background: none;
+    border: none;
+    color: #e2e8f0;
+    font-size: 0.88rem;
+    font-weight: 500;
+    text-align: left;
+    cursor: pointer;
+    transition: background 0.15s ease;
+}
+
+.account-dropdown-item:hover {
+    background: rgba(255, 255, 255, 0.06);
+    color: #ffffff;
+}
+
+.account-dropdown-item.is-active {
+    background: rgba(34, 197, 94, 0.12);
+    color: #22c55e;
+    font-weight: 600;
+}
+
+.account-item-check {
+    color: #22c55e;
+    font-weight: bold;
+}
+
+.account-dropdown-footer {
+    padding: 6px;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.create-account-action-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    width: 100%;
+    padding: 8px 12px;
+    background: rgba(34, 197, 94, 0.15);
+    border: 1px dashed rgba(34, 197, 94, 0.4);
+    border-radius: 6px;
+    color: #22c55e;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.create-account-action-btn:hover {
+    background: rgba(34, 197, 94, 0.25);
+    border-color: #22c55e;
+}
+
+/* ===== MODAL BACKDROP CENTERING FIX ===== */
+.futures-modal-backdrop {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    background: rgba(0, 0, 0, 0.75) !important;
+    backdrop-filter: blur(4px) !important;
+    display: none !important;
+    align-items: center !important;
+    justify-content: center !important;
+    z-index: 99999 !important;
+    margin: 0 !important;
+    padding: 16px !important;
+    box-sizing: border-box !important;
+}
+
+.futures-modal-backdrop.is-open {
+    display: flex !important;
+}
+
+.futures-modal-card {
+    position: relative !important;
+    width: 100% !important;
+    max-width: 440px !important;
+    margin: auto !important;
+    background: #0f111a !important;
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+    border-radius: 14px !important;
+    padding: 22px !important;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7) !important;
+    color: #fff !important;
+}
+
+/* ===== PASSWORD TOGGLE EYE EYE-ICON OVERLAY FIX ===== */
+input::-ms-reveal,
+input::-ms-clear {
+    display: none !important;
+}
+
+.password-field {
+    position: relative !important;
+    display: flex !important;
+    align-items: center !important;
+    width: 100% !important;
+}
+
+.password-field input {
+    padding-right: 46px !important;
+    width: 100% !important;
+}
+
+.password-toggle {
+    position: absolute !important;
+    right: 10px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    width: 34px !important;
+    height: 34px !important;
+    border: none !important;
+    background: transparent !important;
+    color: rgba(255, 255, 255, 0.7) !important;
+    cursor: pointer !important;
+    font-size: 18px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    z-index: 50 !important;
+    pointer-events: auto !important;
+    user-select: none !important;
+}
+
+.password-toggle:hover {
+    color: var(--kv-yellow) !important;
+}

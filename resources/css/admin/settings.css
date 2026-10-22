@@ -1,0 +1,441 @@
+.settings-page {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.settings-hero {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 18px;
+    padding: 4px 2px 0;
+}
+
+.settings-eyebrow {
+    margin: 0 0 8px;
+    color: #facc15;
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+}
+
+.settings-hero h1 {
+    margin: 0;
+    color: #ffffff;
+    font-size: 32px;
+    line-height: 1.05;
+    font-weight: 1000;
+    letter-spacing: -0.04em;
+}
+
+.settings-hero span {
+    display: block;
+    margin-top: 8px;
+    color: #8b8f9c;
+    font-size: 14px;
+}
+
+.settings-reload-btn {
+    border-radius: 13px;
+    border: 1px solid rgba(250, 204, 21, 0.25);
+    background: rgba(250, 204, 21, 0.08);
+    color: #facc15;
+    padding: 10px 15px;
+    font-size: 13px;
+    font-weight: 900;
+    text-decoration: none;
+    transition: 0.2s ease;
+}
+
+.settings-reload-btn:hover {
+    background: rgba(250, 204, 21, 0.14);
+    transform: translateY(-1px);
+}
+
+.settings-form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.settings-layout {
+    display: grid;
+    grid-template-columns: 210px minmax(0, 1fr) 270px;
+    gap: 18px;
+    align-items: start;
+}
+
+.settings-tabs {
+    position: sticky;
+    top: 92px;
+    display: grid;
+    gap: 10px;
+}
+
+.settings-tab {
+    width: 100%;
+    border: 1px solid transparent;
+    border-radius: 14px;
+    background: transparent;
+    color: #8b8f9c;
+    padding: 13px 14px;
+    text-align: left;
+    cursor: pointer;
+    transition: 0.22s ease;
+}
+
+.settings-tab span {
+    display: block;
+    color: inherit;
+    font-size: 14px;
+    font-weight: 950;
+}
+
+.settings-tab small {
+    display: block;
+    margin-top: 3px;
+    color: #626977;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.settings-tab:hover,
+.settings-tab.is-active {
+    border-color: rgba(250, 204, 21, 0.26);
+    background: linear-gradient(135deg, rgba(250, 204, 21, 0.16), rgba(250, 204, 21, 0.06));
+    color: #facc15;
+    box-shadow: 0 16px 44px rgba(0, 0, 0, 0.20);
+}
+
+.settings-panels {
+    min-width: 0;
+}
+
+.settings-panel {
+    display: none;
+}
+
+.settings-panel.is-active {
+    display: block;
+}
+
+.settings-card,
+.settings-preview-card {
+    background: linear-gradient(180deg, rgba(17, 19, 24, 0.96), rgba(12, 14, 18, 0.96));
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 22px;
+    padding: 22px;
+    box-shadow: 0 16px 42px rgba(0, 0, 0, 0.23);
+}
+
+.settings-card-head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+    padding-bottom: 18px;
+    margin-bottom: 18px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.settings-card h2 {
+    margin: 0;
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 1000;
+}
+
+.settings-card p {
+    margin: 7px 0 0;
+    color: #8b8f9c;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+}
+
+.settings-card .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    margin-bottom: 16px;
+}
+
+.settings-card label {
+    color: #d4d4d8;
+    font-size: 13px;
+    font-weight: 850;
+}
+
+.settings-card input[type="number"],
+.settings-card input[type="text"],
+.settings-card input[type="email"],
+.settings-card select {
+    height: 46px;
+    width: 100%;
+    background: #090a0d;
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    border-radius: 14px;
+    padding: 0 13px;
+    outline: none;
+    font-size: 14px;
+    font-weight: 750;
+}
+
+.settings-card input:focus,
+.settings-card select:focus {
+    border-color: #facc15;
+    box-shadow: 0 0 0 3px rgba(250, 204, 21, 0.10);
+}
+
+.settings-card small {
+    color: #71717a;
+    font-size: 12px;
+    line-height: 1.4;
+}
+
+.settings-subtitle {
+    margin: 10px 0 16px;
+    color: #facc15;
+    font-size: 12px;
+    font-weight: 950;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.switch-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.setting-switch {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #090a0d;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 14px;
+    padding: 13px 14px;
+    cursor: pointer;
+}
+
+.setting-switch.single-switch {
+    height: 46px;
+}
+
+.setting-switch input {
+    width: 18px;
+    height: 18px;
+    accent-color: #facc15;
+}
+
+.setting-switch span {
+    color: #ffffff;
+    font-weight: 850;
+    font-size: 13px;
+}
+
+.charge-preview-box {
+    margin-top: 4px;
+    border-radius: 16px;
+    border: 1px solid rgba(250, 204, 21, 0.18);
+    background: rgba(250, 204, 21, 0.07);
+    padding: 15px;
+}
+
+.charge-preview-box strong {
+    color: #ffffff;
+    font-size: 14px;
+}
+
+.charge-preview-box p {
+    margin: 7px 0 5px;
+    color: #d4d4d8;
+    font-size: 13px;
+}
+
+.charge-preview-box b {
+    color: #facc15;
+}
+
+.danger-card {
+    border-color: rgba(239, 68, 68, 0.18);
+}
+
+.maintenance-switch {
+    margin-bottom: 16px;
+}
+
+.maintenance-note {
+    padding: 14px;
+    border-radius: 14px;
+    color: #fecaca;
+    background: rgba(239, 68, 68, 0.1);
+    border: 1px solid rgba(239, 68, 68, 0.22);
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.settings-preview-card {
+    position: sticky;
+    top: 92px;
+    min-height: 250px;
+}
+
+.preview-status-dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 999px;
+    background: #22c55e;
+    box-shadow: 0 0 20px rgba(34, 197, 94, 0.55);
+    display: inline-block;
+    margin-right: 8px;
+}
+
+.settings-preview-card > span {
+    color: #d4d4d8;
+    font-size: 13px;
+    font-weight: 950;
+}
+
+.settings-preview-card h3 {
+    margin: 18px 0 4px;
+    color: #ffffff;
+    font-size: 22px;
+}
+
+.settings-preview-card p {
+    margin: 0;
+    color: #8b8f9c;
+    font-size: 13px;
+}
+
+.preview-list {
+    margin-top: 20px;
+    display: grid;
+    gap: 13px;
+}
+
+.preview-list div {
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.preview-list div:last-child {
+    border-bottom: 0;
+    padding-bottom: 0;
+}
+
+.preview-list strong {
+    display: block;
+    color: #ffffff;
+    font-size: 13px;
+}
+
+.preview-list small {
+    display: block;
+    margin-top: 4px;
+    color: #8b8f9c;
+    font-size: 12px;
+    line-height: 1.35;
+}
+
+.settings-actions {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.settings-actions button {
+    height: 48px;
+    padding: 0 24px;
+    border: none;
+    border-radius: 15px;
+    background: linear-gradient(135deg, #facc15, #d99818);
+    color: #050505;
+    font-weight: 950;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.settings-actions button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 18px 40px rgba(250, 204, 21, 0.14);
+}
+
+@media (max-width: 1200px) {
+    .settings-layout {
+        grid-template-columns: 190px minmax(0, 1fr);
+    }
+
+    .settings-preview-card {
+        grid-column: 1 / -1;
+        position: static;
+    }
+}
+
+@media (max-width: 860px) {
+    .settings-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .settings-tabs {
+        position: static;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 560px) {
+    .settings-hero {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .form-row,
+    .switch-grid,
+    .settings-tabs {
+        grid-template-columns: 1fr;
+    }
+
+    .settings-actions button {
+        width: 100%;
+    }
+}
+
+/* ===== Company deposit wallet address settings ===== */
+.company-wallet-settings-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+    margin-top: 14px;
+}
+.company-wallet-setting-card {
+    border: 1px solid rgba(245, 158, 11, .18);
+    border-radius: 16px;
+    padding: 14px;
+    background: rgba(245, 158, 11, .045);
+    display: grid;
+    gap: 12px;
+}
+.wallet-network-title {
+    display: grid;
+    gap: 4px;
+}
+.wallet-network-title strong {
+    color: var(--admin-text, #f4f4f5);
+}
+.wallet-network-title span {
+    color: var(--admin-muted, #8b8f9b);
+    font-size: 11px;
+}
+@media(max-width: 900px) {
+    .company-wallet-settings-grid { grid-template-columns: 1fr; }
+}

@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <radialGradient id="goldGradient" cx="35%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#FFE082"/>
+      <stop offset="40%" stop-color="#FFB300"/>
+      <stop offset="85%" stop-color="#FF8F00"/>
+      <stop offset="100%" stop-color="#C67100"/>
+    </radialGradient>
+    <linearGradient id="rimGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFE57F"/>
+      <stop offset="50%" stop-color="#FF8F00"/>
+      <stop offset="100%" stop-color="#FFE082"/>
+    </linearGradient>
+    <linearGradient id="innerGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFF8E1"/>
+      <stop offset="100%" stop-color="#FFA000"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="1" stdDeviation="1.5" flood-color="#000000" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+
+  <!-- Outer Rim -->
+  <circle cx="32" cy="32" r="30" fill="url(#rimGradient)" filter="url(#glow)"/>
+  
+  <!-- Outer Gold Coin Body -->
+  <circle cx="32" cy="32" r="27.5" fill="url(#goldGradient)"/>
+  
+  <!-- Subtle Inner Ring -->
+  <circle cx="32" cy="32" r="24.5" fill="none" stroke="#FFE57F" stroke-width="1" stroke-dasharray="2 1" opacity="0.6"/>
+
+  <!-- Centered Gold Bullion / Au Emblem -->
+  <!-- Gold Bars Icon -->
+  <g fill="url(#innerGradient)" stroke="#8D4F00" stroke-width="0.75" stroke-linejoin="round">
+    <!-- Base Left Bar -->
+    <polygon points="17,39 28,39 31,33 20,33" />
+    <polygon points="20,33 31,33 28,30 17,30" />
+    
+    <!-- Base Right Bar -->
+    <polygon points="36,39 47,39 44,33 33,33" />
+    <polygon points="33,33 44,33 47,30 36,30" />
+    
+    <!-- Top Pyramid Bar -->
+    <polygon points="26,30 38,30 35,24 23,24" />
+    <polygon points="23,24 35,24 38,21 26,21" />
+  </g>
+
+  <!-- Subtle 'XAU' Text -->
+  <text x="32" y="49" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="7" font-weight="900" fill="#FFFDE7" text-anchor="middle" letter-spacing="0.5" filter="url(#glow)">XAU</text>
+</svg>
+

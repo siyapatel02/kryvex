@@ -1,0 +1,104 @@
+/* Kryvex Admin Login Styles - Glassmorphism & Custom Overrides */
+
+@import 'tailwindcss';
+
+.admin-login-wrapper {
+    min-height: 100vh;
+    background: radial-gradient(circle at top left, rgba(245, 197, 66, 0.12), transparent 40%),
+                linear-gradient(135deg, #09090b, #18181b 60%, #050505);
+}
+
+/* Force password field relative container */
+.password-field {
+    position: relative !important;
+    width: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+}
+
+/* Eye Toggle Button absolute alignment - Perfectly vertically centered inside input box */
+.password-toggle {
+    position: absolute !important;
+    right: 12px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    bottom: auto !important;
+    margin: 0 !important;
+    width: 28px !important;
+    height: 28px !important;
+    padding: 0 !important;
+    background: transparent !important;
+    border: none !important;
+    outline: none !important;
+    cursor: pointer !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    z-index: 30 !important;
+    color: #9ca3af !important;
+}
+
+.password-toggle:hover {
+    color: #f5c542 !important;
+}
+
+/* HIDE BROWSER NATIVE REVEAL ICONS (Edge / Chrome / Safari / Firefox)
+   Prevents double/duplicate icons like browser native eye or monkey emoji */
+input::-ms-reveal,
+input::-ms-clear,
+input::-webkit-contacts-auto-fill-button,
+input::-webkit-credentials-auto-fill-button {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    visibility: hidden !important;
+}
+
+/* Fix checkbox size on auth form - Overriding legacy auth.css height 42px */
+.auth-form input[type="checkbox"],
+.auth-checkbox input,
+.terms-checkbox,
+input[type="checkbox"] {
+    width: 16px !important;
+    height: 16px !important;
+    min-width: 16px !important;
+    min-height: 16px !important;
+    max-width: 16px !important;
+    max-height: 16px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    cursor: pointer !important;
+    accent-color: #f5c542 !important;
+}
+
+/* Auth alert box overrides */
+.auth-alert.is-success {
+    display: block !important;
+    border-color: rgba(34, 197, 94, 0.4);
+    background: rgba(34, 197, 94, 0.1);
+    color: #4ade80;
+    padding: 10px 14px;
+    border-radius: 12px;
+    font-size: 13px;
+}
+
+.auth-alert.is-error {
+    display: block !important;
+    border-color: rgba(239, 68, 68, 0.4);
+    background: rgba(239, 68, 68, 0.1);
+    color: #f87171;
+    padding: 10px 14px;
+    border-radius: 12px;
+    font-size: 13px;
+}
+
+.auth-reset-step {
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.auth-reset-step.is-active {
+    display: flex !important;
+    flex-direction: column;
+}
